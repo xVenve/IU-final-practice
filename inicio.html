@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- cabecera en la que se define las fuente que utilizaremos, el icono de la página en el navegador, la vista por
+defecto de la página y dónde se encuenta el css -->
+
+<head>
+    <title>Plataforma Educativa UC3M</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="shortcut icon" href="./images/faviconn.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Cabecera de la página -->
+    <div id="arriba">
+        <div class="logo">
+            <img src="./images/logo.png" alt="LogoUC3M" />
+        </div>
+        <!-- Menú de acceso rapido a la pagina principal de la asignatura, 
+				contacto con el profesor o para poder acceder a contenido adicional de la asignatura-->
+        <div class="cabecera">
+            <p>PLATAFORMA EDUCATIVA UNIVERSIDAD CARLOS III</p>
+            <ul class="menucabecera">
+                <li><a href="./inicio.html">Inicio</a> |</li>
+                <li>
+                    <a href="mailto:100405999@alumnos.uc3m.es">Contacto del profesor</a>
+                    |
+                </li>
+                <li>
+                    <a href="http://ocw.uc3m.es/ingenieria-informatica/teoria-de-automatas-y-lenguajes-formales">Página
+                        web de apoyo</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Menú hamburguesa que sólo estará visible para la versión móvil de la página -->
+        <nav class="menuhamburguesa">
+            <input type="checkbox" id="menu" />
+            <label for="menu"><img src="./images/menu.png" alt="Menu" /></label>
+            <ul>
+                <li class="titulohamburguesa">
+                    TEORÍA DE AUTÓMATAS Y LENGUAJES FORMALES
+                </li>
+                <li class="elementoshamburguesa">
+                    <a href="./estudiantes.html">Estudiantes</a>
+                </li>
+                <li class="elementoshamburguesa"><a href="./foro.html">Foro</a></li>
+                <li class="elementoshamburguesa">
+                    <a href="./calificaciones.html">Calificaciones</a>
+                </li>
+                <li class="elementoshamburguesa">
+                    <a href="#Actividadreciente">Actividad reciente</a>
+                </li>
+                <li class="elementoshamburguesa">
+                    <a href="#Proximoseventos">Próximos eventos</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="principal">
+        <!-- Menú de acceso rápido a las distintas partes de la página -->
+        <div class="columnaizq">
+            <p>TEORÍA DE AUTÓMATAS Y LENGUAJES FORMALES</p>
+            <ul class="menuizquierda">
+                <li><a href="./estudiantes.html">Estudiantes</a></li>
+                <li><a href="./foro.html">Foro</a></li>
+                <li><a href="./calificaciones.html">Calificaciones</a></li>
+                <li class="accesotablet">
+                    <a href="#Actividadreciente">Actividad reciente</a>
+                </li>
+                <li class="accesotablet">
+                    <a href="#Proximoseventos">Próximos eventos</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="columnacentro">
+            <!-- En esta parte, se realizará la explicación de cada tema de la asignatura 
+					mediante videos junto con un breve resumen adjunto al vídeo-->
+            <div class="introduccion">
+                <div class="imagenestema">
+                    <img src="./images/tema1.jpg" alt="Alan Turing" />
+                </div>
+
+                <div class="temas">
+                    <h3>TEMA 1: TEORÍA DE AUTÓMATAS.</h3>
+                    <p>
+                        Tema orientado a la introducción de la Teoría de Autómatas, su
+                        historia y las figuras más representativas a lo largo de ella.
+                    </p>
+                </div>
+            </div>
+
+            <div class="desarrollo">
+                <!-- Primer vídeo del tema -->
+                <div class="videostema">
+                    <iframe src="https://www.youtube.com/embed/gpxmMat0IT4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <!-- Parte reservada a la explicación del vídeo -->
+                <div class="explicacionvideo">
+                    <h3>Vídeo 1: Introducción</h3>
+                    <p>
+                        De forma introductoria este vídeo nos va a mostrar a modo de guía
+                        el contenido de este tema y que conocimientos se van a adquirir.
+                    </p>
+                </div>
+            </div>
+
+            <div class="desarrollo">
+                <div class="videostema">
+                    <iframe src="https://www.youtube.com/embed/u11AWwdGZEg"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="explicacionvideo">
+                    <h3>Vídeo 2: Explicación del tema</h3>
+                    <p>
+                        Video en el que se motiva al estudiante a estudiar sobre el tema.
+                        Además se explican los primeros conceptos básicos sobre la teoría
+                        de Autómatas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="desarrollo">
+                <div class="videostema">
+                    <iframe src="https://www.youtube.com/embed/htW_nZ4XAc0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="explicacionvideo">
+                    <h3>Vídeo 3: Ejercicios</h3>
+                    <p>
+                        En este video resolveremos ejercicios a partir de la teoría vista
+                        en el apartado anterior.
+                    </p>
+                </div>
+            </div>
+
+            <div class="introduccion">
+                <div class="imagenestema">
+                    <img src="./images/tema2.png" alt="Automata" />
+                </div>
+                <!-- Comienzo del siguiente tema -->
+                <div class="temas">
+                    <h3>TEMA 2: AUTÓMATAS FINITOS.</h3>
+                    <p>
+                        Tema en el que profundizaremos en los tipos básicos de autómatas
+                        finitos básicos que hay.
+                    </p>
+                </div>
+            </div>
+
+            <div class="desarrollo">
+                <div class="videostema">
+                    <iframe src="https://www.youtube.com/embed/P0AxQvJcN2Q"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="explicacionvideo">
+                    <h3>Vídeo 1: Definición de autómata determinista.</h3>
+                    <p>
+                        Explicación de los autómatas finitos deterministas y la tupla en
+                        la que se identifica el autómata.
+                    </p>
+                </div>
+            </div>
+
+            <div class="desarrollo">
+                <div class="videostema">
+                    <iframe src="https://www.youtube.com/embed/8KKFcHpU0w0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="explicacionvideo">
+                    <h3>Vídeo 2: De funcion de transición a Lenguaje formal.</h3>
+                    <p>
+                        Explicación adicional sobrelos lenguajes de los autómatas
+                        deterministas vistos en el vídeo anterior. Este vídeo es una
+                        introducción para el siguiente tema.
+                    </p>
+                </div>
+            </div>
+
+            <div class="desarrollo">
+                <div class="videostema">
+                    <iframe src="https://www.youtube.com/embed/K5X-FpDYYAM"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="explicacionvideo">
+                    <h3>Vídeo 3: De autómata no determinista a determinista.</h3>
+                    <p>
+                        Junto con un ejemplo se explica como poder pasar de tipo de
+                        autómata a otro. Pudiendo mantener el lenguaje que posee ese
+                        autómata.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Y comienzo del último tema -->
+            <div class="introduccion">
+                <div class="imagenestema">
+                    <img src="./images/tema3.png" alt="Gramatica formal" />
+                </div>
+                <div class="temas">
+                    <h3>TEMA 3: LENGUAJES Y GRAMÁTICAS FORMALES.</h3>
+                    <p>
+                        En este tema vamos a conocer los tipos de gramáticas que hay, como
+                        pasar de un tipo a otro y la estructura de los lenguajes formales.
+                    </p>
+                </div>
+            </div>
+
+            <div class="desarrollo">
+                <div class="videostema">
+                    <iframe src="https://www.youtube.com/embed/YMjH3MWT5TQ"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="explicacionvideo">
+                    <h3>Vídeo 1: Tipos de gramáticas y lenguajes asociados.</h3>
+                    <p>
+                        Vídeo explicativo del tema. Se introduce el tema de las
+                        gramáticas, qué tipos hay, en que se diferencian y los ejemplos
+                        aplicables de cada gramática.
+                    </p>
+                </div>
+            </div>
+
+            <div class="desarrollo">
+                <div class="videostema">
+                    <iframe src="https://www.youtube.com/embed/8faMBmJ0HQ0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="explicacionvideo">
+                    <h3>Vídeo 2: Ejercicio de clasificacion de gramática.</h3>
+                    <p>
+                        Ejercicio a partir de la gramática proporcionada en el enunciado,
+                        deberemos clasificarla y hallar su lenguaje equivalente.
+                    </p>
+                </div>
+            </div>
+
+            <div class="desarrollo">
+                <div class="videostema">
+                    <iframe src="https://www.youtube.com/embed/kTySKcmbHLs"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="explicacionvideo">
+                    <h3>
+                        Vídeo 3: Paso de gramática de tipo 3 lineal izquierda a lineal
+                        derecha.
+                    </h3>
+                    <p>
+                        Ejemplo en el que en diferentes casos podemos mediante 4 sencillos
+                        pasos podemos convertir una gramática de tipo 3 lineal izquierda a
+                        una del mismo tipo lineal derecha.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- En esta parte se resaltarán las ultimas actualizaciones realizadas en la página
+				 y las fechas de las próximas entregas o exámenes que están pendientes de realizar-->
+        <div class="columnadrcha">
+            <p id="Actividadreciente">Actividad reciente</p>
+            <h1>25/09 Añadido Teoría Tema 2 - Autómatas Finitos</h1>
+            <h1>25/09 Añadido Ejercicios Tema 2 - Autómatas Finitos</h1>
+            <p id="Proximoseventos">Próximos eventos</p>
+            <h1>10/10 Examen Temas 1 y 2</h1>
+            <h1>15/10 Práctica 1: JFLAP</h1>
+        </div>
+    </div>
+    <!-- 
+			Parte reservada para el footer de la página en el que se podrá acceder a la web de la universidad, a la
+			 política de privacidad o a la politica de derechos de autor y a la propiedad intelectual
+		-->
+    <div class="abajo">
+        <ul class="menupie">
+            <li><a href="https://www.uc3m.es/inicio">UC3M</a> |</li>
+            <li>
+                <a
+                    href="https://www.uc3m.es/ss/Satellite/Biblioteca/es/TextoDosColumnas/1371213999139/Propiedad_intelectual_y_derechos_de_autor:_cuestiones_generales">Copyright
+                    ©</a>
+                |
+            </li>
+            <li>
+                <a
+                    href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/TextoMixta/1371207850505/Politica_de_privacidad">Política
+                    de privacidad</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
