@@ -4,126 +4,123 @@
 defecto de la página y dónde se encuenta el css -->
 
 <head>
-    <title>Plataforma Educativa UC3M</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/style.css" />
-    <link rel="shortcut icon" href="./images/faviconn.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <title>Plataforma Educativa UC3M</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/style.css" />
+  <link rel="shortcut icon" href="./images/faviconn.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- Cabecera de la página -->
-    <div id="arriba" class="col-12">
-        <div class="logo col-2">
-            <img id ="img_logo" src="./images/logo.png" alt="LogoUC3M" />
-        </div>
-        <!-- Menú de acceso rapido a la pagina principal de la asignatura, 
+  <!-- Cabecera de la página -->
+  <div id="arriba" class="col-12">
+    <div class="logo col-2">
+      <img id="img_logo" src="./images/logo.png" alt="LogoUC3M" />
+    </div>
+    <!-- Menú de acceso rapido a la pagina principal de la asignatura,
 				contacto con el profesor o para poder acceder a contenido adicional de la asignatura-->
-        <div class="cabecera col-8">
+    <div class="cabecera col-8">
 
-            <p>PLATAFORMA EDUCATIVA UNIVERSIDAD CARLOS III</p>
+      <p>PLATAFORMA EDUCATIVA UNIVERSIDAD CARLOS III</p>
 
-            <ul id="menucabecera">
-                <li><a href="./inicio.html">Inicio</a> |</li>
-                <li>
-                    <a href="">Mensajes</a>
-                    |
-                </li>
-                <li>
-                    <a href="https://www.uc3m.es/inicio">UC3M</a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Menú hamburguesa que sólo estará visible para la versión móvil de la página -->
-        <nav class="menuhamburguesa">
-            <input type="checkbox" id="menu" />
-            <label for="menu"><img src="./images/menu.png" alt="Menu" /></label>
-            <ul>
-                <li class="titulohamburguesa">
-                    TEORÍA DE AUTÓMATAS Y LENGUAJES FORMALES
-                </li>
-                <li class="elementoshamburguesa">
-                    <a href="./estudiantes.html">Estudiantes</a>
-                </li>
-                <li class="elementoshamburguesa"><a href="./foro.html">Foro</a></li>
-                <li class="elementoshamburguesa">
-                    <a href="./calificaciones.html">Calificaciones</a>
-                </li>
-                <li class="elementoshamburguesa">
-                    <a href="#Actividadreciente">Actividad reciente</a>
-                </li>
-                <li class="elementoshamburguesa">
-                    <a href="#Proximoseventos">Próximos eventos</a>
-                </li>
-            </ul>
-        </nav>
+      <ul id="menucabecera">
+        <li><a href="./inicio.html">Inicio</a> |</li>
+        <li>
+          <a href="">Mensajes</a>
+          |
+        </li>
+        <li>
+          <a href="https://www.uc3m.es/inicio">UC3M</a>
+        </li>
+      </ul>
     </div>
 
+    <!-- Menú hamburguesa que sólo estará visible para la versión móvil de la página -->
+    <nav class="menuhamburguesa">
+      <input type="checkbox" id="menu" />
+      <label for="menu"><img src="./images/menu.png" alt="Menu" /></label>
+      <ul>
+        <li class="titulohamburguesa">
+          TEORÍA DE AUTÓMATAS Y LENGUAJES FORMALES
+        </li>
+        <li class="elementoshamburguesa">
+          <a href="./estudiantes.html">Estudiantes</a>
+        </li>
+        <li class="elementoshamburguesa"><a href="./foro.html">Foro</a></li>
+        <li class="elementoshamburguesa">
+          <a href="./calificaciones.html">Calificaciones</a>
+        </li>
+        <li class="elementoshamburguesa">
+          <a href="#Actividadreciente">Actividad reciente</a>
+        </li>
+        <li class="elementoshamburguesa">
+          <a href="#Proximoseventos">Próximos eventos</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
-    <div class= "col-3" id = "formularios">
-         
-        <div id="iniciosesion">
-            <form id="Formulario_Inicio_Sesion" name="Formulario_Inicio_Sesion" method="post">
-                <label class="underline" for="inicioemail">Correo electrónico</label><br>
-                <input type="text" name="inicioemail" id="inicioemail"><br>
-                <label class="underline" for="contraseña">Contraseña</label><br>
-                <input type="password" name="contraseña" id="iniciocontraseña"><br>
-                <a href="#" type="button" class="boton" onclick="inicioSesion()">Iniciar sesión</a>
-                <a  href="#" type="button" id="boton_registro" class="boton" onclick="desplegarRegistro()"><span>Registrarse</span></a>
-            </form>
-           
-        </div>
+
+  <div class="col-3" id="formularios">
+
+    <div id="iniciosesion">
+      <form id="Formulario_Inicio_Sesion" name="Formulario_Inicio_Sesion" method="post">
+        <label class="underline" for="inicioemail">Correo electrónico</label><br>
+        <input type="text" name="inicioemail" id="inicioemail"><br>
+        <label class="underline" for="contraseña">Contraseña</label><br>
+        <input type="password" name="contraseña" id="iniciocontraseña"><br>
+        <a href="#" type="button" class="boton" onclick="inicioSesion()">Iniciar sesión</a>
+        <a href="#" type="button" id="boton_registro" class="boton" onclick="desplegarRegistro()"><span>Registrarse</span></a>
+      </form>
+
+    </div>
     <span id="vertical-line"></span>
-        <div id="registro">
-            <form id="formularioregistro" method="get" onsubmit="return guardarCookie()">
-                <label class="underline" for="formnombre">Nombre y Apellidos</label><br>
-                <input type="text" id="formnombre" name="nombre" placeholder="Nombre" required>
-                <input type="text" id="formapellidos" name="apellidos" placeholder="Apellidos" required><br>
-                <label class="underline" for="formemail">Correo electrónico</label><br>
-                <input type="text" id="formemail" name="email" placeholder="Correo electrónico" required pattern="[A-Za-z0-9]+@[a-z0-9]+.[a-z]{2,3}"><br>
-                <label class="underline" for="formcontraseña">Contraseña</label><br>
-                <input type="password" id="formcontraseña" name="contraseña" placeholder="Contraseña" required pattern="[A-Za-z0-9]{1,8}"><br>
-                <label class="underline" for="formNIA">NIA</label><br>
-                <input type="text" id="formNIA" name="NIA" placeholder="NIA" required pattern="100[0-9]{6}"><br>
-                <label class="underline" for="formrol">Roles</label><br>
-                <select name="roles" id="formrol" required>
-                    <option selected disabled value="">Elige tu rol</option>
-                    <option value="Estudiante" id="rolestudiante">Estudiante</option>
-                    <option value="Profesor" id="rolprofesor">Profesor</option>
-                    <option value="Administrador" id="roladmin">Administrador</option>
-                </select><br>
-                <input type="checkbox" id="terminos" required>
-                <label for="terminos"> He leído y acepto las Condiciones de uso</label><br>
-                <input type="submit" class="boton" value="Registrarse">
+    <div id="registro">
+      <form id="formularioregistro" method="get" onsubmit="return guardarCookie()">
+        <label class="underline" for="formnombre">Nombre y Apellidos</label><br>
+        <input type="text" id="formnombre" name="nombre" placeholder="Nombre" required>
+        <input type="text" id="formapellidos" name="apellidos" placeholder="Apellidos" required><br>
+        <label class="underline" for="formemail">Correo electrónico</label><br>
+        <input type="text" id="formemail" name="email" placeholder="Correo electrónico" required pattern="[A-Za-z0-9]+@[a-z0-9]+.[a-z]{2,3}"><br>
+        <label class="underline" for="formcontraseña">Contraseña</label><br>
+        <input type="password" id="formcontraseña" name="contraseña" placeholder="Contraseña" required pattern="[A-Za-z0-9]{1,8}"><br>
+        <label class="underline" for="formNIA">NIA</label><br>
+        <input type="text" id="formNIA" name="NIA" placeholder="NIA" required pattern="100[0-9]{6}"><br>
+        <label class="underline" for="formrol">Roles</label><br>
+        <select name="roles" id="formrol" required>
+          <option selected disabled value="">Elige tu rol</option>
+          <option value="Estudiante" id="rolestudiante">Estudiante</option>
+          <option value="Profesor" id="rolprofesor">Profesor</option>
+          <option value="Administrador" id="roladmin">Administrador</option>
+        </select><br>
+        <input type="checkbox" id="terminos" required>
+        <label for="terminos"> He leído y acepto las Condiciones de uso</label><br>
+        <input type="submit" class="boton" value="Registrarse">
 
-                <input class="boton" type="reset" value="Borrar">
+        <input class="boton" type="reset" value="Borrar">
 
-            </form>
-        </div>
+      </form>
     </div>
-    <!-- 
+  </div>
+  <!--
 			Parte reservada para el footer de la página en el que se podrá acceder a la web de la universidad, a la
 			 política de privacidad o a la politica de derechos de autor y a la propiedad intelectual
 		-->
-    <div class="abajo col-12">
-        <ul class="menupie">
-            <li><a href="https://www.uc3m.es/ss/Satellite/Biblioteca/es/TextoDosColumnas/1371213999139/Propiedad_intelectual_y_derechos_de_autor:_cuestiones_generales"> Copyright © </a> |</li>
-            <li>
-                <a
-                    href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/TextoMixta/1371207850505/Politica_de_privacidad"> Política
-                    de privacidad </a>
-                |
-            </li>
-            <li>
-                <a
-                    href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/TextoMixta/1371207850505/Politica_de_privacidad"> Términos y condiciones</a>
-            </li>
-        </ul>
-    </div>
-    <script src="./script/script.js"></script>
+  <div class="abajo col-12">
+    <ul class="menupie">
+      <li><a href="https://www.uc3m.es/ss/Satellite/Biblioteca/es/TextoDosColumnas/1371213999139/Propiedad_intelectual_y_derechos_de_autor:_cuestiones_generales"> Copyright © </a> |</li>
+      <li>
+        <a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/TextoMixta/1371207850505/Politica_de_privacidad"> Política de privacidad </a>
+        |
+      </li>
+      <li>
+        <a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/TextoMixta/1371207850505/Politica_de_privacidad"> Términos y condiciones</a>
+      </li>
+    </ul>
+  </div>
+  <script src="./script/script.js"></script>
 </body>
 
 </html>

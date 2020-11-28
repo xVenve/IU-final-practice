@@ -1,14 +1,14 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: pink;
 }
 
-#arriba{
+#arriba {
     display: flex;
     text-align: center;
     font-family: 'Poppins', sans-serif;
@@ -22,46 +22,49 @@ body {
     max-height: auto;
     float: left;
 }
+
 /* una vez iniciada sesión retirar el padding top para que quede bien*/
-.cabecera{
-    width:60%;
+.cabecera {
+    width: 60%;
     float: left;
     color: white;
     font-size: x-large;
     padding-top: 1%;
 }
 
-#menucabecera{
-    text-align:center;
-    font-size:large;
+#menucabecera {
+    text-align: center;
+    font-size: large;
     display: none;
 }
 
-#menucabecera li{
+#menucabecera li {
     list-style: none;
     display: inline-block;
     font-family: 'Poppins', sans-serif;
 }
 
-#menucabecera a{
+#menucabecera a {
     text-decoration: none;
     color: white;
     cursor: pointer;
 }
 
-.menupie li{
+.menupie li {
     display: inline-flex;
     list-style: none;
     text-align: center;
-    
+
 }
 
 .menuhamburguesa {
     display: none;
 }
 
-.menupie a:link, a:visited, a:active {
-    text-decoration:none;
+.menupie a:link,
+a:visited,
+a:active {
+    text-decoration: none;
 }
 
 #formularios {
@@ -69,7 +72,7 @@ body {
     margin-left: 38%;
     margin-right: 35%;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     background-color: white;
     padding: 3%;
     font-family: 'Poppins', sans-serif;
@@ -80,7 +83,7 @@ body {
     width: 100%;
     margin-right: 2.5%;
     text-align: center;
-    display:inline;
+    display: inline;
     float: left;
     padding-top: 2%;
 
@@ -98,8 +101,8 @@ body {
     justify-content: center;
 }
 
-.boton{
-    background-color: #fc7474; 
+.boton {
+    background-color: #fc7474;
     border: none;
     color: white;
     text-align: center;
@@ -122,7 +125,7 @@ body {
     position: relative;
     transition: 0.5s;
 }
-  
+
 .boton span:after {
     content: '\00bb';
     position: absolute;
@@ -133,7 +136,7 @@ body {
 }
 
 .boton:hover span {
-    padding-right: 25px;    
+    padding-right: 25px;
 }
 
 .boton:hover span:after {
@@ -141,10 +144,10 @@ body {
     right: 0;
 }
 
-input[type="reset"], input[type="submit"] {
-    outline:none;
+input[type="reset"],
+input[type="submit"] {
+    outline: none;
 }
-
 
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
@@ -166,7 +169,7 @@ input[type="reset"], input[type="submit"] {
     height: auto;
 }
 
-.abajo{
-    display:none;
+.abajo {
+    display: none;
     text-align: center;
 }
