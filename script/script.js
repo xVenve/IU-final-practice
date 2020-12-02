@@ -23,45 +23,45 @@ $(document).ready(function(){
 });
 
 function start() {
-    document.getElementById('iniciosesion').style.paddingTop = "2%";
-    document.getElementById('iniciosesion').style.width = "100%";
-    document.getElementById('formularios').style.marginLeft = "38%";
-    document.getElementById('formularios').style.marginRight = "35%";
-    document.getElementById('formularios').style.width = "25%";
+  document.getElementById('iniciosesion').style.paddingTop = "2%";
+  document.getElementById('iniciosesion').style.width = "100%";
+  document.getElementById('formularios').style.marginLeft = "38%";
+  document.getElementById('formularios').style.marginRight = "35%";
+  document.getElementById('formularios').style.width = "25%";
 }
 
 function guardarCookie() {
-    var contraseña = document.getElementById('formcontraseña').value;
-    var nombre = document.getElementById('formnombre').value;
-    var apellidos = document.getElementById('formapellidos').value;
-    var email = document.getElementById('formemail').value;
-    var roles = document.getElementById('formrol').selectedOptions[0].value;
-    var NIA = document.getElementById('formNIA').value;
-    var sep = "#";
-    var cookieCompleta = email + "=" + contraseña + sep + nombre + sep + apellidos + sep + roles + sep + NIA;
-    document.cookie = cookieCompleta;
-    
-    $("#vertical-line").fadeOut("slow");
-    $("#registro").fadeOut("slow");
-    start();
+  var contraseña = document.getElementById('formcontraseña').value;
+  var nombre = document.getElementById('formnombre').value;
+  var apellidos = document.getElementById('formapellidos').value;
+  var email = document.getElementById('formemail').value;
+  var roles = document.getElementById('formrol').selectedOptions[0].value;
+  var NIA = document.getElementById('formNIA').value;
+  var sep = "#";
+  var cookieCompleta = email + "=" + contraseña + sep + nombre + sep + apellidos + sep + roles + sep + NIA;
+  document.cookie = cookieCompleta;
+
+  $("#vertical-line").fadeOut("slow");
+  $("#registro").fadeOut("slow");
+  start();
 }
 
 function desplegarRegistro() {
-    $("#vertical-line").fadeIn("slow");
-    $("#registro").fadeIn("slow");
-    document.getElementById('vertical-line').style.display = "absolute";
-    document.getElementById('registro').style.display = "block";
-    document.getElementById('iniciosesion').style.paddingTop = "10%";
-    document.getElementById('formularios').style.marginLeft = "20%";
-    document.getElementById('formularios').style.marginRight = "20%";
-    document.getElementById('formularios').style.width = "58.33%";
-    document.getElementById('iniciosesion').style.width = "40%";
+  $("#vertical-line").fadeIn("slow");
+  $("#registro").fadeIn("slow");
+  document.getElementById('vertical-line').style.display = "absolute";
+  document.getElementById('registro').style.display = "block";
+  document.getElementById('iniciosesion').style.paddingTop = "10%";
+  document.getElementById('formularios').style.marginLeft = "20%";
+  document.getElementById('formularios').style.marginRight = "20%";
+  document.getElementById('formularios').style.width = "58.33%";
+  document.getElementById('iniciosesion').style.width = "40%";
 }
 
 
-function desplegar_contenido(x){
-    var contenido = document.getElementById(x);
-    $(contenido).slideToggle();
+function desplegar_contenido(x) {
+  var contenido = document.getElementById(x);
+  $(contenido).slideToggle();
 }
 
 function desplegar_asignatura(x){
@@ -84,14 +84,14 @@ function desplegar_contenido_barra(x){
 }
 
 function obtenerCookie(email) {
-    var emailigual = email + "=";
-    var restoCookie = document.cookie.split(emailigual)[1];
-    if (!restoCookie) {
-        alert("Este correo no tiene una cuenta vinculada");
-        location.reload();
-    }
-    var valoresCookie = restoCookie.split("#");
-    return valoresCookie;
+  var emailigual = email + "=";
+  var restoCookie = document.cookie.split(emailigual)[1];
+  if (!restoCookie) {
+    alert("Este correo no tiene una cuenta vinculada");
+    location.reload();
+  }
+  var valoresCookie = restoCookie.split("#");
+  return valoresCookie;
 }
 
 function inicioSesion() {
@@ -122,6 +122,10 @@ function inicioSesion() {
         /*responsive();
         Inicio();*/
     }
+    document.getElementById('nombreusuario').innerHTML = usernameCookie;
+    /*responsive();
+    Inicio();*/
+  }
 }
 
 function estudiante(){
@@ -135,28 +139,28 @@ function estudiante(){
 }
 
 //MOSTRAR ROL PROFESOR
-function profesor(){
-    $(".admin").hide();
-    $(".estudiante").hide();
-    $(".profesor").show();
+function profesor() {
+  $(".admin").hide();
+  $(".estudiante").hide();
+  $(".profesor").show();
 }
 
-function administrador(){
-    $(".profesor").hide();
-    $(".estudiante").hide();
-    $(".admin").show();
+function administrador() {
+  $(".profesor").hide();
+  $(".estudiante").hide();
+  $(".admin").show();
 }
 
-function cerrarSesion(){
-    var confirmacion=confirm("¿Quieres cerrar sesión?");
-    if(confirmacion){
-        start();
-        $("#principal").hide();
-        $("#formularios").show();
-        $("#perfil").hide();
-        $("#cabecera2").hide();
-        $("#abajo").hide();
-}
+function cerrarSesion() {
+  var confirmacion = confirm("¿Quieres cerrar sesión?");
+  if (confirmacion) {
+    start();
+    $("#principal").hide();
+    $("#formularios").show();
+    $("#perfil").hide();
+    $("#cabecera2").hide();
+    $("#abajo").hide();
+  }
 }
 
 function Inicio(){

@@ -28,19 +28,19 @@ defecto de la página y dónde se encuenta el css -->
     <div class="cabecera col-8">
 
       <p>PLATAFORMA EDUCATIVA UNIVERSIDAD CARLOS III</p>
-     
+
     </div>
 
     <div id="perfil" class="col-2">
-        <div id="arribaperfil">
-            <div id="divusericon" class="col-2">
-                <img src="./images/usericon.png" class="usericon" alt="usericon">
-            </div>
-            <div id="divnombreusuario" class="col-11">
-                <p id="nombreusuario"></p>
-            </div>
+      <div id="arribaperfil">
+        <div id="divusericon" class="col-2">
+          <img src="./images/usericon.png" class="usericon" alt="usericon">
         </div>
-        <button id="cerrarsesion" onclick="cerrarSesion()">Cerrar sesión</button>
+        <div id="divnombreusuario" class="col-11">
+          <p id="nombreusuario"></p>
+        </div>
+      </div>
+      <button id="cerrarsesion" onclick="cerrarSesion()">Cerrar sesión</button>
     </div>
 
   </div>
@@ -48,42 +48,42 @@ defecto de la página y dónde se encuenta el css -->
 
   <div id="cabecera2" class="col-12">
     <ul id="menucabecera">
-        <li><a onclick="Inicio()">Inicio</a> | </li>
-        <li>
-          <a href="#">Mensajes</a>
-          |
-        </li>
-        <li>
-          <a href="https://www.uc3m.es/inicio">UC3M</a>
-        </li>
+      <li><a onclick="Inicio()">Inicio</a> | </li>
+      <li>
+        <a href="#">Mensajes</a>
+        |
+      </li>
+      <li>
+        <a href="https://www.uc3m.es/inicio">UC3M</a>
+      </li>
     </ul>
 
     <!-- Menú hamburguesa que sólo estará visible para la versión móvil de la página -->
     <nav class="menuhamburguesa">
-        <input type="checkbox" id="menu" />
-        <label for="menu"><img src="./images/menu.png" alt="Menu" /></label>
-        <ul>
-            <li class="titulohamburguesa">
-            TEORÍA DE AUTÓMATAS Y LENGUAJES FORMALES
-            </li>
-            <li class="elementoshamburguesa">
-            <a href="./estudiantes.html">Estudiantes</a>
-            </li>
-            <li class="elementoshamburguesa"><a href="./foro.html">Foro</a></li>
-            <li class="elementoshamburguesa">
-            <a href="./calificaciones.html">Calificaciones</a>
-            </li>
-            <li class="elementoshamburguesa">
-            <a href="#Actividadreciente">Actividad reciente</a>
-            </li>
-            <li class="elementoshamburguesa">
-            <a href="#Proximoseventos">Próximos eventos</a>
-            </li>
-        </ul>
-    </nav>  
+      <input type="checkbox" id="menu" />
+      <label for="menu"><img src="./images/menu.png" alt="Menu" /></label>
+      <ul>
+        <li class="titulohamburguesa">
+          TEORÍA DE AUTÓMATAS Y LENGUAJES FORMALES
+        </li>
+        <li class="elementoshamburguesa">
+          <a href="./estudiantes.html">Estudiantes</a>
+        </li>
+        <li class="elementoshamburguesa"><a href="./foro.html">Foro</a></li>
+        <li class="elementoshamburguesa">
+          <a href="./calificaciones.html">Calificaciones</a>
+        </li>
+        <li class="elementoshamburguesa">
+          <a href="#Actividadreciente">Actividad reciente</a>
+        </li>
+        <li class="elementoshamburguesa">
+          <a href="#Proximoseventos">Próximos eventos</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 
- 
+
   <div class="col-3" id="formularios">
 
     <div id="iniciosesion">
@@ -126,42 +126,42 @@ defecto de la página y dónde se encuenta el css -->
     </div>
   </div>
 
-  
+
   <div id="principal">
     <div class="content estudiante profesor">
-      
+
 
       <article id="contenido_principal">
-        <div id = "div_content">
+        <div id="div_content">
           <h1>CURSOS</h1>
-          
+
           <h2 id="campusLega" onclick="desplegar_contenido('asignaturasLega')">
-          ▼ Escuela Politécnica Superior (Leganés)
+            ▼ Escuela Politécnica Superior (Leganés)
           </h2>
-          <article id ="asignaturasLega">
-          <ul>          
-            <li id ="link_IU" onclick="desplegar_asignatura('IU')"> Grupo 1. Interfaces de Usuario.</li>
-            <li id = "link_IS"> Grupo 27. Ingeniería del Software.</li>
-          </ul>
+          <article id="asignaturasLega">
+            <ul>
+              <li id="link_IU" onclick="desplegar_asignatura('IU')"> Grupo 1. Interfaces de Usuario.</li>
+              <li id="link_IS"> Grupo 27. Ingeniería del Software.</li>
+            </ul>
           </article>
 
-          <h2 id="campusColme" onclick="desplegar_contenido('asignaturasColme')"> 
+          <h2 id="campusColme" onclick="desplegar_contenido('asignaturasColme')">
             ▼ Escuela Politécnica Superior (Colmenarejo)
           </h2>
-            <article id ="asignaturasColme">
-              <ul>          
-                <li>Grupo 99. Programación.</li>
-                <li>Grupo 16. Ingeniería del Software.</li>
-                <li>Grupo 37. Interfaces de Usuario.</li>
-                <li>Grupo 12. Interfaces de Usuario.</li>
-              </ul>
-            </article>        
+          <article id="asignaturasColme">
+            <ul>
+              <li>Grupo 99. Programación.</li>
+              <li>Grupo 16. Ingeniería del Software.</li>
+              <li>Grupo 37. Interfaces de Usuario.</li>
+              <li>Grupo 12. Interfaces de Usuario.</li>
+            </ul>
+          </article>
 
-          <h2 id="campusGeta" onclick="desplegar_contenido('asignaturasGeta')">  
+          <h2 id="campusGeta" onclick="desplegar_contenido('asignaturasGeta')">
             ▼ Facultad de Humanidades, Comunicación y Documentación (Getafe)
           </h2>
-          <article id ="asignaturasGeta">
-            <ul>          
+          <article id="asignaturasGeta">
+            <ul>
               <li>Grupo 40. Marketing y publicidad.</li>
               <li>Grupo 56. Desarrollo web y multimedia.</li>
             </ul>
@@ -189,29 +189,29 @@ defecto de la página y dónde se encuenta el css -->
             </ul>
           </article> 
 
-          <h2 id="TEMA2_IU" onclick="desplegar_contenido('contenidoT2')"> 
-            ▼  TEMA 2: Interfaces de Usuario
-          </h2>
-          <article id ="contenidoT2">
-            <ul>          
-              <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Interfaces</li>
-              <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Usabilidad</li>
-              <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Metedologia</li>
-              <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Prototipado</li>
-            </ul>
-          </article>   
+        <h2 id="TEMA2_IU" onclick="desplegar_contenido('contenidoT2')">
+          ▼ TEMA 2: Interfaces de Usuario
+        </h2>
+        <article id="contenidoT2">
+          <ul>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Interfaces</li>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Usabilidad</li>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Metedologia</li>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Prototipado</li>
+          </ul>
+        </article>
 
-          <h2 id="TEMA3_IU" onclick="desplegar_contenido('contenidoT3')">
-            ▼ TEMA 3: Interfaces Web
-          </h2>
-          <article id="contenidoT3">
-            <ul>
-              <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Diseño web</li>
-              <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Patrones y Heurísticas</li>
-              <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Principios de diseño</li>
-              <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Obtencion de patrones</li>
-            </ul>
-          </article>
+        <h2 id="TEMA3_IU" onclick="desplegar_contenido('contenidoT3')">
+          ▼ TEMA 3: Interfaces Web
+        </h2>
+        <article id="contenidoT3">
+          <ul>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Diseño web</li>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Patrones y Heurísticas</li>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Principios de diseño</li>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Obtencion de patrones</li>
+          </ul>
+        </article>
 
           <h2 id="TEMA4_IU" onclick="desplegar_contenido('contenidoT4')">
             ▼ TEMA 4: Interacción con las interfaces
@@ -679,16 +679,16 @@ defecto de la página y dónde se encuenta el css -->
       
       <div><img class="icono" src="./images/calendario.png" alt="calendario" /><p class="underline">Calendario</p></div>
 
-      <div id="calendario"></div> 
+      <div id="calendario"></div>
 
     </div>
-   
+
   </div>
 
   			<!--Parte reservada para el footer de la página en el que se podrá acceder a la web de la universidad, a la
 			 política de privacidad o a la politica de derechos de autor y a la propiedad intelectual
 		-->
-  <div id ="abajo" class="col-12">
+  <div id="abajo" class="col-12">
     <ul class="menupie">
       <li><a href="https://www.uc3m.es/ss/Satellite/Biblioteca/es/TextoDosColumnas/1371213999139/Propiedad_intelectual_y_derechos_de_autor:_cuestiones_generales"> Copyright © </a> | </li>
       <li><a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/TextoMixta/1371207850505/Politica_de_privacidad"> Política de privacidad </a> | </li>
