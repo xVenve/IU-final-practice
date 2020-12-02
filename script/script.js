@@ -125,7 +125,7 @@ function inicioSesion() {
     document.getElementById('nombreusuario').innerHTML = usernameCookie;
     /*responsive();
     Inicio();*/
-  }
+  
 }
 
 function estudiante(){
