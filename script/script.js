@@ -8,8 +8,8 @@ $(document).ready(function(){
         displayYear: true,              // Display year in header
         fixedStartDay: true,            // Week begin always by monday or by day set by number 0 = sunday, 7 = saturday, false = month always begin by first day of the month
         displayEvent: true,             // Display existing event
-        disableEventDetails: false, // disable showing event details
-        disableEmptyDetails: true, // disable showing empty date details
+        disableEventDetails: false,     // disable showing event details
+        disableEmptyDetails: true,      // disable showing empty date details
         events: [{
             startDate: new Date("2020-12-05 21:35"),
             endDate: new Date("2020-12-05"),
@@ -70,8 +70,19 @@ function desplegar_asignatura(x){
     var home = document.getElementById("div_content");
     home.style.display ="none";
     $(".barralateralderecha").show();
+}
+ 
+function desplegar_contenido_barra(x){
+
+    $(".div_content").hide();
+    $("#IU").hide();
+    $("#foroasignatura").hide();
+    $("#calificaciones").hide();
+    var contenido = document.getElementById(x);
+    contenido.style.display = "block";
 
 }
+
 function obtenerCookie(email) {
     var emailigual = email + "=";
     var restoCookie = document.cookie.split(emailigual)[1];
@@ -99,6 +110,7 @@ function inicioSesion() {
         document.getElementById('perfil').style.display="inline";
         document.getElementById('abajo').style.display="block";
         document.getElementById('lateral').style.display="block";
+        
         if (rolCookie === "Estudiante") {
             estudiante();
         } else if(rolCookie === "Profesor"){
@@ -116,6 +128,10 @@ function estudiante(){
     $(".admin").hide();
     $(".profesor").hide();
     $(".estudiante").show();
+    crear_notas();
+    $("#TABLA_ESTUDIANTE").show();
+
+   
 }
 
 //MOSTRAR ROL PROFESOR
@@ -146,5 +162,59 @@ function cerrarSesion(){
 function Inicio(){
     $("#div_content").show();
     $("#IU").hide();
+    $("#calificaciones").hide();
+    $(".barralateralderecha").hide();
 
+}
+//ABRIR Y CERRAR UN HILO DEL FORO
+function alternarForo(x){
+    var mensajesForo=document.getElementById('hilo'+ x);
+    $(mensajesForo).slideToggle();
+}
+
+//ENVIAR MENSAJE POR EL FORO
+function enviarMensajeForo(i){
+    var mensaje=document.getElementById("usermensaje"+i).value;
+    var cookieActual=obtenerCookie(cuentaActiva);
+    var nombre=cookieActual[1]+' '+cookieActual[2];
+    var hoy= new Date();
+    var fecha =hoy.getHours() + ":" + hoy.getMinutes() + " "+ hoy.getDate() + "/" + (hoy.getMonth()+1) + "/" + hoy.getFullYear();
+    $("#mensajesforo"+i).append('<div class="mensajeusuarioenvio"> <div class="informacionusuario"> <div class="fechamensajeenvio">'+
+    '<p>'+fecha+'</p></div>'+
+    '<div class="nombreestudianteenvio"><p>'+nombre+'</p> </div>'+
+    '<div class="estudianteconversacion">'+
+    '<img src="./images/usericon.png" id="usericon" alt="usericon"></div>'+
+    '</div><div class="mensajeforo"><p>'
+    +mensaje+'</p></div></div>');
+    var numReplicas=Number(document.getElementById("replicas"+i).textContent);
+    document.getElementById("replicas"+i).innerHTML=numReplicas+1;
+    document.getElementById('ultimomensaje'+i).innerHTML=fecha;
+    document.getElementById("usermensaje"+i).value="";
+}
+
+//Métodos para descargar la tabla de calificaciones en formato excel.
+$(".export_e").click(function () {
+  $("#TABLA_ESTUDIANTE").table2excel({
+    // exclude CSS class
+    exclude: ".noExl",
+    name: "Data",
+    filename: "calificaciones" //do not include extension
+  });
+});
+
+$(".export_p").click(function () {
+  $("#TABLA_PROFESOR").table2excel({
+    // exclude CSS class
+    exclude: ".noExl",
+    name: "Data",
+    filename: "calificaciones" //do not include extension
+  });
+});
+
+//Método para generar aleatoriamente las notas de calificaciones.
+function crear_notas() {
+  var a1 = document.getElementById("act1").innerHTML = Math.floor(Math.random() * 1000) / 100;
+  var a2 = document.getElementById("act2").innerHTML = Math.floor(Math.random() * 1000) / 100;
+  var a3 = document.getElementById("act3").innerHTML = Math.floor(Math.random() * 1000) / 100;
+  var m = document.getElementById("media").innerHTML = Math.floor((a1 + a2 + a3) * 100 / 3) / 100;
 }

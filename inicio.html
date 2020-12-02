@@ -13,6 +13,7 @@ defecto de la página y dónde se encuenta el css -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
   <script type="text/javascript" src="./script/jquery.simple-calendar.js"></script>
+  <script src="./script/jquery.table2excel.js"></script>
   <link rel="stylesheet" type="text/css" href="./style/simple-calendar.css" />
 </head>
 
@@ -165,10 +166,12 @@ defecto de la página y dónde se encuenta el css -->
               <li>Grupo 56. Desarrollo web y multimedia.</li>
             </ul>
           </article>
+          <div><img class="icono" src="./images/excel.png" alt="nuevaAsignatura" /><p>Añadir asignatura ADMIN</p></div>
+
         </div>
       </article>
         <!--PAGINA DE ASIGNATURA INTERFACES DE USUSARIO-->
-        <article id ="IU">
+      <article id ="IU">
           <h1> ASIGNATURA INTERFACES DE USUARIO</h1>
           <p> <a href ="https://eu-lti.bbcollab.com/collab/ui/scheduler/session"> <img class="pdf" src="./images/blackboard.png" alt="Online"><b> Enlace al Blackboard Collaborate de las magistrales</b></p></a>
           <!--TEMA 1 IU-->
@@ -221,37 +224,466 @@ defecto de la página y dónde se encuenta el css -->
               <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: HTA & GOMS</li>
             </ul>
           </article>
-         
-        </article>
-    
-    
+           <div><img class="icono" src="./images/excel.png" alt="nuevoContenido" /><p>Añadir contenido</p></div>
+      </article>
+
+        <!--PAGINA DE CALIFICACIONES-->
+      <div id = "calificaciones">
+        <table class="tabla_calificaciones" id="TABLA_ESTUDIANTE" class="col-12 col-t-12">
+        <tr class="cabeceratabla">
+          <th>Actividad 1</th>
+          <th>Actividad 2</th>
+          <th>Actividad 3</th>
+          <th>Media actividades</th>
+        </tr>
+        <tr class="impar">
+          <td id="act1"></td>
+          <td id="act2"></td>
+          <td id="act3"></td>
+          <td id="media"></td>
+        </tr>
+      </table>
+      <div class= "botoncalificaciones">
+        <img class="icono" src="./images/excel.png" alt="excel"  class="export_e">
+        <p>Exportar datos tabla Excel</p>
+      </div>
+
+      <table class="tabla_calificaciones" id="TABLA_PROFESOR" class="col-12 col-t-12">
+        <tr class="cabeceratabla">
+          <th>Estudiante</th>
+          <th>Actividad 1</th>
+          <th>Actividad 2</th>
+          <th>Actividad 3</th>
+        </tr>
+        <!-- Alumno 1 -->
+        <tr class="impar">
+          <td class="NOMBRE">Carlos Rubio Olivares</td>
+          <td>8.00</td>
+          <td>8.50</td>
+          <td>9.00</td>
+        </tr>
+
+        <!-- Alumno 2 -->
+        <tr class="par">
+          <td class="NOMBRE">Jorge Rodriguez Fraile</td>
+          <td>10.00</td>
+          <td>7.75</td>
+          <td>8.50</td>
+
+        </tr>
+
+        <!-- Alumno 3 -->
+        <tr class="impar">
+          <td class="NOMBRE">Ivan Serrano Garcia</td>
+          <td>7.40</td>
+          <td>7.75</td>
+          <td>8.00</td>
+        </tr>
+
+        <!-- Alumno 4 -->
+        <tr class="par">
+          <td class="NOMBRE">Francisco José Ruiz de la Cruz</td>
+          <td>7.00</td>
+          <td>7.30</td>
+          <td>6.70</td>
+        </tr>
+
+          <!-- Alumno 5 -->
+           <tr class="impar">
+            <td class="NOMBRE">Nuria García Rozas</td> 
+              <td>9.00</td>
+              <td>8.75</td>
+              <td>9.20</td>
+          </tr>
+
+        <!-- Alumno 6 -->
+        <tr class="par">
+          <td class="NOMBRE">Daniel Cano Robledo</td>
+            <td>7.00</td>
+            <td>6.75</td>
+            <td>9.00</td>
+        </tr>
+
+        <!-- Alumno 7 -->
+        <tr class="impar">
+          <td class="NOMBRE">Maria Sanchez Blazquez</td>
+          <td>6.20</td>
+          <td>5.50</td>
+          <td>4.75</td>
+        </tr>
+
+        <!-- Alumno 8 -->
+        <tr class="par">
+          <td class="NOMBRE">Luis Acero Morata</td>
+          <td>5.20</td>
+          <td>4.50</td>
+          <td>6.50</td>
+        </tr>
+
+        <!-- Alumno 9 -->
+        <tr class="impar">
+          <td class="NOMBRE">Paula Alvarez Rey</td>
+          <td>7.50</td>
+          <td>7.00</td>
+          <td>6.75</td>
+        </tr>
+
+        <!-- Alumno 10 -->
+        <tr class="par">
+          <td class="NOMBRE">Xu Chen</td>
+          <td>6.50</td>
+          <td>7.30</td>
+          <td>7.75</td>
+        </tr>
+      </table>
+      <div class="botoncalificaciones"><img class="icono" src="./images/excel.png" alt="excel" class="export_p" /><p>Exportar datos tabla Excel</p></div>
+            
+      
+      </div>
+  
+      <div id="foroasignatura">
+          <!-- Cabecera de la implementación del foro -->
+          <div class="cabeceraforo">
+            
+            <div class="temasforo">
+              <p>Temas</p>
+            </div>
+  
+            <div class="replicas">	
+              <p>Réplicas</p>
+            </div>
+  
+            <div class="ultimomensaje">
+              <p>Último mensaje</p>
+            </div>
+            
+          </div>
+          <!-- Parte reservada al primer hilo del foro -->
+          <div class="hiloforo" onclick="alternarForo(1)">
+            <!-- Parte para indicar el tema del hilo -->
+            <div class="temasforo">
+              <p>Entrega práctica 1</p>
+            </div>
+            <!--  Parte reservada para indicar los mensajes que hay en ese hilo del foro -->
+            <div class="replicas" id="replicas1">	
+              <p>3</p>
+            </div>
+            <!-- Parte en la que se indica la fecha del último mensaje enviado en el hilo -->
+            <div class="ultimomensaje" id="ultimomensaje1">
+              <p>14:20 29/09/2020</p>
+            </div>
+          </div>
+  
+          <div class="conversacionforo" id="hilo1">
+            <div class="mensajes" id="mensajesforo1">
+              <div class="mensajeusuario">
+                <div class="informacionusuario">
+                  <div class="estudianteconversacion">
+                    <img src="./images/usericon.png" class="usericon" alt="usericon">
+                  </div>
+                  <div class="nombreestudiante">
+                    <p>Paula Echavarría Sánchez</p>
+                  </div>
+                  <div class="fechamensaje">
+                    <p>11:02 29/09/2020</p>						
+                  </div>	
+                </div>
+                <div class="mensajeforo">
+                  <p>Buenos días, tengo una duda sobre la práctica 1. ¿La entrega la realiza solo una persona de las parejas o ambas?</p>
+                </div>
+              </div>
+  
+  
+              <div class="mensajeusuario">
+                <div class="informacionusuario">
+                  <div class="estudianteconversacion">
+                    <img src="./images/usericon.png" class="usericon" alt="usericon">
+                  </div>
+                  <div class="nombreestudiante">
+                    <p>Félix Macipe Albarrán</p>
+                  </div>
+                  <div class="fechamensaje">
+                    <p>13:37 29/09/2020</p>						
+                  </div>
+                  
+                </div>
+                <div class="mensajeforo">
+                  <p>Yo creo que la entregan las dos personas</p>
+                </div>
+              </div>
+  
+  
+              <div class="mensajeusuario">
+                <div class="informacionusuario">
+                  <div class="estudianteconversacion">
+                    <img src="./images/usericon.png" class="usericon" alt="usericon">
+                  </div>
+                  <div class="nombreestudiante">
+                    <p>Carmina Rodríguez Pazos</p>
+                  </div>
+                  <div class="fechamensaje">
+                    <p>14:20 29/09/2020</p>						
+                  </div>
+                  
+                </div>
+                <div class="mensajeforo">
+                  <p>La entrega la realiza únicamente una persona, lo pone en el enunciado de la práctica...</p>
+                </div>
+              </div>
+            </div>
+            <div class="envioforo">
+              <label class="usermensaje1">Mensaje:</label><br>
+              <input type="text" id="usermensaje1" name="usermensaje" placeholder="Escriba el mensaje que quiera enviar" ><br>
+              <button class="botonenviar" onclick="enviarMensajeForo(1)">Enviar</button>
+              
+            </div>
+          </div>
+          
+          
+          
+  
+          <!-- Implementación del siguiente hilo y así sucesivamente -->
+          <div class="hiloforo" onclick="alternarForo(2)">
+            <div class="temasforo">
+              <p>Clase adicional 30/09/2020</p>
+            </div>
+            <div class="replicas" id="replicas2">	
+              <p>2</p>
+            </div>
+            <div class="ultimomensaje" id="ultimomensaje2">
+              <p>06:01 29/09/2020</p>
+            </div>
+          </div>
+  
+          <div class="conversacionforo" id="hilo2">
+            <div class="mensajes" id="mensajesforo2">
+              <div class="mensajeusuario">
+                <div class="informacionusuario">
+                  <div class="estudianteconversacion">
+                    <img src="./images/usericon.png" class="usericon" alt="usericon">
+                  </div>
+                  <div class="nombreestudiante">
+                    <p>María Perez Da Silva</p>
+                  </div>
+                  <div class="fechamensaje">
+                    <p>23:00 28/09/2020</p>						
+                  </div>
+                  
+                </div>
+                <div class="mensajeforo">
+                  <p>Hola buenas noches la clase de mañana va a ser presencial o online?
+                    Es que tenemos justo despues una clase online. Es que si es presencial, no podríamos compaginar
+                    la docencia online con la presencial. Un saludo.</p>
+                </div>
+              </div>
+  
+  
+              <div class="mensajeusuario">
+                <div class="informacionusuario">
+                  <div class="estudianteconversacion">
+                    <img src="./images/usericon.png" class="usericon" alt="usericon">
+                  </div>
+                  <div class="nombreestudiante">
+                    <p>Sofiane Fernández Álvarez</p>
+                  </div>
+                  <div class="fechamensaje">
+                    <p>06:01 29/09/2020</p>						
+                  </div>
+                  
+                </div>
+                <div class="mensajeforo">
+                  <p>Hola María, el profe lo ha dicho claramente en clase que iba a ser online,
+                    por la razón que has expuesto tu antes. Un saludo, nos vemos en clase! :)</p>
+                </div>
+              </div>
+            </div>
+            <div class="envioforo">
+              <label class="usermensaje2">Mensaje:</label><br>
+              <input type="text" id="usermensaje2" name="usermensaje" placeholder="Escriba el mensaje que quiera enviar" ><br>
+              <button class="botonenviar" onclick="enviarMensajeForo(2)">Enviar</button>
+              
+            </div>
+          </div>
+  
+          <div class="hiloforo" onclick="alternarForo(3)">
+            <div class="temasforo">
+              <p>Laboratorio: primera sesión</p>
+            </div>
+            <div class="replicas" id="replicas3">	
+              <p>1</p>
+            </div>
+            <div class="ultimomensaje" id="ultimomensaje3">
+              <p>13:08 21/09/2020</p>
+            </div>
+          </div>
+  
+          <div class="conversacionforo" id="hilo3">
+            <div class="mensajes" id="mensajesforo3"> 
+              <div class="mensajeusuario">
+                <div class="informacionusuario">
+                  <div class="estudianteconversacion">
+                    <img src="./images/usericon.png" class="usericon" alt="usericon">
+                  </div>
+                  <div class="nombreestudiante">
+                    <p>Nuria García Rozas</p>
+                  </div>
+                  <div class="fechamensaje">
+                    <p>13:08 21/09/2020</p>						
+                  </div>
+                  
+                </div>
+                <div class="mensajeforo">
+                  <p>Buenos días, ¿se necesita algún material adicional que llevar al laboratorio de mañana?</p>
+                </div>
+              </div>
+            </div>
+            <div class="envioforo">
+              <label class="usermensaje3">Mensaje:</label><br>
+              <input type="text" id="usermensaje3" name="usermensaje" placeholder="Escriba el mensaje que quiera enviar" ><br>
+              <button class="botonenviar" onclick="enviarMensajeForo(3)">Enviar</button>
+              
+            </div>
+          </div>
+  
+          <div class="hiloforo" onclick="alternarForo(4)">
+            <div class="temasforo">
+              <p>Ejercicios tema 1</p>
+            </div>
+            <div class="replicas" id="replicas4">	
+              <p>2</p>
+            </div>
+            <div class="ultimomensaje" id="ultimomensaje4">
+              <p>16:37 18/09/2020</p>
+            </div>
+          </div>
+  
+          <div class="conversacionforo" id="hilo4">
+            <div class="mensajes" id="mensajesforo4">
+              <div class="mensajeusuario">
+                <div class="informacionusuario">
+                  <div class="estudianteconversacion">
+                    <img src="./images/usericon.png" class="usericon" alt="usericon">
+                  </div>
+                  <div class="nombreestudiante">
+                    <p>Juan Carlos Cano Resa</p>
+                  </div>
+                  <div class="fechamensaje">
+                    <p>07:12 18/09/2020</p>						
+                  </div>
+                </div>
+                <div class="mensajeforo">
+                  <p>Hola, me gustaría saber si los ejercicios del tema 1 se van a subir solucionados tras la clase de ejercicios </p>
+                </div>
+              </div>
+  
+              <div class="mensajeusuario">
+                <div class="informacionusuario">
+                  <div class="estudianteconversacion">
+                    <img src="./images/usericon.png" class="usericon" alt="usericon">
+                  </div>
+                  <div class="nombreestudiante">
+                    <p>Borja Álvarez de Toledo</p>
+                  </div>
+                  <div class="fechamensaje">
+                    <p>16:37 18/09/2020</p>						
+                  </div>
+                  
+                </div>
+                <div class="mensajeforo">
+                  <p>Espero que si los suba y así si tenemos alguna duda le preguntamos.</p>
+                </div>
+              </div>
+            </div>
+            <div class="envioforo">
+              <label class="usermensaje4">Mensaje:</label><br>
+              <input type="text" id="usermensaje4" name="usermensaje" placeholder="Escriba el mensaje que quiera enviar" ><br>
+              <button class="botonenviar" onclick="enviarMensajeForo(4)">Enviar</button>
+              
+            </div>
+          </div>
+  
+          <div class="hiloforo" onclick="alternarForo(5)">
+            <div class="temasforo">
+              <p>Inicio del curso</p>
+            </div>
+            <div class="replicas" id="replicas5">	
+              <p>2</p>
+            </div>
+            <div class="ultimomensaje" id="ultimomensaje5">
+              <p>21:21 14/09/2020</p>
+            </div>
+            
+          </div>
+  
+          <div class="conversacionforo" id="hilo5">
+            <div class="mensajes" id="mensajesforo5">
+              <div class="mensajeusuario">
+                <div class="informacionusuario">
+                  <div class="estudianteconversacion">
+                    <img src="./images/usericon.png" class="usericon" alt="usericon">
+                  </div>
+                  <div class="nombreestudiante">
+                    <p>Li Zhou Weng</p>
+                  </div>
+                  <div class="fechamensaje">
+                    <p>20:36 14/09/2020</p>						
+                  </div>
+                  
+                </div>
+                <div class="mensajeforo">
+                  <p>Hola ya que mañana comienza el curso, me presento: Soy Li Zhou Weng y tengo muchas ganas de conoceros a todos.
+                    ¡Nos vemos mañana en clase! :D
+                  </p>
+                </div>
+              </div>
+              <div class="mensajeusuario">
+                <div class="informacionusuario">
+                  <div class="estudianteconversacion">
+                    <img src="./images/usericon.png" class="usericon" alt="usericon">
+                  </div>
+                  <div class="nombreestudiante">
+                    <p>João Carvalho Ronaldo</p>
+                  </div>
+                  <div class="fechamensaje">
+                    <p>21:21 14/09/2020</p>						
+                  </div>
+                </div>
+                <div class="mensajeforo">
+                  <p>Hola Li, yo también tengo bastante ilusión por este curso (aunque vaya a ser un poco raro),
+                    y eso que estamos de Erasmus!!!!!! Si quieres para los laboratorios nos ponemos juntos.
+                    Mi correo es el siguiente: 100425897@alumnos.uc3m.es Un saludo!!!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="envioforo">
+              <label class="usermensaje5">Mensaje:</label><br>
+              <input type="text" id="usermensaje5" name="usermensaje" placeholder="Escriba el mensaje que quiera enviar" ><br>
+              <button class="botonenviar" onclick="enviarMensajeForo(5)">Enviar</button>
+              
+            </div>
+          </div>
+  
+      </div>
+        
     </div>
     <div id="lateral">
     
-      <div class="barralateralderecha"><img class="icono" src="./images/calificaciones.png" alt="calificaciones" />Mis calificaciones</div>
+      <div class="barralateralderecha"><img class="icono" src="./images/calificaciones.png" alt="calificaciones" /><p class="underline" onclick="desplegar_contenido_barra('calificaciones')">Mis calificaciones</p></div>
 
-      <div class="barralateralderecha"><img class="icono" src="./images/foro.png" alt="foro" />Foro</div>
+      <div class="barralateralderecha"><img class="icono" src="./images/foro.png" alt="foro" /><p class="underline" onclick="desplegar_contenido_barra('foroasignatura')">Foro</p></div>
       
-      <div class="barralateralderecha"><img class="icono" src="./images/estudiantes.png" alt="estudiantes" />Estudiantes</div>
+      <div class="barralateralderecha"><img class="icono" src="./images/estudiantes.png" alt="estudiantes" /><p class="underline">Estudiantes</p></div>
 
-      <div class="barralateralderecha"><img class="icono" src="./images/actividades.png" alt="actividades" />Actividades</div>
+      <div class="barralateralderecha"><img class="icono" src="./images/actividades.png" alt="actividades" /><p class="underline">Actividades</p></div>
       
-      <div>
-        <img class="icono" src="./images/calendario.png" alt="calendario" />Calendario
-      </div>
+      <div><img class="icono" src="./images/calendario.png" alt="calendario" /><p class="underline">Calendario</p></div>
 
       <div id="calendario"></div> 
 
     </div>
    
   </div>
-
-
-
-
-
-
-
 
   			<!--Parte reservada para el footer de la página en el que se podrá acceder a la web de la universidad, a la
 			 política de privacidad o a la politica de derechos de autor y a la propiedad intelectual

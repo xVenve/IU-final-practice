@@ -267,6 +267,7 @@ input[type="submit"] {
     margin-right: 0;
     background-color: white;
     height: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 #div_content{
@@ -274,17 +275,26 @@ input[type="submit"] {
 }
 
 
+
+
 #lateral {
     float:left;
     background-color: white;
     width: 25%;
     height: 100%;
-    
     margin-left: 3.5%;
     padding: 1.5%;
     font-family: 'Poppins', sans-serif;
     display:none;
 }
+
+#lateral p {
+    float: right;
+    width:85%;
+    padding-top: 3%;   
+}
+
+
 
 #calendario{
     margin-right: auto;
@@ -333,3 +343,196 @@ ul {
 a{
 text-decoration: none;
 }
+
+/*ESTILO PARA TABLA DE CALIFACIONES*/
+#calificaciones {
+ display: none;
+}
+
+.tabla_calificaciones {
+    width:80%;
+    margin-left: 3%;
+    font-family: 'Poppins', sans-serif;
+    border-collapse: collapse;
+}
+
+.tabla_calificaciones th {
+  border: 1px solid black;
+  text-align: center;
+  font-size: 16px;
+}
+
+.tabla_calificaciones td {
+  font-size: 14px;
+  padding-left: 1%;
+  padding-right: 1%;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.NOMBRE {
+  text-align: left;
+}
+
+.par {
+    background-color: rgb(167, 174, 184) ;
+  }
+.impar {
+    background-color:  rgb(201, 207, 211) ;
+  }
+
+
+#tablacalificacionesestudiante td{
+    text-align: center;
+}
+
+.cabeceratabla{
+    background-color: rgb(58, 51, 53);
+    color: white;
+}
+
+#TABLA_ESTUDIANTE {
+    display: none;
+}
+
+
+.NOMBRE {
+  text-align: left;
+}
+
+.botoncalificaciones{
+    margin: 1%;
+    display:inline-block;
+    width:40%;
+}
+
+.botoncalificaciones p{
+    width:85%;
+    padding-top:2%;
+    float: right;
+}
+
+/*Diseño de la columna central en Foro*/
+#foroasignatura{
+    display:none;
+    padding: 1%;
+    width:100%;
+    background-color:#fad0d6;   
+    float:left;
+    visibility:visible;
+    
+}
+/*Dedicado a la cabecera del foro*/
+.cabeceraforo{
+    margin: 0;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+}
+/*Esta parte para los hilos del foro*/
+.hiloforo{
+    border:1px solid black;
+    border-radius: 5px;
+    display: flex;
+    padding: 2%;
+    align-items: center;
+}
+
+.hiloforo:hover{
+    background-color: #ffa0ae;
+    cursor: pointer;
+}
+
+/*Zona dedicada al tamaño de cada parte del foro*/
+.temasforo{
+    width: 40%;
+    float: left;
+    font-weight: bold;
+}
+
+.replicas{
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+
+.ultimomensaje{
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+
+.mensajeusuario{
+    padding: 0.5%;
+    display:block;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.informacionusuario{
+    display:flex;
+}
+
+.estudianteconversacion{
+    width: 10%;
+    float:left;
+   
+}
+
+.estudianteconversacion img{
+    max-width:100%;
+    max-height:100%;
+    
+}
+
+.nombreestudiante{
+    width:60%;
+    float:left;
+}
+
+.fechamensaje{
+    width: 30%;
+    float:left;
+   
+}
+
+.nombreestudianteenvio{
+    width:60%;
+    text-align: right;
+    float:left;
+}
+
+.fechamensajeenvio{
+    padding: 0 0 0 2%;
+    width: 30%;
+    text-align: left;
+    float:left;
+}
+.mensajeusuarioenvio{
+    padding: 0.5%;
+    display:block;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #fdb3be;
+
+}
+
+.mensajeforo{
+    width:100%;
+    padding: 0 2% 2% 2%;
+}
+
+.envioforo{
+    width: 100%;
+    display:block;
+}
+
+.envioforo input{
+    width: 100%;
+    padding: 2%;
+}
+
+#mensaje{
+    width:20%;
+}
+
