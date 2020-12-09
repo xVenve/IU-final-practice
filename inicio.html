@@ -11,7 +11,7 @@ defecto de la página y dónde se encuenta el css -->
   <link rel="shortcut icon" href="./images/faviconn.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <script src="./script/jquery.simple-calendar.js"></script>
   <script src="./script/jquery.table2excel.js"></script>
   <link rel="stylesheet" type="text/css" href="./style/simple-calendar.css" />
@@ -167,7 +167,27 @@ defecto de la página y dónde se encuenta el css -->
           </div>
           <div id="nuevocontenido">
             <img class="icono" src="./images/anadir.png" alt="nuevaAsignatura" />
-            <p>Añadir asignatura ADMIN</p>
+            <p id="addAsignatura">Añadir asignatura ADMIN</p>
+
+            <div id="popup_add_asignatura">
+              <div class="content-popup">
+                <div class="cerrar"><p id="botoncerrar">+</p></div>
+                <div>
+                  <h2>Introduzca los datos de la nueva asignatura</h2>
+                  <form id="Formulario_Asignatura" name="Formulario_Asignatura" method="post">
+                    <label class="underline" for="campus">Campus</label><br>
+                    <input type="text" name="asignaturacampus" id="campus"><br>
+                    <label class="underline" for="grupo">Grupo</label><br>
+                    <input type="text" name="grupo" id="grupo"><br>
+                    <label class="underline" for="asignatura">Nombre asignatura</label><br>
+                    <input type="text" name="asignatura" id="asignatura"><br>
+                    <a class="boton cerrar">Añadir</a>
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
             </div>
             
           
@@ -228,8 +248,48 @@ defecto de la página y dónde se encuenta el css -->
         </div>
         <div id="nuevocontenido">
           <img class="icono" src="./images/anadir.png" alt="nuevoContenido" />
-          <p>Añadir contenido</p>
+          <p id="addcontent">Añadir contenido</p>
         </div>
+        
+        <div id="popup_contenido">
+          <div class="content-popup">
+            <div class="cerrar"><p id="botoncerrar">+</p></div>
+            <div>
+              <h2>Introduzca los datos del nuevo contenido</h2>
+              <form id="Formulario_Contenido" name="Formulario_Contenido" method="post">
+                <label class="underline" for="Titulocontenido">Titulo Archivo</label><br>
+                <input type="text" name="Titulocontenido" id="Titulocontenido"><br>
+              </form>
+
+              <div id="seleccionarArchivo">
+                <div id="fileHolder">
+                    <input type="file" id="fileURL" />
+                </div>
+
+                  FALTA LA FOTOOOOOOO
+              </div>
+              <a class="boton cerrar">Añadir</a>
+                
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
       </div>
 
       <!--PAGINA DE CALIFICACIONES-->
@@ -253,10 +313,8 @@ defecto de la página y dónde se encuenta el css -->
           <img class="icono export_e" src="./images/excel.png" alt="excel">
           <p>Exportar datos tabla Excel</p>
         </div>
-        <div class="botonnombre"><img class="icono" src="./images/anadir.png" alt="anadir" />
-          <p>Añadir calificaciones</p>
-        </div>
-        <div class="botonnombre"><img class="icono" src="./images/chart.png" alt="chart" />
+        <div class="botonnombre">
+          <img class="icono" src="./images/chart.png" alt="chart" />
           <p>Ver graficas de resultados</p>
         </div>
 
@@ -714,9 +772,9 @@ defecto de la página y dónde se encuenta el css -->
             <td><img class="AVATAR" src="./images/Carlos.jpg" alt="CarlosRubio" /></td>
             <td>Carlos</td>
             <td>Rubio Olivares</td>
-            <td>100405832@alumnos.uc3m.es</td>
+            <td>100405834@alumnos.uc3m.es</td>
             <td><button class="boton" type="button"
-                onclick="window.location.href='mailto:100405832@alumnos.uc3m.es';">Enviar mensaje</button></td>
+                onclick="window.location.href='mailto:100405834@alumnos.uc3m.es';">Enviar mensaje</button></td>
           </tr>
 
           <!-- Alumno 2 -->
@@ -814,29 +872,6 @@ defecto de la página y dónde se encuenta el css -->
           </div>    
       </div>
 
-      <div id="actividades_estudiante">
-    
-        <div id ="actividad">
-          <div id ="Nombreactividad">
-            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
-           <p>Entrega práctica 1 HTML Y CSS</p>
-          </div>
-          <div id ="tiemporestante">
-            <p>Finalizado. Sin calificar.</p>
-          </div>
-        </div>
-        <div id ="actividad">
-          <div id ="Nombreactividad">
-            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
-           <p>Entrega práctica 2 JavaScript y Jquery</p>
-          </div>
-          <div id ="tiemporestante">
-            <p>En proceso. 5 días restantes.</p>
-          </div>
-        </div>
-      </div>
-
-
       <div id="actividades_profesor">
         
         <div id ="actividad">
@@ -854,7 +889,9 @@ defecto de la página y dónde se encuenta el css -->
            <p>Entrega práctica 2 JavaScript y Jquery</p>
           </div>
           <div id ="tiemporestante">
-            <p>En proceso. 5 días restantes.</p>
+            <p>En proceso. Tiempo restante 5 días.
+             
+            </p>
           </div>
         </div>
         <div id="nuevocontenido">
@@ -862,6 +899,33 @@ defecto de la página y dónde se encuenta el css -->
           <p>Crear nueva actividad</p>
         </div>
       </div>
+
+
+      <div id="actividades_estudiante">
+    
+        <div id ="actividad">
+          <div id ="Nombreactividad">
+            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
+           <p>Entrega práctica 1 HTML Y CSS</p>
+          </div>
+          <div id ="tiemporestante">
+            <p>Finalizado. Sin calificar.</p>
+          </div>
+        </div>
+        <div id ="actividad">
+          <div id ="Nombreactividad">
+            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
+           <p>Entrega práctica 2 JavaScript y Jquery</p>
+          </div>
+          <div id ="tiemporestante">
+            <p>En proceso. Tiempo restante 5 días.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      
     </div>
 
 

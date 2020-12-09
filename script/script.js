@@ -24,7 +24,27 @@ $(document).ready(function() {
       summary: 'ENTREGA PRACTICA 2. JAVASCRIPT Y JQUERY'
     }]
   });
+    popups('#addAsignatura', '#popup_add_asignatura');
+    popups('#addcontent', '#popup_contenido');
+
 });
+
+
+function popups(nombre, seccion) {
+  $(nombre).on('click', function () {
+    $(seccion).fadeIn('slow');
+    $('.popup-overlay').fadeIn('slow');
+    $('.popup-overlay').height($(window).height());
+    return false;
+  });
+  $('.cerrar').on('click', function () {
+    $(seccion).fadeOut('slow');
+    $('.popup-overlay').fadeOut('slow');
+    return false;
+  });
+}
+
+
 
 function start() {
   document.getElementById('iniciosesion').style.paddingTop = "2%";
@@ -244,3 +264,5 @@ function crear_notas() {
   var a3 = document.getElementById("act3").innerHTML = Math.floor(Math.random() * 1000) / 100;
   var m = document.getElementById("media").innerHTML = Math.floor((a1 + a2 + a3) * 100 / 3) / 100;
 }
+
+
