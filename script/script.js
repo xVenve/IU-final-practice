@@ -1,5 +1,5 @@
 var cuentaActiva = null;
-
+var rolActivo = null;
 
 $(document).ready(function() {
   $("#calendario").simpleCalendar({
@@ -18,6 +18,10 @@ $(document).ready(function() {
       startDate: new Date("2020-12-06"),
       endDate: new Date("2020-12-06"),
       summary: 'DIA DE LA CONSTITUCION DE ESPAÑITA'
+    }, {
+      startDate: new Date("2020-12-22 23:55"),
+      endDate: new Date("2020-12-22 23:55"),
+      summary: 'ENTREGA PRACTICA 2. JAVASCRIPT Y JQUERY'
     }]
   });
 });
@@ -67,17 +71,30 @@ function desplegar_contenido(x) {
 function desplegar_asignatura(x) {
   var asignatura = document.getElementById(x);
   asignatura.style.display = "block";
-  var home = document.getElementById("div_content");
-  home.style.display = "none";
   $(".barralateralderecha").show();
+
+  if (rolActivo === "Estudiante") {
+    estudiante();
+  } else if (rolActivo === "Profesor") {
+    profesor();
+  } else {
+    administrador();
+  }
+  
+  var home = document.getElementById("contenido_principal");
+  home.style.display = "none";
 }
 
 function desplegar_contenido_barra(x) {
 
-  $(".div_content").hide();
+  $("#contenido_principal").hide();
   $("#IU").hide();
   $("#foroasignatura").hide();
-  $("#calificaciones").hide();
+  $("#estudiantes").hide();
+  $("#actividades_estudiante").hide();
+  $("#actividades_profesor").hide();
+  $("#calificaciones_profesor").hide();
+  $("#calificaciones_estudiante").hide();
   var contenido = document.getElementById(x);
   contenido.style.display = "block";
 
@@ -112,12 +129,17 @@ function inicioSesion() {
     document.getElementById('lateral').style.display = "block";
 
     if (rolCookie === "Estudiante") {
+      rolActivo = "Estudiante";
       estudiante();
     } else if (rolCookie === "Profesor") {
+      rolActivo = "Profesor";
       profesor();
     } else {
+      rolActivo = "Administrador";
       administrador();
     }
+
+    $(".barralateralderecha").hide();
     document.getElementById('nombreusuario').innerHTML = usernameCookie;
     /*responsive();
     Inicio();*/
@@ -129,9 +151,6 @@ function estudiante() {
   $(".profesor").hide();
   $(".estudiante").show();
   crear_notas();
-  $("#TABLA_ESTUDIANTE").show();
-
-
 }
 
 //MOSTRAR ROL PROFESOR
@@ -160,12 +179,19 @@ function cerrarSesion() {
 }
 
 function Inicio() {
-  $("#div_content").show();
+  $("#contenido_principal").show();
   $("#IU").hide();
+  $("#actividades_estudiante").hide();
+  $("#actividades_profesor").hide();
   $("#calificaciones").hide();
   $(".barralateralderecha").hide();
+  $("#foroasignatura").hide();
+  $("#calificaciones_estudiante").hide();
+  $("#calificaciones_profesor").hide();
+  $("#estudiantes").hide();
 
 }
+
 //ABRIR Y CERRAR UN HILO DEL FORO
 function alternarForo(x) {
   var mensajesForo = document.getElementById('hilo' + x);

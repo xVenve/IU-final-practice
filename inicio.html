@@ -12,7 +12,7 @@ defecto de la página y dónde se encuenta el css -->
   <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="./script/jquery.simple-calendar.js"></script>
+  <script src="./script/jquery.simple-calendar.js"></script>
   <script src="./script/jquery.table2excel.js"></script>
   <link rel="stylesheet" type="text/css" href="./style/simple-calendar.css" />
 </head>
@@ -90,10 +90,10 @@ defecto de la página y dónde se encuenta el css -->
       <form id="Formulario_Inicio_Sesion" name="Formulario_Inicio_Sesion" method="post">
         <label class="underline" for="inicioemail">Correo electrónico</label><br>
         <input type="text" name="inicioemail" id="inicioemail"><br>
-        <label class="underline" for="contraseña">Contraseña</label><br>
+        <label class="underline" for="iniciocontraseña">Contraseña</label><br>
         <input type="password" name="contraseña" id="iniciocontraseña"><br>
-        <a href="#" type="button" class="boton" onclick="inicioSesion()">Iniciar sesión</a>
-        <a href="#" type="button" id="boton_registro" class="boton" onclick="desplegarRegistro()"><span>Registrarse</span></a>
+        <a class="boton" onclick="inicioSesion()">Iniciar sesión</a>
+        <a id="boton_registro" class="boton" onclick="desplegarRegistro()"><span>Registrarse</span></a>
       </form>
 
     </div>
@@ -128,112 +128,114 @@ defecto de la página y dónde se encuenta el css -->
 
 
   <div id="principal">
-    <div class="content estudiante profesor">
+    <div class="content">
 
-
-      <article id="contenido_principal">
-        <div id="div_content">
+      <div id="contenido_principal" class="estudiante profesor">
+        
           <h1>CURSOS</h1>
 
           <h2 id="campusLega" onclick="desplegar_contenido('asignaturasLega')">
             ▼ Escuela Politécnica Superior (Leganés)
           </h2>
-          <article id="asignaturasLega">
+          <div id="asignaturasLega" class="asignaturas">
             <ul>
               <li id="link_IU" onclick="desplegar_asignatura('IU')"> Grupo 1. Interfaces de Usuario.</li>
               <li id="link_IS"> Grupo 27. Ingeniería del Software.</li>
             </ul>
-          </article>
+          </div>
 
           <h2 id="campusColme" onclick="desplegar_contenido('asignaturasColme')">
             ▼ Escuela Politécnica Superior (Colmenarejo)
           </h2>
-          <article id="asignaturasColme">
+          <div id="asignaturasColme" class="asignaturas">
             <ul>
               <li>Grupo 99. Programación.</li>
               <li>Grupo 16. Ingeniería del Software.</li>
               <li>Grupo 37. Interfaces de Usuario.</li>
               <li>Grupo 12. Interfaces de Usuario.</li>
             </ul>
-          </article>
+          </div>
 
           <h2 id="campusGeta" onclick="desplegar_contenido('asignaturasGeta')">
             ▼ Facultad de Humanidades, Comunicación y Documentación (Getafe)
           </h2>
-          <article id="asignaturasGeta">
+          <div id="asignaturasGeta" class="asignaturas">
             <ul>
               <li>Grupo 40. Marketing y publicidad.</li>
               <li>Grupo 56. Desarrollo web y multimedia.</li>
             </ul>
-          </article>
-          <div><img class="icono" src="./images/excel.png" alt="nuevaAsignatura" />
-            <p>Añadir asignatura ADMIN</p>
           </div>
+          <div id="nuevocontenido">
+            <img class="icono" src="./images/anadir.png" alt="nuevaAsignatura" />
+            <p>Añadir asignatura ADMIN</p>
+            </div>
+            
+          
 
-        </div>
-      </article>
+      </div>
       <!--PAGINA DE ASIGNATURA INTERFACES DE USUSARIO-->
-      <article id="IU">
+      <div id="IU">
         <h1> ASIGNATURA INTERFACES DE USUARIO</h1>
-        <p> <a href="https://eu-lti.bbcollab.com/collab/ui/scheduler/session"> <img class="pdf" src="./images/blackboard.png" alt="Online"><b> Enlace al Blackboard Collaborate de las magistrales</b></p></a>
+        <p> <a href="https://eu-lti.bbcollab.com/collab/ui/scheduler/session"> <img class="pdf" src="./images/blackboard.png" alt="Online"><b> Enlace al Blackboard Collaborate de las magistrales</b></a></p>
         <!--TEMA 1 IU-->
 
         <h2 id="TEMA1_IU" onclick="desplegar_contenido('contenidoT1')">
           ▼ TEMA 1: Interacción Persona-Ordenador
         </h2>
-        <article id="contenidoT1">
+        <div id="contenidoT1">
           <ul>
 
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Modelo de Norman</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas de teoria</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Enunciado practica individual</li>
-            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Entrega Practica individual</li>
           </ul>
-        </article>
+        </div>
 
         <h2 id="TEMA2_IU" onclick="desplegar_contenido('contenidoT2')">
           ▼ TEMA 2: Interfaces de Usuario
         </h2>
-        <article id="contenidoT2">
+        <div id="contenidoT2">
           <ul>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Interfaces</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Usabilidad</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Metedologia</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Prototipado</li>
           </ul>
-        </article>
+        </div>
 
         <h2 id="TEMA3_IU" onclick="desplegar_contenido('contenidoT3')">
           ▼ TEMA 3: Interfaces Web
         </h2>
-        <article id="contenidoT3">
+        <div id="contenidoT3">
           <ul>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Diseño web</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Patrones y Heurísticas</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Principios de diseño</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Obtencion de patrones</li>
           </ul>
-        </article>
+        </div>
 
         <h2 id="TEMA4_IU" onclick="desplegar_contenido('contenidoT4')">
           ▼ TEMA 4: Interacción con las interfaces
         </h2>
-        <article id="contenidoT4">
+        <div id="contenidoT4">
           <ul>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Requisitos</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Evaluación</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Modelos de interacción</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: HTA & GOMS</li>
           </ul>
-        </article>
-        <div><img class="icono" src="./images/excel.png" alt="nuevoContenido" />
+        </div>
+        <div id="nuevocontenido">
+          <img class="icono" src="./images/anadir.png" alt="nuevoContenido" />
           <p>Añadir contenido</p>
         </div>
-      </article>
+      </div>
 
       <!--PAGINA DE CALIFICACIONES-->
-      <div id="calificaciones">
-        <table class="tabla_calificaciones" id="TABLA_ESTUDIANTE" class="col-12 col-t-12">
+      <div id="calificaciones_estudiante">
+        <h1>CALIFICACIONES</h1>
+        <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_ESTUDIANTE">
           <tr class="cabeceratabla">
             <th>Actividad 1</th>
             <th>Actividad 2</th>
@@ -247,12 +249,22 @@ defecto de la página y dónde se encuenta el css -->
             <td id="media"></td>
           </tr>
         </table>
-        <div class="botoncalificaciones">
-          <img class="icono" src="./images/excel.png" alt="excel" class="export_e">
+        <div class="botonnombre">
+          <img class="icono export_e" src="./images/excel.png" alt="excel">
           <p>Exportar datos tabla Excel</p>
         </div>
+        <div class="botonnombre"><img class="icono" src="./images/anadir.png" alt="anadir" />
+          <p>Añadir calificaciones</p>
+        </div>
+        <div class="botonnombre"><img class="icono" src="./images/chart.png" alt="chart" />
+          <p>Ver graficas de resultados</p>
+        </div>
 
-        <table class="tabla_calificaciones" id="TABLA_PROFESOR" class="col-12 col-t-12">
+      </div>
+
+      <div id="calificaciones_profesor">
+        <h1>CALIFICACIONES</h1>
+        <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_PROFESOR">
           <tr class="cabeceratabla">
             <th>Estudiante</th>
             <th>Actividad 1</th>
@@ -340,11 +352,15 @@ defecto de la página y dónde se encuenta el css -->
             <td>7.75</td>
           </tr>
         </table>
-        <div class="botoncalificaciones"><img class="icono" src="./images/excel.png" alt="excel" class="export_p" />
+        <div class="botonnombre"><img class="icono export_p" src="./images/excel.png" alt="excel"/>
           <p>Exportar datos tabla Excel</p>
         </div>
-
-
+        <div class="botonnombre"><img class="icono" src="./images/anadir.png" alt="anadir" />
+          <p>Añadir calificaciones</p>
+        </div>
+        <div class="botonnombre"><img class="icono" src="./images/chart.png" alt="chart" />
+          <p>Ver graficas de resultados</p>
+        </div>
       </div>
 
       <div id="foroasignatura">
@@ -669,26 +685,211 @@ defecto de la página y dónde se encuenta el css -->
 
           </div>
         </div>
-
+        <div id="nuevocontenido">
+          <img class="icono Añadir" src="./images/anadir.png" alt="anadir"/>
+          <p>Crear nuevo hilo</p>
+        </div>
       </div>
 
+         
+      
+      
+      
+      
+
+      <!--PAGINA DE ESTUDIANTES-->
+      <div id="estudiantes">
+        <h1>ESTUDIANTES</h1>
+        <table class="tabla_estudiantes col-12 col-t-12">
+          <tr class="cabec">
+            <th></th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th></th>
+          </tr>
+
+          <!-- Alumno 1 -->
+          <tr class="impar">
+            <td><img class="AVATAR" src="./images/Carlos.jpg" alt="CarlosRubio" /></td>
+            <td>Carlos</td>
+            <td>Rubio Olivares</td>
+            <td>100405832@alumnos.uc3m.es</td>
+            <td><button class="boton" type="button"
+                onclick="window.location.href='mailto:100405832@alumnos.uc3m.es';">Enviar mensaje</button></td>
+          </tr>
+
+          <!-- Alumno 2 -->
+          <tr class="par">
+            <td><img class="AVATAR" src="./images/Jorge.jpg" alt="JorgeRodriguez" /></td>
+            <td>Jorge</td>
+            <td>Rodriguez Fraile</td>
+            <td>100405951@alumnos.uc3m.es</td>
+            <td><button class="boton" type="button"
+                onclick="window.location.href='mailto:100405951@alumnos.uc3m.es';">Enviar mensaje</button></td>
+          </tr>
+
+          <!-- Alumno 3 -->
+          <tr class="impar">
+            <td><img class="AVATAR" src="./images/Ivan.jpg" alt="IvanSerrano" /></td>
+            <td>Ivan</td>
+            <td>Serrano Garcia</td>
+            <td>100405836@alumnos.uc3m.es</td>
+            <td><button class="boton" type="button"
+                onclick="window.location.href='mailto:100405836@alumnos.uc3m.es';">Enviar mensaje</button></td>
+          </tr>
+
+          <tr class="par">
+            <td><img class="AVATAR" src="./images/Fran.jpg" alt="FranciscoJoseRuiz" /></td>
+            <td>Francisco José</td>
+            <td>Ruiz de la Cruz</td>
+            <td>100405807@alumnos.uc3m.es</td>
+            <td><button class="boton" type="button" 
+                onclick="window.location.href='mailto:100405807@alumnos.uc3m.es';">Enviar mensaje</button></td>
+          </tr>
+
+          <!-- Alumno 4 -->
+          <tr class="impar">
+            <td><img class="AVATAR" src="./images/alumno1.jpeg" alt="Nuria" /></td>
+            <td>Nuria</td>
+            <td>García Rozas</td>
+            <td>100405997@alumnos.uc3m.es</td>
+            <td><button class="boton" type="button"
+                onclick="window.location.href='mailto:100405997@alumnos.uc3m.es';">Enviar mensaje</button></td>
+          </tr>
+
+          <!-- Alumno 6 -->
+          <tr class="par">
+            <td><img class="AVATAR" src="./images/Daniel.jpg" alt="DanielCano" /></td>
+            <td>Daniel</td>
+            <td>Cano Robledo</td>
+            <td>100405810@alumnos.uc3m.es</td>
+            <td><button class="boton" type="button"
+                onclick="window.location.href='mailto:100405810@alumnos.uc3m.es';">Enviar mensaje</button></td>
+          </tr>
+
+          <!-- Alumno 7 -->
+          <tr class="impar">
+            <td><img class="AVATAR" src="./images/Maria.jpg" alt="MariaSanchez" /></td>
+            <td>Maria</td>
+            <td>Sanchez Blazquez</td>
+            <td>100405838@alumnos.uc3m.es</td>
+            <td><button class="boton" type="button"
+                onclick="window.location.href='mailto:100405838@alumnos.uc3m.es';">Enviar mensaje</button></td>
+          </tr>
+
+          <!-- Alumno 8 -->
+          <tr class="par">
+            <td><img class="AVATAR" src="./images/Luis.jpg" alt="LuisAcero" /></td>
+            <td>Luis</td>
+            <td>Acero Morata</td>
+            <td>100405985@alumnos.uc3m.es</td>
+            <td><button class="boton" type="button"
+                onclick="window.location.href='mailto:100405985@alumnos.uc3m.es';">Enviar mensaje</button></td>
+          </tr>
+
+          <!-- Alumno 9 -->
+          <tr class="impar">
+            <td><img class="AVATAR" src="./images/Paula.jpg" alt="PaulaAlvarez" /></td>
+            <td>Paula</td>
+            <td>Alvarez Rey</td>
+            <td>100366670@alumnos.uc3m.es</td>
+            <td><button class="boton" type="button"
+                onclick="window.location.href='mailto:100366670@alumnos.uc3m.es';">Enviar mensaje</button></td>
+          </tr>
+
+          <!-- Alumno 10 -->
+          <tr class="par">
+            <td><img class="AVATAR" src="./images/Xu.jpg" alt="XuChen" /></td>
+            <td>Xu</td>
+            <td>Chen</td>
+            <td>100406010@alumnos.uc3m.es</td>
+            <td><button class="boton" type="button"
+                onclick="window.location.href='mailto:100406010@alumnos.uc3m.es';">Enviar mensaje</button></td>
+          </tr>
+        </table>
+            <div id="nuevocontenido">
+            <img id="ajustes" class="icono" src="./images/configuraciones.png" alt="nuevoAlumno" />
+            <p>Gestionar estudiantes ADMIN</p>
+          </div>    
+      </div>
+
+      <div id="actividades_estudiante">
+    
+        <div id ="actividad">
+          <div id ="Nombreactividad">
+            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
+           <p>Entrega práctica 1 HTML Y CSS</p>
+          </div>
+          <div id ="tiemporestante">
+            <p>Finalizado. Sin calificar.</p>
+          </div>
+        </div>
+        <div id ="actividad">
+          <div id ="Nombreactividad">
+            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
+           <p>Entrega práctica 2 JavaScript y Jquery</p>
+          </div>
+          <div id ="tiemporestante">
+            <p>En proceso. 5 días restantes.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="actividades_profesor">
+        
+        <div id ="actividad">
+          <div id ="Nombreactividad">
+            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
+           <p>Entrega práctica 1 HTML Y CSS</p>
+          </div>
+          <div id ="tiemporestante">
+            <p>Finalizado. Sin calificar.</p>
+          </div>
+        </div>
+        <div id ="actividad">
+          <div id ="Nombreactividad">
+            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
+           <p>Entrega práctica 2 JavaScript y Jquery</p>
+          </div>
+          <div id ="tiemporestante">
+            <p>En proceso. 5 días restantes.</p>
+          </div>
+        </div>
+        <div id="nuevocontenido">
+          <img class="icono Añadir" src="./images/anadir.png" alt="anadir"/>
+          <p>Crear nueva actividad</p>
+        </div>
+      </div>
     </div>
+
+
+
     <div id="lateral">
 
-      <div class="barralateralderecha"><img class="icono" src="./images/calificaciones.png" alt="calificaciones" />
-        <p class="underline" onclick="desplegar_contenido_barra('calificaciones')">Mis calificaciones</p>
+      <div class="barralateralderecha estudiante"><img class="icono" src="./images/calificaciones.png" alt="calificaciones" />
+        <p class="underline" onclick="desplegar_contenido_barra('calificaciones_estudiante')">Mis calificaciones</p>
       </div>
 
-      <div class="barralateralderecha"><img class="icono" src="./images/foro.png" alt="foro" />
+      <div class="barralateralderecha profesor"><img class="icono" src="./images/calificaciones.png" alt="calificaciones" />
+        <p class="underline" onclick="desplegar_contenido_barra('calificaciones_profesor')">Mis calificaciones</p>
+      </div>
+
+      <div class="barralateralderecha estudiante profesor"><img class="icono" src="./images/foro.png" alt="foro" />
         <p class="underline" onclick="desplegar_contenido_barra('foroasignatura')">Foro</p>
       </div>
 
-      <div class="barralateralderecha"><img class="icono" src="./images/estudiantes.png" alt="estudiantes" />
-        <p class="underline">Estudiantes</p>
+      <div class="barralateralderecha estudiante profesor"><img class="icono" src="./images/estudiantes.png" alt="estudiantes" />
+        <p class="underline" onclick="desplegar_contenido_barra('estudiantes')">Estudiantes</p>
       </div>
 
-      <div class="barralateralderecha"><img class="icono" src="./images/actividades.png" alt="actividades" />
-        <p class="underline">Actividades</p>
+      <div class="barralateralderecha estudiante"><img class="icono" src="./images/actividades.png" alt="actividades" />
+        <p class="underline" onclick="desplegar_contenido_barra('actividades_estudiante')">Actividades</p>
+      </div>
+
+      <div class="barralateralderecha profesor"><img class="icono" src="./images/actividades.png" alt="actividades" />
+        <p class="underline" onclick="desplegar_contenido_barra('actividades_profesor')">Actividades</p>
       </div>
 
       <div><img class="icono" src="./images/calendario.png" alt="calendario" />

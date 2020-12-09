@@ -298,12 +298,10 @@ input[type="submit"] {
   margin-right: 0;
   background-color: white;
   height: 100%;
+  padding: 3%;
   font-family: 'Poppins', sans-serif;
 }
 
-#div_content {
-  display: block;
-}
 
 #lateral {
   float: left;
@@ -346,11 +344,15 @@ ul {
   font-size: 20px;
 }
 
-#div_content {
-  padding: 3%;
+/*.asignaturas li{
+  cursor: pointer;
+}*/
+
+#link_IU{
+  cursor: pointer;
 }
 
-#div_content h2 {
+#contenido_principal h2 {
   cursor: pointer;
 }
 
@@ -360,7 +362,6 @@ ul {
 
 #IU {
   display: none;
-  padding: 3%;
 }
 
 .pdf {
@@ -372,7 +373,11 @@ a {
 }
 
 /*ESTILO PARA TABLA DE CALIFACIONES*/
-#calificaciones {
+#calificaciones_estudiante {
+  display: none;
+}
+
+#calificaciones_profesor {
   display: none;
 }
 
@@ -418,21 +423,18 @@ a {
   color: white;
 }
 
-#TABLA_ESTUDIANTE {
-  display: none;
-}
 
 .NOMBRE {
   text-align: left;
 }
 
-.botoncalificaciones {
+.botonnombre {
   margin: 1%;
   display: inline-block;
   width: 40%;
 }
 
-.botoncalificaciones p {
+.botonnombre p {
   width: 85%;
   padding-top: 2%;
   float: right;
@@ -443,7 +445,7 @@ a {
   display: none;
   padding: 1%;
   width: 100%;
-  background-color: #fad0d6;
+  background-color: white;
   float: left;
   visibility: visible;
 }
@@ -463,6 +465,7 @@ a {
   display: flex;
   padding: 2%;
   align-items: center;
+  background-color: #fad0d6;
 }
 
 .hiloforo:hover {
@@ -494,6 +497,7 @@ a {
   display: block;
   border: 1px solid black;
   border-radius: 5px;
+  background-color: #fad0d6;
 }
 
 .informacionusuario {
@@ -501,7 +505,7 @@ a {
 }
 
 .estudianteconversacion {
-  width: 10%;
+  width: 5%;
   float: left;
 }
 
@@ -511,11 +515,12 @@ a {
 }
 
 .nombreestudiante {
-  width: 60%;
+  width: 65%;
   float: left;
 }
 
 .fechamensaje {
+  padding-left:8.5%;
   width: 30%;
   float: left;
 }
@@ -558,4 +563,84 @@ a {
 
 #mensaje {
   width: 20%;
+}
+
+#nuevocontenido{
+  padding-top: 1.5%;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nuevocontenido p{
+  padding-left: 2%;
+}
+
+#actividades_estudiante{
+  display: none;
+  padding: 1%;
+  width: 100%;
+  float: left;
+}
+
+#actividades_profesor{
+  display:none;
+  padding: 1%;
+  width: 100%;
+  float: left;
+}
+
+#actividad{
+  display: flex;
+  width: 100%;
+  font-weight: bold;
+  padding: 1%;
+}
+
+#Nombreactividad{
+  float:left;
+  display:flex;
+  align-items: center;
+  width: 70%;
+}
+
+#Nombreactividad p{
+  padding-left: 2%;
+}
+
+#tiemporestante{
+  float: left;
+  width:30%;
+}
+
+#estudiantes{
+  display:none;
+}
+
+.AVATAR {
+  height: 50px;
+  width: 50px;
+  padding-top: 5px;
+}
+
+.cabec{
+  text-align: left;
+}
+
+.tabla_estudiantes{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#asignaturasColme, #asignaturasGeta,#asignaturasLega  {
+  display:none;
+}
+
+#contenidoT1, #contenidoT2,#contenidoT3, #contenidoT4  {
+  display:none;
+}
+
+#hilo1, #hilo2, #hilo3, #hilo4, #hilo5 {
+  display:none;
 }

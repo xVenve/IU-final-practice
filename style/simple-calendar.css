@@ -20,14 +20,11 @@
   height: 30px;
   text-align: center;
   line-height: 30px;
-  color: #CBD1D2;
-  border-radius: 50%;
-  border: 2px solid #CBD1D2;
+  color: white;
 }
 
 .calendar header .simple-calendar-btn:hover {
-  background: #CBD1D2;
-  color: white;
+  color: black;
 }
 
 .calendar header .simple-calendar-btn:before {
