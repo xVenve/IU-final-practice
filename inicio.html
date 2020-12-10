@@ -14,6 +14,8 @@ defecto de la página y dónde se encuenta el css -->
   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <script src="./script/jquery.simple-calendar.js"></script>
   <script src="./script/jquery.table2excel.js"></script>
+  <script src="./script/jquery.highchartTable.js" type="text/javascript"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
   <link rel="stylesheet" type="text/css" href="./style/simple-calendar.css" />
 </head>
 
@@ -59,7 +61,7 @@ defecto de la página y dónde se encuenta el css -->
     </ul>
 
     <!-- Menú hamburguesa que sólo estará visible para la versión móvil de la página -->
-    <nav class="menuhamburguesa">
+    <nav id="menuhamburguesa">
       <input type="checkbox" id="menu" />
       <label for="menu"><img src="./images/menu.png" alt="Menu" /></label>
       <ul>
@@ -99,14 +101,16 @@ defecto de la página y dónde se encuenta el css -->
     </div>
     <span id="vertical-line"></span>
     <div id="registro">
-      <form id="formularioregistro" method="post" onsubmit="return guardarCookie()">
+      <form id="formularioregistro" method="post" onsubmit="guardarCookie()">
         <label class="underline" for="formnombre">Nombre y Apellidos</label><br>
         <input type="text" id="formnombre" name="nombre" placeholder="Nombre" required>
         <input type="text" id="formapellidos" name="apellidos" placeholder="Apellidos" required><br>
         <label class="underline" for="formemail">Correo electrónico</label><br>
-        <input type="text" id="formemail" name="email" placeholder="Correo electrónico" required pattern="[A-Za-z0-9]+@[a-z0-9]+.[a-z]{2,3}"><br>
+        <input type="text" id="formemail" name="email" placeholder="Correo electrónico" required
+          pattern="[A-Za-z0-9]+@[a-z0-9]+.[a-z]{2,3}"><br>
         <label class="underline" for="formcontraseña">Contraseña</label><br>
-        <input type="password" id="formcontraseña" name="contraseña" placeholder="Contraseña" required pattern="[A-Za-z0-9]{1,8}"><br>
+        <input type="password" id="formcontraseña" name="contraseña" placeholder="Contraseña" required
+          pattern="[A-Za-z0-9]{1,8}"><br>
         <label class="underline" for="formNIA">NIA</label><br>
         <input type="text" id="formNIA" name="NIA" placeholder="NIA" required pattern="100[0-9]{6}"><br>
         <label class="underline" for="formrol">Roles</label><br>
@@ -118,9 +122,8 @@ defecto de la página y dónde se encuenta el css -->
         </select><br>
         <input type="checkbox" id="terminos" required>
         <label for="terminos"> He leído y acepto las Condiciones de uso</label><br>
-        <input type="submit" class="boton" value="Registrarse">
-
-        <input class="boton" type="reset" value="Borrar">
+        <button type="submit" class="boton">Registrarse</button>
+        <button class="boton" type="reset">Borrar</button>
 
       </form>
     </div>
@@ -130,73 +133,87 @@ defecto de la página y dónde se encuenta el css -->
   <div id="principal">
     <div class="content">
 
-      <div id="contenido_principal" class="estudiante profesor">
-        
-          <h1>CURSOS</h1>
+      <div id="contenido_principal" class="estudiante profesor admin">
 
-          <h2 id="campusLega" onclick="desplegar_contenido('asignaturasLega')">
-            ▼ Escuela Politécnica Superior (Leganés)
-          </h2>
-          <div id="asignaturasLega" class="asignaturas">
-            <ul>
-              <li id="link_IU" onclick="desplegar_asignatura('IU')"> Grupo 1. Interfaces de Usuario.</li>
-              <li id="link_IS"> Grupo 27. Ingeniería del Software.</li>
-            </ul>
-          </div>
+        <h1>CURSOS</h1>
 
-          <h2 id="campusColme" onclick="desplegar_contenido('asignaturasColme')">
-            ▼ Escuela Politécnica Superior (Colmenarejo)
-          </h2>
-          <div id="asignaturasColme" class="asignaturas">
-            <ul>
-              <li>Grupo 99. Programación.</li>
-              <li>Grupo 16. Ingeniería del Software.</li>
-              <li>Grupo 37. Interfaces de Usuario.</li>
-              <li>Grupo 12. Interfaces de Usuario.</li>
-            </ul>
-          </div>
+        <h2 id="campusLega" onclick="desplegar_contenido('asignaturasLega')">
+          ▼ Escuela Politécnica Superior (Leganés)
+        </h2>
+        <div id="asignaturasLega" class="asignaturas">
+          <ul>
+            <li id="link_IU" onclick="desplegar_asignatura('IU')"> Grupo 1. Interfaces de Usuario.</li>
+            <li id="link_IS"> Grupo 27. Ingeniería del Software.</li>
+          </ul>
+        </div>
 
-          <h2 id="campusGeta" onclick="desplegar_contenido('asignaturasGeta')">
-            ▼ Facultad de Humanidades, Comunicación y Documentación (Getafe)
-          </h2>
-          <div id="asignaturasGeta" class="asignaturas">
-            <ul>
-              <li>Grupo 40. Marketing y publicidad.</li>
-              <li>Grupo 56. Desarrollo web y multimedia.</li>
-            </ul>
-          </div>
-          <div id="nuevocontenido">
-            <img class="icono" src="./images/anadir.png" alt="nuevaAsignatura" />
-            <p id="addAsignatura">Añadir asignatura ADMIN</p>
+        <h2 id="campusColme" onclick="desplegar_contenido('asignaturasColme')">
+          ▼ Escuela Politécnica Superior (Colmenarejo)
+        </h2>
+        <div id="asignaturasColme" class="asignaturas">
+          <ul>
+            <li>Grupo 99. Programación.</li>
+            <li>Grupo 16. Ingeniería del Software.</li>
+            <li>Grupo 37. Interfaces de Usuario.</li>
+            <li>Grupo 12. Interfaces de Usuario.</li>
+          </ul>
+        </div>
 
-            <div id="popup_add_asignatura">
-              <div class="content-popup">
-                <div class="cerrar"><p id="botoncerrar">+</p></div>
-                <div>
-                  <h2>Introduzca los datos de la nueva asignatura</h2>
-                  <form id="Formulario_Asignatura" name="Formulario_Asignatura" method="post">
-                    <label class="underline" for="campus">Campus</label><br>
-                    <input type="text" name="asignaturacampus" id="campus"><br>
-                    <label class="underline" for="grupo">Grupo</label><br>
-                    <input type="text" name="grupo" id="grupo"><br>
-                    <label class="underline" for="asignatura">Nombre asignatura</label><br>
-                    <input type="text" name="asignatura" id="asignatura"><br>
-                    <a class="boton cerrar">Añadir</a>
+        <h2 id="campusGeta" onclick="desplegar_contenido('asignaturasGeta')">
+          ▼ Facultad de Humanidades, Comunicación y Documentación (Getafe)
+        </h2>
+        <div id="asignaturasGeta" class="asignaturas">
+          <ul>
+            <li>Grupo 40. Marketing y publicidad.</li>
+            <li>Grupo 56. Desarrollo web y multimedia.</li>
+          </ul>
+        </div>
+        <div class="nuevocontenido admin">
+          <img class="icono" src="./images/configuraciones.png" alt="gestionAsignatura" />
+          <p id="addAsignatura">Gestionar asignatura</p>
 
-                  </form>
-
-                </div>
+          <div id="popup_add_asignatura">
+            <div class="content-popup">
+              <div class="cerrar">
+                <p id="botoncerrar">+</p>
+              </div>
+              <div>
+                <h2>Introduzca los datos de la nueva asignatura</h2>
+                <form id="Formulario_Asignatura" name="Formulario_Asignatura" method="post">
+                  <label class="underline" for="campus">Campus</label><br>
+                  <input type="text" name="asignaturacampus" id="campusAdd"><br>
+                  <label class="underline" for="grupo">Grupo</label><br>
+                  <input type="text" name="grupo" id="grupoAdd"><br>
+                  <label class="underline" for="asignatura">Nombre asignatura</label><br>
+                  <input type="text" name="asignatura" id="asignaturaAdd"><br>
+                  <label class="underline" for="profesor">Profesores asignados separados por ';'</label><br>
+                  <input type="text" name="profesor" id="profesor"><br>
+                  <a class="boton cerrar" onclick="alert('Se ha añadido la asignatura correctamente')">Añadir</a>
+                </form>
+                <h2>Archivar asignatura</h2>
+                <form id="Formulario_arch_Asignatura" name="Formulario_arch_Asignatura" method="post">
+                  <label class="underline" for="campus">Campus</label><br>
+                  <input type="text" name="asignaturacampus" id="campusArchivar"><br>
+                  <label class="underline" for="grupo">Grupo</label><br>
+                  <input type="text" name="grupo" id="grupoArchivar"><br>
+                  <label class="underline" for="asignatura">Nombre asignatura</label><br>
+                  <input type="text" name="asignatura" id="asignaturaArchivar"><br>
+                  <a class="boton cerrar" onclick="alert('Se ha añadido la asignatura correctamente')">Archivar</a>
+                </form>
               </div>
             </div>
-            </div>
-            
-          
+          </div>
+        </div>
+
+
 
       </div>
       <!--PAGINA DE ASIGNATURA INTERFACES DE USUSARIO-->
       <div id="IU">
         <h1> ASIGNATURA INTERFACES DE USUARIO</h1>
-        <p> <a href="https://eu-lti.bbcollab.com/collab/ui/scheduler/session"> <img class="pdf" src="./images/blackboard.png" alt="Online"><b> Enlace al Blackboard Collaborate de las magistrales</b></a></p>
+        <p> <a href="https://eu-lti.bbcollab.com/collab/ui/scheduler/session"> <img class="pdf"
+              src="./images/blackboard.png" alt="Online"><b> Enlace al Blackboard Collaborate de las magistrales</b></a>
+        </p>
         <!--TEMA 1 IU-->
 
         <h2 id="TEMA1_IU" onclick="desplegar_contenido('contenidoT1')">
@@ -246,14 +263,16 @@ defecto de la página y dónde se encuenta el css -->
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: HTA & GOMS</li>
           </ul>
         </div>
-        <div id="nuevocontenido">
+        <div class="nuevocontenido">
           <img class="icono" src="./images/anadir.png" alt="nuevoContenido" />
           <p id="addcontent">Añadir contenido</p>
         </div>
-        
+
         <div id="popup_contenido">
           <div class="content-popup">
-            <div class="cerrar"><p id="botoncerrar">+</p></div>
+            <div class="cerrar">
+              <p id="botoncerrar">+</p>
+            </div>
             <div>
               <h2>Introduzca los datos del nuevo contenido</h2>
               <form id="Formulario_Contenido" name="Formulario_Contenido" method="post">
@@ -263,161 +282,218 @@ defecto de la página y dónde se encuenta el css -->
 
               <div id="seleccionarArchivo">
                 <div id="fileHolder">
-                    <input type="file" id="fileURL" />
+                  <input type="file" id="fileURL" />
                 </div>
-
-                  FALTA LA FOTOOOOOOO
+                  <img id="dragdrop" src="./images/dragdrop.jpg" alt="ArrastraAquíLaImagen">
               </div>
-              <a class="boton cerrar">Añadir</a>
-                
+              <a class="boton cerrar" onclick="alert('Se ha añadido el contenido correctamente')">Añadir</a>
+
 
             </div>
           </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
       </div>
 
       <!--PAGINA DE CALIFICACIONES-->
       <div id="calificaciones_estudiante">
         <h1>CALIFICACIONES</h1>
-        <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_ESTUDIANTE">
+
+        <div id="popup_chartE">
+          <div class="content-popup">
+            <div class="cerrar">
+              <p id="botoncerrar">+</p>
+            </div>
+            <div>
+              <h2>Grafica de calificaciones</h2>
+              <div id="graphcontainerE"></div>
+            </div>
+          </div>
+        </div>
+        <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_ESTUDIANTE" data-graph-container="#graphcontainerE" data-graph-type="column">
+          <thead>
           <tr class="cabeceratabla">
+            <th>Estudiante</th>
             <th>Actividad 1</th>
             <th>Actividad 2</th>
             <th>Actividad 3</th>
             <th>Media actividades</th>
           </tr>
+          </thead>
+          <tbody>
+
           <tr class="impar">
+            <td class="NOMBRE">Tu</td>
             <td id="act1"></td>
             <td id="act2"></td>
             <td id="act3"></td>
             <td id="media"></td>
           </tr>
+                    </tbody>
+
         </table>
         <div class="botonnombre">
           <img class="icono export_e" src="./images/excel.png" alt="excel">
           <p>Exportar datos tabla Excel</p>
         </div>
-        <div class="botonnombre">
+        <div class="botonnombre"  >
           <img class="icono" src="./images/chart.png" alt="chart" />
-          <p>Ver graficas de resultados</p>
+          <p id="verChartE" onclick="verGrafica('Estudiante')">Ver graficas de resultados</p>
         </div>
 
       </div>
 
       <div id="calificaciones_profesor">
         <h1>CALIFICACIONES</h1>
-        <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_PROFESOR">
-          <tr class="cabeceratabla">
-            <th>Estudiante</th>
-            <th>Actividad 1</th>
-            <th>Actividad 2</th>
-            <th>Actividad 3</th>
-          </tr>
-          <!-- Alumno 1 -->
-          <tr class="impar">
-            <td class="NOMBRE">Carlos Rubio Olivares</td>
-            <td>8.00</td>
-            <td>8.50</td>
-            <td>9.00</td>
-          </tr>
+        
+        <div id="popup_chartP">
+          <div class="content-popup">
+            <div class="cerrar">
+              <p id="botoncerrar">+</p>
+            </div>
+            <div>
+              <h2>Grafica de calificaciones</h2>
+              <div id="graphcontainerP"></div>
+            </div>
+          </div>
+        </div>
 
-          <!-- Alumno 2 -->
-          <tr class="par">
-            <td class="NOMBRE">Jorge Rodriguez Fraile</td>
-            <td>10.00</td>
-            <td>7.75</td>
-            <td>8.50</td>
+       
 
-          </tr>
+        <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_PROFESOR" data-graph-container="#graphcontainerP" data-graph-type="line">
+          <thead>
+            <tr class="cabeceratabla">
+              <th>Estudiante</th>
+              <th>Actividad 1</th>
+              <th>Actividad 2</th>
+              <th>Actividad 3</th>
+            </tr>
+          </thead>
+          <tbody>
 
-          <!-- Alumno 3 -->
-          <tr class="impar">
-            <td class="NOMBRE">Ivan Serrano Garcia</td>
-            <td>7.40</td>
-            <td>7.75</td>
-            <td>8.00</td>
-          </tr>
+            <!-- Alumno 1 -->
+            <tr class="impar">
+              <td class="NOMBRE">Carlos Rubio Olivares</td>
+              <td>8.00</td>
+              <td>8.50</td>
+              <td>9.00</td>
+            </tr>
 
-          <!-- Alumno 4 -->
-          <tr class="par">
-            <td class="NOMBRE">Francisco José Ruiz de la Cruz</td>
-            <td>7.00</td>
-            <td>7.30</td>
-            <td>6.70</td>
-          </tr>
+            <!-- Alumno 2 -->
+            <tr class="par">
+              <td class="NOMBRE">Jorge Rodriguez Fraile</td>
+              <td>10.00</td>
+              <td>7.75</td>
+              <td>8.50</td>
 
-          <!-- Alumno 5 -->
-          <tr class="impar">
-            <td class="NOMBRE">Nuria García Rozas</td>
-            <td>9.00</td>
-            <td>8.75</td>
-            <td>9.20</td>
-          </tr>
+            </tr>
 
-          <!-- Alumno 6 -->
-          <tr class="par">
-            <td class="NOMBRE">Daniel Cano Robledo</td>
-            <td>7.00</td>
-            <td>6.75</td>
-            <td>9.00</td>
-          </tr>
+            <!-- Alumno 3 -->
+            <tr class="impar">
+              <td class="NOMBRE">Ivan Serrano Garcia</td>
+              <td>7.40</td>
+              <td>7.75</td>
+              <td>8.00</td>
+            </tr>
 
-          <!-- Alumno 7 -->
-          <tr class="impar">
-            <td class="NOMBRE">Maria Sanchez Blazquez</td>
-            <td>6.20</td>
-            <td>5.50</td>
-            <td>4.75</td>
-          </tr>
+            <!-- Alumno 4 -->
+            <tr class="par">
+              <td class="NOMBRE">Francisco José Ruiz de la Cruz</td>
+              <td>7.00</td>
+              <td>7.30</td>
+              <td>6.70</td>
+            </tr>
 
-          <!-- Alumno 8 -->
-          <tr class="par">
-            <td class="NOMBRE">Luis Acero Morata</td>
-            <td>5.20</td>
-            <td>4.50</td>
-            <td>6.50</td>
-          </tr>
+            <!-- Alumno 5 -->
+            <tr class="impar">
+              <td class="NOMBRE">Nuria García Rozas</td>
+              <td>9.00</td>
+              <td>8.75</td>
+              <td>9.20</td>
+            </tr>
 
-          <!-- Alumno 9 -->
-          <tr class="impar">
-            <td class="NOMBRE">Paula Alvarez Rey</td>
-            <td>7.50</td>
-            <td>7.00</td>
-            <td>6.75</td>
-          </tr>
+            <!-- Alumno 6 -->
+            <tr class="par">
+              <td class="NOMBRE">Daniel Cano Robledo</td>
+              <td>7.00</td>
+              <td>6.75</td>
+              <td>9.00</td>
+            </tr>
 
-          <!-- Alumno 10 -->
-          <tr class="par">
-            <td class="NOMBRE">Xu Chen</td>
-            <td>6.50</td>
-            <td>7.30</td>
-            <td>7.75</td>
-          </tr>
+            <!-- Alumno 7 -->
+            <tr class="impar">
+              <td class="NOMBRE">Maria Sanchez Blazquez</td>
+              <td>6.20</td>
+              <td>5.50</td>
+              <td>4.75</td>
+            </tr>
+
+            <!-- Alumno 8 -->
+            <tr class="par">
+              <td class="NOMBRE">Luis Acero Morata</td>
+              <td>5.20</td>
+              <td>4.50</td>
+              <td>6.50</td>
+            </tr>
+
+            <!-- Alumno 9 -->
+            <tr class="impar">
+              <td class="NOMBRE">Paula Alvarez Rey</td>
+              <td>7.50</td>
+              <td>7.00</td>
+              <td>6.75</td>
+            </tr>
+
+            <!-- Alumno 10 -->
+            <tr class="par">
+              <td class="NOMBRE">Xu Chen</td>
+              <td>6.50</td>
+              <td>7.30</td>
+              <td>7.75</td>
+            </tr>
+          </tbody>
+
         </table>
-        <div class="botonnombre"><img class="icono export_p" src="./images/excel.png" alt="excel"/>
+        <div class="botonnombre"><img class="icono export_p" src="./images/excel.png" alt="excel" />
           <p>Exportar datos tabla Excel</p>
         </div>
-        <div class="botonnombre"><img class="icono" src="./images/anadir.png" alt="anadir" />
+        <div class="botonnombre" id=addCalificaciones><img class="icono" src="./images/anadir.png" alt="anadir" />
           <p>Añadir calificaciones</p>
         </div>
-        <div class="botonnombre"><img class="icono" src="./images/chart.png" alt="chart" />
-          <p>Ver graficas de resultados</p>
+
+
+        <div id="popup_calificaciones">
+          <div class="content-popup">
+            <div class="cerrar">
+              <p id="botoncerrar">+</p>
+            </div>
+            <div>
+              <h2>Introduzca los datos de las calificaciones</h2>
+              <form id="Formulario_Calificaciones" name="Formulario_Calificaciones" method="post">
+                <label class="underline" for="Tituloactividad">Actividad</label><br>
+                <input type="text" name="Actividad" id="Tituloactividad"><br>
+                  <label class="underline" for="Alumno">Alumno y Nota </label><br>
+                <input type="text" name="Alumno" id="Alumno1">
+                <input type="text" name="Nota" id="Nota1"><br>
+                <input type="text" name="Alumno" id="Alumno2">
+                <input type="text" name="Nota" id="Nota2"><br>
+                <input type="text" name="Alumno" id="Alumno3">
+                <input type="text" name="Nota" id="Nota3"><br>
+                <input type="text" name="Alumno" id="Alumno4">
+                <input type="text" name="Nota" id="Nota4"><br>
+
+                
+              </form>
+              <a class="boton cerrar" onclick="alert('Se han añadido las calificaciones correctamente')">Añadir</a>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="botonnombre" >
+          <img class="icono" src="./images/chart.png" alt="chart" />
+          <p id="verChartP" onclick="verGrafica('Profesor')">Ver gráficas de resultados</p>
         </div>
       </div>
 
@@ -469,7 +545,8 @@ defecto de la página y dónde se encuenta el css -->
                 </div>
               </div>
               <div class="mensajeforo">
-                <p>Buenos días, tengo una duda sobre la práctica 1. ¿La entrega la realiza solo una persona de las parejas o ambas?</p>
+                <p>Buenos días, tengo una duda sobre la práctica 1. ¿La entrega la realiza solo una persona de las
+                  parejas o ambas?</p>
               </div>
             </div>
 
@@ -513,7 +590,8 @@ defecto de la página y dónde se encuenta el css -->
           </div>
           <div class="envioforo">
             <label class="usermensaje1">Mensaje:</label><br>
-            <input type="text" id="usermensaje1" name="usermensaje" placeholder="Escriba el mensaje que quiera enviar"><br>
+            <input type="text" id="usermensaje1" name="usermensaje"
+              placeholder="Escriba el mensaje que quiera enviar"><br>
             <button class="botonenviar" onclick="enviarMensajeForo(1)">Enviar</button>
 
           </div>
@@ -579,7 +657,8 @@ defecto de la página y dónde se encuenta el css -->
           </div>
           <div class="envioforo">
             <label class="usermensaje2">Mensaje:</label><br>
-            <input type="text" id="usermensaje2" name="usermensaje" placeholder="Escriba el mensaje que quiera enviar"><br>
+            <input type="text" id="usermensaje2" name="usermensaje"
+              placeholder="Escriba el mensaje que quiera enviar"><br>
             <button class="botonenviar" onclick="enviarMensajeForo(2)">Enviar</button>
 
           </div>
@@ -619,7 +698,8 @@ defecto de la página y dónde se encuenta el css -->
           </div>
           <div class="envioforo">
             <label class="usermensaje3">Mensaje:</label><br>
-            <input type="text" id="usermensaje3" name="usermensaje" placeholder="Escriba el mensaje que quiera enviar"><br>
+            <input type="text" id="usermensaje3" name="usermensaje"
+              placeholder="Escriba el mensaje que quiera enviar"><br>
             <button class="botonenviar" onclick="enviarMensajeForo(3)">Enviar</button>
 
           </div>
@@ -652,7 +732,8 @@ defecto de la página y dónde se encuenta el css -->
                 </div>
               </div>
               <div class="mensajeforo">
-                <p>Hola, me gustaría saber si los ejercicios del tema 1 se van a subir solucionados tras la clase de ejercicios </p>
+                <p>Hola, me gustaría saber si los ejercicios del tema 1 se van a subir solucionados tras la clase de
+                  ejercicios </p>
               </div>
             </div>
 
@@ -676,7 +757,8 @@ defecto de la página y dónde se encuenta el css -->
           </div>
           <div class="envioforo">
             <label class="usermensaje4">Mensaje:</label><br>
-            <input type="text" id="usermensaje4" name="usermensaje" placeholder="Escriba el mensaje que quiera enviar"><br>
+            <input type="text" id="usermensaje4" name="usermensaje"
+              placeholder="Escriba el mensaje que quiera enviar"><br>
             <button class="botonenviar" onclick="enviarMensajeForo(4)">Enviar</button>
 
           </div>
@@ -711,7 +793,8 @@ defecto de la página y dónde se encuenta el css -->
 
               </div>
               <div class="mensajeforo">
-                <p>Hola ya que mañana comienza el curso, me presento: Soy Li Zhou Weng y tengo muchas ganas de conoceros a todos.
+                <p>Hola ya que mañana comienza el curso, me presento: Soy Li Zhou Weng y tengo muchas ganas de conoceros
+                  a todos.
                   ¡Nos vemos mañana en clase! :D
                 </p>
               </div>
@@ -738,22 +821,47 @@ defecto de la página y dónde se encuenta el css -->
           </div>
           <div class="envioforo">
             <label class="usermensaje5">Mensaje:</label><br>
-            <input type="text" id="usermensaje5" name="usermensaje" placeholder="Escriba el mensaje que quiera enviar"><br>
+            <input type="text" id="usermensaje5" name="usermensaje"
+              placeholder="Escriba el mensaje que quiera enviar"><br>
             <button class="botonenviar" onclick="enviarMensajeForo(5)">Enviar</button>
 
           </div>
         </div>
-        <div id="nuevocontenido">
-          <img class="icono Añadir" src="./images/anadir.png" alt="anadir"/>
-          <p>Crear nuevo hilo</p>
+        <div id= "addHilo" class="nuevocontenido">
+          <img  class="icono Añadir" src="./images/anadir.png" alt="anadir" />
+          <p >Crear nuevo hilo</p>
         </div>
+
+        <div id="popup_hilo">
+          <div class="content-popup">
+            <div class="cerrar">
+              <p id="botoncerrar">+</p>
+            </div>
+            <div>
+              <h2>Introduzca los datos del nuevo hilo </h2>
+              <form id="Formulario_Hilo" name="Formulario_Hilo" method="post">
+                <label class="underline" for="TemaHilo">Tema</label><br>
+                <input type="text" name="Tema" id="TemaHilo"><br>
+                <label class="underline" for="Mensaje">Mensaje</label><br>
+                <textarea rows = "10" cols ="80" id="mensaje_formulario_foro"></textarea> <br>
+              </form> 
+              <a class="boton cerrar" onclick="alert('Se ha añadido el hilo correctamente')">Añadir</a>
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
       </div>
 
-         
-      
-      
-      
-      
+
+
+
+
 
       <!--PAGINA DE ESTUDIANTES-->
       <div id="estudiantes">
@@ -802,7 +910,7 @@ defecto de la página y dónde se encuenta el css -->
             <td>Francisco José</td>
             <td>Ruiz de la Cruz</td>
             <td>100405807@alumnos.uc3m.es</td>
-            <td><button class="boton" type="button" 
+            <td><button class="boton" type="button"
                 onclick="window.location.href='mailto:100405807@alumnos.uc3m.es';">Enviar mensaje</button></td>
           </tr>
 
@@ -866,10 +974,33 @@ defecto de la página y dónde se encuenta el css -->
                 onclick="window.location.href='mailto:100406010@alumnos.uc3m.es';">Enviar mensaje</button></td>
           </tr>
         </table>
-            <div id="nuevocontenido">
-            <img id="ajustes" class="icono" src="./images/configuraciones.png" alt="nuevoAlumno" />
-            <p>Gestionar estudiantes ADMIN</p>
-          </div>    
+        <div class="nuevocontenido admin">
+          <img id="ajustes" class="icono" src="./images/configuraciones.png" alt="nuevoAlumno" />
+          <p id="gestAlumno">Gestionar estudiantes</p>
+        </div>
+
+        <div id="popup_gestion_est">
+          <div class="content-popup">
+            <div class="cerrar">
+              <p id="botoncerrar">+</p>
+            </div>
+            <div>
+              <h2>Introduzca los datos de la nueva asignatura</h2>
+              <form id="Formulario_Estudiantes" name="Formulario_Estudiantes" method="post">
+                <label class="underline" for="addnombre">Introduzca el nombre de alumno a añadir</label><br>
+                <input type="text" name="addnombre" id="addnombr"><br>
+                <a class="boton cerrar" onclick="alert('Se ha añadido el alumno correctamente')">Añadir</a><br>
+
+                <label class="underline" for="delnombre">Introduzca el nombre del alumno a eliminar</label><br>
+                <input type="text" name="delnombre" id="delnombre"><br>
+                <label class="underline" for="reason">Razon</label><br>
+                <input type="text" name="reason" id="reason"><br>
+                <a class="boton cerrar" onclick="alert('Se ha eliminado el alumno correctamente')">Eliminar</a>
+            </div>
+          </div>
+
+
+        </div>
       </div>
 
       <div id="actividades_profesor">
@@ -894,10 +1025,33 @@ defecto de la página y dónde se encuenta el css -->
             </p>
           </div>
         </div>
-        <div id="nuevocontenido">
+        <div id= "addActividad" class="nuevocontenido">
           <img class="icono Añadir" src="./images/anadir.png" alt="anadir"/>
           <p>Crear nueva actividad</p>
         </div>
+
+        <div id="popup_actividad">
+          <div class="content-popup">
+            <div class="cerrar">
+              <p id="botoncerrar">+</p>
+            </div>
+            <div>
+              <h2>Introduzca los datos de la nueva actividad</h2>
+              <form id="Formulario_Actividad" name="Formulario_Actividad" method="post">
+                <label class="underline" for="Titulo">Titulo</label><br>
+                <input type="text" name="Titulo" id="Tituloact"><br>
+                <label class="underline" for="Mensaje">Mensaje</label><br>
+                <textarea rows = "10" cols ="80" id="mensaje_formulario_actividad"></textarea> <br>
+                <label class="underline" for="Fecha">Fecha Límite de la entrega</label><br>
+                <input id="fecha_entrega" type="datetime-local" id="fechaentrega" name= "fecha"><br>
+              </form> 
+              <a class="boton cerrar" onclick="alert('Se ha añadido la fecha')">Añadir</a>
+
+
+            </div>
+          </div>
+        </div>
+
       </div>
 
 
@@ -924,27 +1078,28 @@ defecto de la página y dónde se encuenta el css -->
         </div>
       </div>
 
-
-      
     </div>
 
 
 
     <div id="lateral">
 
-      <div class="barralateralderecha estudiante"><img class="icono" src="./images/calificaciones.png" alt="calificaciones" />
+      <div class="barralateralderecha estudiante"><img class="icono" src="./images/calificaciones.png"
+          alt="calificaciones" />
         <p class="underline" onclick="desplegar_contenido_barra('calificaciones_estudiante')">Mis calificaciones</p>
       </div>
 
-      <div class="barralateralderecha profesor"><img class="icono" src="./images/calificaciones.png" alt="calificaciones" />
+      <div class="barralateralderecha profesor admin"><img class="icono" src="./images/calificaciones.png"
+          alt="calificaciones" />
         <p class="underline" onclick="desplegar_contenido_barra('calificaciones_profesor')">Mis calificaciones</p>
       </div>
 
-      <div class="barralateralderecha estudiante profesor"><img class="icono" src="./images/foro.png" alt="foro" />
+      <div class="barralateralderecha estudiante profesor admin"><img class="icono" src="./images/foro.png" alt="foro" />
         <p class="underline" onclick="desplegar_contenido_barra('foroasignatura')">Foro</p>
       </div>
 
-      <div class="barralateralderecha estudiante profesor"><img class="icono" src="./images/estudiantes.png" alt="estudiantes" />
+      <div class="barralateralderecha estudiante profesor admin"><img class="icono" src="./images/estudiantes.png"
+          alt="estudiantes" />
         <p class="underline" onclick="desplegar_contenido_barra('estudiantes')">Estudiantes</p>
       </div>
 
@@ -952,7 +1107,7 @@ defecto de la página y dónde se encuenta el css -->
         <p class="underline" onclick="desplegar_contenido_barra('actividades_estudiante')">Actividades</p>
       </div>
 
-      <div class="barralateralderecha profesor"><img class="icono" src="./images/actividades.png" alt="actividades" />
+      <div class="barralateralderecha profesor admin"><img class="icono" src="./images/actividades.png" alt="actividades" />
         <p class="underline" onclick="desplegar_contenido_barra('actividades_profesor')">Actividades</p>
       </div>
 
@@ -971,12 +1126,15 @@ defecto de la página y dónde se encuenta el css -->
 		-->
   <div id="abajo" class="col-12">
     <ul class="menupie">
-      <li><a href="https://www.uc3m.es/ss/Satellite/Biblioteca/es/TextoDosColumnas/1371213999139/Propiedad_intelectual_y_derechos_de_autor:_cuestiones_generales"> Copyright © </a> | </li>
-      <li><a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/TextoMixta/1371207850505/Politica_de_privacidad"> Política de privacidad </a> | </li>
-      <li><a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/TextoMixta/1371207850505/Politica_de_privacidad"> Términos y condiciones</a> </li>
+      <li><a
+          href="https://www.uc3m.es/ss/Satellite/Biblioteca/es/TextoDosColumnas/1371213999139/Propiedad_intelectual_y_derechos_de_autor:_cuestiones_generales">
+          Copyright © </a> | </li>
+      <li><a
+          href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/TextoMixta/1371207850505/Politica_de_privacidad">
+          Política de privacidad </a> | </li>
+      <li><a
+          href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/TextoMixta/1371207850505/Politica_de_privacidad">
+          Términos y condiciones</a> </li>
     </ul>
   </div>
   <script src="./script/script.js"></script>
-</body>
-
-</html>

@@ -18,7 +18,7 @@ body {
 #img_logo {
   margin-left: auto;
   margin-right: auto;
-  max-width: 200px;
+  max-width: 70%;
   max-height: auto;
   float: left;
 }
@@ -70,7 +70,7 @@ body {
   color: white;
 }
 
-.menuhamburguesa {
+#menuhamburguesa {
   display: none;
 }
 
@@ -220,6 +220,8 @@ input[type="submit"] {
 
 #abajo {
   display: none;
+  position: fixed;
+  bottom: 0;
   background-color: #ff4040;
   width: 100%;
   text-align: center;
@@ -315,6 +317,7 @@ input[type="submit"] {
 }
 
 #lateral p {
+  cursor: pointer;
   float: right;
   width: 85%;
   padding-top: 3%;
@@ -329,6 +332,7 @@ input[type="submit"] {
 }
 
 .icono {
+  
   width: 40px;
   height: 40px;
 }
@@ -342,6 +346,10 @@ ul {
 #campusColme,
 #campusGeta {
   font-size: 20px;
+}
+
+.admin{
+  display: none;
 }
 
 /*.asignaturas li{
@@ -565,7 +573,7 @@ a {
   width: 20%;
 }
 
-#nuevocontenido{
+.nuevocontenido{
   padding-top: 1.5%;
   width:100%;
   display: flex;
@@ -573,7 +581,7 @@ a {
   justify-content: center;
 }
 
-#nuevocontenido p{
+.nuevocontenido p{
   padding-left: 2%;
 }
 
@@ -646,7 +654,14 @@ a {
 }
 
 
-
+#popup_gestion_est {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  display: none;
+}
 
 #popup_add_asignatura {
   left: 0;
@@ -664,6 +679,76 @@ a {
   width: 100%;
   z-index: 1001;
   display: none;
+}
+
+#popup_calificaciones {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  display: none;
+}
+
+#popup_chartP {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  display: none;
+}
+
+#popup_chartE {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  display: none;
+}
+
+#popup_hilo {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  display: none;
+}
+
+#popup_actividad {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  display: none;
+}
+
+textarea{
+  margin-top: 1%;
+}
+#fecha_entrega{
+  margin-top:1%;
+}
+
+.div_alumno{
+  width:35%;
+  float:left;
+}
+
+.div_alumno input[type="text"]{
+  width:35%;
+}
+
+.div_nota{
+  width:55%;
+  float:left;
+}
+
+.div_nota input[type="text"]{
+  width:15%;
 }
 
 .cerrar {
@@ -685,7 +770,7 @@ a {
 
 .content-popup {
   margin: 0px auto;
-  margin-top: 120px;
+  margin-top: 40px;
   position: relative;
   padding: 2%;
   width: 45%;
@@ -739,7 +824,94 @@ input[type="file"] {
 }
 
 
+#dragdrop {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
+/*VERSION TABLET*/
+@media only screen and (max-width:768px){
+  #login {
+    display: flex;
+  }
+  
+  #formularios {
+    width: 50%;
+    margin-left: 25%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 3%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+  }
+  
+  #iniciosesion {
+    width: 100%;
+    margin-right: 2.5%;
+    text-align: center;
+    display: inline;
+    float: left;
+    padding-top: 2%;
+  }
+  
+  #registro{
+    width: 100%;
+  }
 
+  #principal{
+    display:inline-block;
+  }
+
+  .content{
+    width:94%;
+    margin-bottom: 2%;
+  }
+  #lateral{
+    width:94%;
+    margin-left:3%;
+  }
+
+}
+ /*VERSION MÓVIL*/
+@media only screen and (max-width:600px){
+  #formularios {
+    width:100%;
+    margin-top: 5%;
+    margin-left: 0%;
+    margin-right: 0%;
+
+  }
+  
+  #iniciosesion {
+    margin-right: 10%;
+  }
+  
+  
+  #registro {
+    display: none;
+    width: 100%;
+    margin: 0%;
+    float: left;
+    margin-left: 2.5%;
+    justify-content: center;
+  }
+
+  #principal{
+    display:inline-block;
+  }
+
+  .content{
+    width:94%;
+    margin-bottom: 2%;
+  }
+  #lateral{
+    width:94%;
+    margin-left:3%;
+  }
+
+}
 
 
 

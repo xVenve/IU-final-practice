@@ -11,14 +11,6 @@ $(document).ready(function() {
     disableEventDetails: false, // disable showing event details
     disableEmptyDetails: true, // disable showing empty date details
     events: [{
-      startDate: new Date("2020-12-05 21:35"),
-      endDate: new Date("2020-12-05"),
-      summary: 'CUMPLEAÑOS DE LA FANTÁSTICA Y MARAVILLOSA NURIA GARCÍA ROZAS'
-    }, {
-      startDate: new Date("2020-12-06"),
-      endDate: new Date("2020-12-06"),
-      summary: 'DIA DE LA CONSTITUCION DE ESPAÑITA'
-    }, {
       startDate: new Date("2020-12-22 23:55"),
       endDate: new Date("2020-12-22 23:55"),
       summary: 'ENTREGA PRACTICA 2. JAVASCRIPT Y JQUERY'
@@ -26,6 +18,12 @@ $(document).ready(function() {
   });
     popups('#addAsignatura', '#popup_add_asignatura');
     popups('#addcontent', '#popup_contenido');
+    popups('#addCalificaciones', '#popup_calificaciones');
+    popups('#gestAlumno', '#popup_gestion_est');
+    popups('#addHilo', '#popup_hilo');
+    popups('#addActividad', '#popup_actividad');
+    popups('#verChartP', '#popup_chartP');
+    popups('#verChartE', '#popup_chartE');
 
 });
 
@@ -71,15 +69,35 @@ function guardarCookie() {
 }
 
 function desplegarRegistro() {
-  $("#vertical-line").fadeIn("slow");
-  $("#registro").fadeIn("slow");
   document.getElementById('vertical-line').style.display = "absolute";
   document.getElementById('registro').style.display = "block";
-  document.getElementById('iniciosesion').style.paddingTop = "10%";
-  document.getElementById('formularios').style.marginLeft = "20%";
-  document.getElementById('formularios').style.marginRight = "20%";
-  document.getElementById('formularios').style.width = "58.33%";
-  document.getElementById('iniciosesion').style.width = "40%";
+
+  if(window.matchMedia("(max-width: 600px)").matches){
+
+    document.getElementById('formularios').style.display = "inline-block";
+    document.getElementById('formularios').style.marginLeft = "0%";
+    document.getElementById('formularios').style.marginRight = "0%";
+    document.getElementById('formularios').style.width = "100%";
+    document.getElementById('iniciosesion').style.width = "100%";
+
+  }else if(window.matchMedia("(max-width: 768px)").matches){
+
+    $("#vertical-line").fadeIn("slow");
+    $("#registro").fadeIn("slow");
+    document.getElementById('formularios').style.width = "60%";
+    document.getElementById('formularios').style.marginLeft = "20%";
+
+  }else{
+
+   $("#vertical-line").fadeIn("slow");
+   $("#registro").fadeIn("slow");
+   document.getElementById('iniciosesion').style.paddingTop = "10%";
+   document.getElementById('formularios').style.marginLeft = "20%";
+   document.getElementById('formularios').style.marginRight = "20%";
+   document.getElementById('formularios').style.width = "58.33%";
+   document.getElementById('iniciosesion').style.width = "40%";
+
+  }
 }
 
 
@@ -131,6 +149,18 @@ function obtenerCookie(email) {
   return valoresCookie;
 }
 
+function responsive(){
+  if(window.matchMedia("(max-width: 600px)").matches){
+      document.getElementById('principal').style.display="inline";
+      document.getElementById('menuhamburguesa').style.display="block";
+  }else if(window.matchMedia("(max-width: 768px)").matches){
+      document.getElementById('principal').style.display="inline";
+  }else{
+      document.getElementById('principal').style.display="flex";
+      document.getElementById('lateral').display.display="inline";
+  }
+}
+
 function inicioSesion() {
   var emailInicio = document.getElementById('inicioemail').value;
   var contraseñaInicio = document.getElementById('iniciocontraseña').value;
@@ -140,7 +170,7 @@ function inicioSesion() {
   var usernameCookie = elementosCookie[1] + " " + elementosCookie[2];
   if (contraseñaInicio === contraseñaCookie) {
     cuentaActiva = emailInicio;
-    //window.addEventListener("resize", responsive);
+    window.addEventListener("resize", responsive);
     document.getElementById('formularios').style.display = "none";
     document.getElementById('cabecera2').style.display = "block";
     document.getElementById('principal').style.display = "flex";
@@ -161,8 +191,8 @@ function inicioSesion() {
 
     $(".barralateralderecha").hide();
     document.getElementById('nombreusuario').innerHTML = usernameCookie;
-    /*responsive();
-    Inicio();*/
+    responsive();
+    Inicio();
   }
 }
 
@@ -195,6 +225,16 @@ function cerrarSesion() {
     $("#perfil").hide();
     $("#cabecera2").hide();
     $("#abajo").hide();
+    $("#contenido_principal").hide();
+    $("#IU").hide();
+    $("#actividades_estudiante").hide();
+    $("#actividades_profesor").hide();
+    $("#calificaciones").hide();
+    $(".barralateralderecha").hide();
+    $("#foroasignatura").hide();
+    $("#calificaciones_estudiante").hide();
+    $("#calificaciones_profesor").hide();
+    $("#estudiantes").hide();
   }
 }
 
@@ -256,6 +296,16 @@ $(".export_p").click(function() {
     filename: "calificaciones" //do not include extension
   });
 });
+
+function verGrafica(x){
+  if(x=="Estudiante"){
+    $("#TABLA_ESTUDIANTE").highchartTable();
+  }else if(x=="Profesor"){
+    $("#TABLA_PROFESOR").highchartTable();
+  }
+
+}
+
 
 //Método para generar aleatoriamente las notas de calificaciones.
 function crear_notas() {
