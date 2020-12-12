@@ -29,7 +29,7 @@ body {
   float: left;
   color: white;
   font-size: x-large;
-  padding-top: 1%;
+  padding-top: 0.5%;
 }
 
 #menucabecera {
@@ -70,8 +70,74 @@ body {
   color: white;
 }
 
-#menuhamburguesa {
+#menuhamburguesa{
+  display:none;
+  text-align: right;
+}
+
+#menuhamburguesa img{
+  height: 40px;
+  width: 40px;
+}
+
+.titulohamburguesa {
+  font-weight: bold;
+}
+
+#menuhamburguesa ul{
   display: none;
+}
+
+#menuhamburguesa input:checked  ~ ul{
+  display:none;
+  text-align: left;
+}
+
+#menuhamburguesa input{
+  display: none;
+}
+
+#menuhamburguesa label {
+  display: none;
+  box-sizing: border-box;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  text-align: right;
+  user-select: none;
+}
+
+#menuhamburguesa a{
+  text-decoration: none;
+  color: white;
+  width: 100%;
+}
+
+#menuhamburguesa a:hover{
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+/* Estilo del botón cuando el menú está expandido*/
+#menuhamburguesa input:checked ~ label {
+  background: #f8667c;
+}
+/* Fuente del menú desplegable */
+#menuhamburguesa ul{
+  margin:auto;
+  padding: 0;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.elementoshamburguesa{
+  border-color:#f77d8f ;
+  border-width: 2px;
+  border-radius: 30px;
+  border-style: solid;
+  margin: 1%;
+  padding: 2%;
+  cursor: pointer;
 }
 
 .menupie a:link,
@@ -599,25 +665,25 @@ a {
   float: left;
 }
 
-#actividad{
+.actividad{
   display: flex;
   width: 100%;
   font-weight: bold;
   padding: 1%;
 }
 
-#Nombreactividad{
+.Nombreactividad{
   float:left;
   display:flex;
   align-items: center;
   width: 70%;
 }
 
-#Nombreactividad p{
+.Nombreactividad p{
   padding-left: 2%;
 }
 
-#tiemporestante{
+.tiemporestante{
   float: left;
   width:30%;
 }
@@ -756,7 +822,7 @@ textarea{
   right: 15px;
 }
 
-#botoncerrar {
+.botoncerrar {
 	position: absolute;
 	top: 0;
 	right: 10px;
@@ -830,6 +896,13 @@ input[type="file"] {
   margin: auto;
   display: block;
 }
+
+@media only screen and (max-width:1220px){
+  #lateral p{
+    width:70%;
+  }
+}
+
 /*VERSION TABLET*/
 @media only screen and (max-width:768px){
   #login {
@@ -860,6 +933,11 @@ input[type="file"] {
     width: 100%;
   }
 
+  .cabecera{
+    padding-top: 0;
+    font-size: medium;
+  }
+
   #principal{
     display:inline-block;
   }
@@ -873,21 +951,29 @@ input[type="file"] {
     margin-left:3%;
   }
 
+  #lateral p{
+    width: 92%;
+  }
+
 }
  /*VERSION MÓVIL*/
 @media only screen and (max-width:600px){
+  #menuhamburguesa label{
+    display: inline-block;
+}
+
+#menuhamburguesa input:checked  ~ ul{
+    display:block;
+    text-align: center;
+}
+
   #formularios {
     width:100%;
     margin-top: 5%;
     margin-left: 0%;
     margin-right: 0%;
-
+    justify-content: center;
   }
-  
-  #iniciosesion {
-    margin-right: 10%;
-  }
-  
   
   #registro {
     display: none;
@@ -896,6 +982,12 @@ input[type="file"] {
     float: left;
     margin-left: 2.5%;
     justify-content: center;
+    align-items: center;
+  }
+
+  .cabecera{
+    padding-top: 0.5%;
+    font-size: xx-small;
   }
 
   #principal{
@@ -906,11 +998,14 @@ input[type="file"] {
     width:94%;
     margin-bottom: 2%;
   }
+
   #lateral{
     width:94%;
     margin-left:3%;
   }
-
+  #lateral p{
+    width: 85%;
+  }
 }
 
 

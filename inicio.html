@@ -14,7 +14,7 @@ defecto de la página y dónde se encuenta el css -->
   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <script src="./script/jquery.simple-calendar.js"></script>
   <script src="./script/jquery.table2excel.js"></script>
-  <script src="./script/jquery.highchartTable.js" type="text/javascript"></script>
+  <script src="./script/jquery.highchartTable.js"></script>
   <script src="http://code.highcharts.com/highcharts.js"></script>
   <link rel="stylesheet" type="text/css" href="./style/simple-calendar.css" />
 </head>
@@ -65,21 +65,23 @@ defecto de la página y dónde se encuenta el css -->
       <input type="checkbox" id="menu" />
       <label for="menu"><img src="./images/menu.png" alt="Menu" /></label>
       <ul>
-        <li class="titulohamburguesa">
-          TEORÍA DE AUTÓMATAS Y LENGUAJES FORMALES
+        <li class="elementoshamburguesa estudiante" onclick="desplegar_contenido_barra('calificaciones_estudiante')">Mis
+          calificaciones
         </li>
-        <li class="elementoshamburguesa">
-          <a href="./estudiantes.html">Estudiantes</a>
+        <li class="elementoshamburguesa profesor admin" onclick="desplegar_contenido_barra('calificaciones_profesor')">
+          Mis calificaciones
         </li>
-        <li class="elementoshamburguesa"><a href="./foro.html">Foro</a></li>
-        <li class="elementoshamburguesa">
-          <a href="./calificaciones.html">Calificaciones</a>
+        <li class="elementoshamburguesa estudiante profesor admin"
+          onclick="desplegar_contenido_barra('foroasignatura')">Foro
         </li>
-        <li class="elementoshamburguesa">
-          <a href="#Actividadreciente">Actividad reciente</a>
+        <li class="elementoshamburguesa estudiante profesor admin" onclick="desplegar_contenido_barra('estudiantes')">
+          Estudiantes
         </li>
-        <li class="elementoshamburguesa">
-          <a href="#Proximoseventos">Próximos eventos</a>
+        <li class="elementoshamburguesa estudiante" onclick="desplegar_contenido_barra('actividades_estudiante')">
+          Actividades
+        </li>
+        <li class="elementoshamburguesaprofesor admin" onclick="desplegar_contenido_barra('actividades_profesor')">
+          Actividades
         </li>
       </ul>
     </nav>
@@ -175,16 +177,16 @@ defecto de la página y dónde se encuenta el css -->
           <div id="popup_add_asignatura">
             <div class="content-popup">
               <div class="cerrar">
-                <p id="botoncerrar">+</p>
+                <p class="botoncerrar">+</p>
               </div>
               <div>
                 <h2>Introduzca los datos de la nueva asignatura</h2>
                 <form id="Formulario_Asignatura" name="Formulario_Asignatura" method="post">
-                  <label class="underline" for="campus">Campus</label><br>
+                  <label class="underline" for="campusAdd">Campus</label><br>
                   <input type="text" name="asignaturacampus" id="campusAdd"><br>
-                  <label class="underline" for="grupo">Grupo</label><br>
+                  <label class="underline" for="grupoAdd">Grupo</label><br>
                   <input type="text" name="grupo" id="grupoAdd"><br>
-                  <label class="underline" for="asignatura">Nombre asignatura</label><br>
+                  <label class="underline" for="asignaturaAdd">Nombre asignatura</label><br>
                   <input type="text" name="asignatura" id="asignaturaAdd"><br>
                   <label class="underline" for="profesor">Profesores asignados separados por ';'</label><br>
                   <input type="text" name="profesor" id="profesor"><br>
@@ -192,11 +194,11 @@ defecto de la página y dónde se encuenta el css -->
                 </form>
                 <h2>Archivar asignatura</h2>
                 <form id="Formulario_arch_Asignatura" name="Formulario_arch_Asignatura" method="post">
-                  <label class="underline" for="campus">Campus</label><br>
+                  <label class="underline" for="campusArchivar">Campus</label><br>
                   <input type="text" name="asignaturacampus" id="campusArchivar"><br>
-                  <label class="underline" for="grupo">Grupo</label><br>
+                  <label class="underline" for="grupoArchivar">Grupo</label><br>
                   <input type="text" name="grupo" id="grupoArchivar"><br>
-                  <label class="underline" for="asignatura">Nombre asignatura</label><br>
+                  <label class="underline" for="asignaturaArchivar">Nombre asignatura</label><br>
                   <input type="text" name="asignatura" id="asignaturaArchivar"><br>
                   <a class="boton cerrar" onclick="alert('Se ha añadido la asignatura correctamente')">Archivar</a>
                 </form>
@@ -271,7 +273,7 @@ defecto de la página y dónde se encuenta el css -->
         <div id="popup_contenido">
           <div class="content-popup">
             <div class="cerrar">
-              <p id="botoncerrar">+</p>
+              <p class="botoncerrar">+</p>
             </div>
             <div>
               <h2>Introduzca los datos del nuevo contenido</h2>
@@ -284,7 +286,7 @@ defecto de la página y dónde se encuenta el css -->
                 <div id="fileHolder">
                   <input type="file" id="fileURL" />
                 </div>
-                  <img id="dragdrop" src="./images/dragdrop.jpg" alt="ArrastraAquíLaImagen">
+                <img id="dragdrop" src="./images/dragdrop.jpg" alt="ArrastraAquíLaImagen">
               </div>
               <a class="boton cerrar" onclick="alert('Se ha añadido el contenido correctamente')">Añadir</a>
 
@@ -302,7 +304,7 @@ defecto de la página y dónde se encuenta el css -->
         <div id="popup_chartE">
           <div class="content-popup">
             <div class="cerrar">
-              <p id="botoncerrar">+</p>
+              <p class="botoncerrar">+</p>
             </div>
             <div>
               <h2>Grafica de calificaciones</h2>
@@ -310,33 +312,34 @@ defecto de la página y dónde se encuenta el css -->
             </div>
           </div>
         </div>
-        <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_ESTUDIANTE" data-graph-container="#graphcontainerE" data-graph-type="column">
+        <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_ESTUDIANTE"
+          data-graph-container="#graphcontainerE" data-graph-type="column">
           <thead>
-          <tr class="cabeceratabla">
-            <th>Estudiante</th>
-            <th>Actividad 1</th>
-            <th>Actividad 2</th>
-            <th>Actividad 3</th>
-            <th>Media actividades</th>
-          </tr>
+            <tr class="cabeceratabla">
+              <th>Estudiante</th>
+              <th>Actividad 1</th>
+              <th>Actividad 2</th>
+              <th>Actividad 3</th>
+              <th>Media actividades</th>
+            </tr>
           </thead>
           <tbody>
 
-          <tr class="impar">
-            <td class="NOMBRE">Tu</td>
-            <td id="act1"></td>
-            <td id="act2"></td>
-            <td id="act3"></td>
-            <td id="media"></td>
-          </tr>
-                    </tbody>
+            <tr class="impar">
+              <td class="NOMBRE">Tu</td>
+              <td id="act1"></td>
+              <td id="act2"></td>
+              <td id="act3"></td>
+              <td id="media"></td>
+            </tr>
+          </tbody>
 
         </table>
         <div class="botonnombre">
           <img class="icono export_e" src="./images/excel.png" alt="excel">
           <p>Exportar datos tabla Excel</p>
         </div>
-        <div class="botonnombre"  >
+        <div class="botonnombre">
           <img class="icono" src="./images/chart.png" alt="chart" />
           <p id="verChartE" onclick="verGrafica('Estudiante')">Ver graficas de resultados</p>
         </div>
@@ -345,11 +348,11 @@ defecto de la página y dónde se encuenta el css -->
 
       <div id="calificaciones_profesor">
         <h1>CALIFICACIONES</h1>
-        
+
         <div id="popup_chartP">
           <div class="content-popup">
             <div class="cerrar">
-              <p id="botoncerrar">+</p>
+              <p class="botoncerrar">+</p>
             </div>
             <div>
               <h2>Grafica de calificaciones</h2>
@@ -358,9 +361,10 @@ defecto de la página y dónde se encuenta el css -->
           </div>
         </div>
 
-       
 
-        <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_PROFESOR" data-graph-container="#graphcontainerP" data-graph-type="line">
+
+        <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_PROFESOR" data-graph-container="#graphcontainerP"
+          data-graph-type="line">
           <thead>
             <tr class="cabeceratabla">
               <th>Estudiante</th>
@@ -465,14 +469,14 @@ defecto de la página y dónde se encuenta el css -->
         <div id="popup_calificaciones">
           <div class="content-popup">
             <div class="cerrar">
-              <p id="botoncerrar">+</p>
+              <p class="botoncerrar">+</p>
             </div>
             <div>
               <h2>Introduzca los datos de las calificaciones</h2>
               <form id="Formulario_Calificaciones" name="Formulario_Calificaciones" method="post">
-                <label class="underline" for="Tituloactividad">Actividad</label><br>
-                <input type="text" name="Actividad" id="Tituloactividad"><br>
-                  <label class="underline" for="Alumno">Alumno y Nota </label><br>
+                <label class="underline" for="TituloactividadP">Actividad</label><br>
+                <input type="text" name="Actividad" id="TituloactividadP"><br>
+                <label class="underline" for="Alumno1">Alumno y Nota </label><br>
                 <input type="text" name="Alumno" id="Alumno1">
                 <input type="text" name="Nota" id="Nota1"><br>
                 <input type="text" name="Alumno" id="Alumno2">
@@ -482,7 +486,7 @@ defecto de la página y dónde se encuenta el css -->
                 <input type="text" name="Alumno" id="Alumno4">
                 <input type="text" name="Nota" id="Nota4"><br>
 
-                
+
               </form>
               <a class="boton cerrar" onclick="alert('Se han añadido las calificaciones correctamente')">Añadir</a>
 
@@ -491,7 +495,7 @@ defecto de la página y dónde se encuenta el css -->
           </div>
         </div>
 
-        <div class="botonnombre" >
+        <div class="botonnombre">
           <img class="icono" src="./images/chart.png" alt="chart" />
           <p id="verChartP" onclick="verGrafica('Profesor')">Ver gráficas de resultados</p>
         </div>
@@ -827,35 +831,30 @@ defecto de la página y dónde se encuenta el css -->
 
           </div>
         </div>
-        <div id= "addHilo" class="nuevocontenido">
-          <img  class="icono Añadir" src="./images/anadir.png" alt="anadir" />
-          <p >Crear nuevo hilo</p>
+        <div id="addHilo" class="nuevocontenido">
+          <img class="icono Añadir" src="./images/anadir.png" alt="anadir" />
+          <p>Crear nuevo hilo</p>
         </div>
 
         <div id="popup_hilo">
           <div class="content-popup">
             <div class="cerrar">
-              <p id="botoncerrar">+</p>
+              <p class="botoncerrar">+</p>
             </div>
             <div>
               <h2>Introduzca los datos del nuevo hilo </h2>
               <form id="Formulario_Hilo" name="Formulario_Hilo" method="post">
                 <label class="underline" for="TemaHilo">Tema</label><br>
                 <input type="text" name="Tema" id="TemaHilo"><br>
-                <label class="underline" for="Mensaje">Mensaje</label><br>
-                <textarea rows = "10" cols ="80" id="mensaje_formulario_foro"></textarea> <br>
-              </form> 
+                <label class="underline" for="mensaje_formulario_foro">Mensaje</label><br>
+                <textarea rows="10" cols="80" id="mensaje_formulario_foro"></textarea> <br>
+              </form>
               <a class="boton cerrar" onclick="alert('Se ha añadido el hilo correctamente')">Añadir</a>
 
 
             </div>
           </div>
         </div>
-
-
-
-
-
       </div>
 
 
@@ -982,13 +981,13 @@ defecto de la página y dónde se encuenta el css -->
         <div id="popup_gestion_est">
           <div class="content-popup">
             <div class="cerrar">
-              <p id="botoncerrar">+</p>
+              <p class="botoncerrar">+</p>
             </div>
             <div>
               <h2>Introduzca los datos de la nueva asignatura</h2>
               <form id="Formulario_Estudiantes" name="Formulario_Estudiantes" method="post">
                 <label class="underline" for="addnombre">Introduzca el nombre de alumno a añadir</label><br>
-                <input type="text" name="addnombre" id="addnombr"><br>
+                <input type="text" name="addnombre" id="addnombre"><br>
                 <a class="boton cerrar" onclick="alert('Se ha añadido el alumno correctamente')">Añadir</a><br>
 
                 <label class="underline" for="delnombre">Introduzca el nombre del alumno a eliminar</label><br>
@@ -996,55 +995,55 @@ defecto de la página y dónde se encuenta el css -->
                 <label class="underline" for="reason">Razon</label><br>
                 <input type="text" name="reason" id="reason"><br>
                 <a class="boton cerrar" onclick="alert('Se ha eliminado el alumno correctamente')">Eliminar</a>
+              </form>
             </div>
           </div>
-
-
         </div>
+
       </div>
 
       <div id="actividades_profesor">
-        
-        <div id ="actividad">
-          <div id ="Nombreactividad">
-            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
-           <p>Entrega práctica 1 HTML Y CSS</p>
+
+        <div class="actividad">
+          <div class="Nombreactividad">
+            <img class="icono" src="./images/actividades.png" alt="actividades" />
+            <p>Entrega práctica 1 HTML Y CSS</p>
           </div>
-          <div id ="tiemporestante">
+          <div class="tiemporestante">
             <p>Finalizado. Sin calificar.</p>
           </div>
         </div>
-        <div id ="actividad">
-          <div id ="Nombreactividad">
-            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
-           <p>Entrega práctica 2 JavaScript y Jquery</p>
+        <div class="actividad">
+          <div class="Nombreactividad">
+            <img class="icono" src="./images/actividades.png" alt="actividades" />
+            <p>Entrega práctica 2 JavaScript y Jquery</p>
           </div>
-          <div id ="tiemporestante">
+          <div class="tiemporestante">
             <p>En proceso. Tiempo restante 5 días.
-             
+
             </p>
           </div>
         </div>
-        <div id= "addActividad" class="nuevocontenido">
-          <img class="icono Añadir" src="./images/anadir.png" alt="anadir"/>
+        <div id="addActividad" class="nuevocontenido">
+          <img class="icono Añadir" src="./images/anadir.png" alt="anadir" />
           <p>Crear nueva actividad</p>
         </div>
 
         <div id="popup_actividad">
           <div class="content-popup">
             <div class="cerrar">
-              <p id="botoncerrar">+</p>
+              <p class="botoncerrar">+</p>
             </div>
             <div>
               <h2>Introduzca los datos de la nueva actividad</h2>
               <form id="Formulario_Actividad" name="Formulario_Actividad" method="post">
-                <label class="underline" for="Titulo">Titulo</label><br>
+                <label class="underline" for="Tituloact">Titulo</label><br>
                 <input type="text" name="Titulo" id="Tituloact"><br>
-                <label class="underline" for="Mensaje">Mensaje</label><br>
-                <textarea rows = "10" cols ="80" id="mensaje_formulario_actividad"></textarea> <br>
-                <label class="underline" for="Fecha">Fecha Límite de la entrega</label><br>
-                <input id="fecha_entrega" type="datetime-local" id="fechaentrega" name= "fecha"><br>
-              </form> 
+                <label class="underline" for="mensaje_formulario_actividad">Mensaje</label><br>
+                <textarea rows="10" cols="80" id="mensaje_formulario_actividad"></textarea> <br>
+                <label class="underline" for="fecha_entrega">Fecha Límite de la entrega</label><br>
+                <input id="fecha_entrega" type="datetime-local" name="fecha"><br>
+              </form>
               <a class="boton cerrar" onclick="alert('Se ha añadido la fecha')">Añadir</a>
 
 
@@ -1056,22 +1055,22 @@ defecto de la página y dónde se encuenta el css -->
 
 
       <div id="actividades_estudiante">
-    
-        <div id ="actividad">
-          <div id ="Nombreactividad">
-            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
-           <p>Entrega práctica 1 HTML Y CSS</p>
+
+        <div class="actividad">
+          <div class="Nombreactividad">
+            <img class="icono" src="./images/actividades.png" alt="actividades" />
+            <p>Entrega práctica 1 HTML Y CSS</p>
           </div>
-          <div id ="tiemporestante">
+          <div class="tiemporestante">
             <p>Finalizado. Sin calificar.</p>
           </div>
         </div>
-        <div id ="actividad">
-          <div id ="Nombreactividad">
-            <img class ="icono" src="./images/actividades.png" alt="actividades"/>
-           <p>Entrega práctica 2 JavaScript y Jquery</p>
+        <div class="actividad">
+          <div class="Nombreactividad">
+            <img class="icono" src="./images/actividades.png" alt="actividades" />
+            <p>Entrega práctica 2 JavaScript y Jquery</p>
           </div>
-          <div id ="tiemporestante">
+          <div class="tiemporestante">
             <p>En proceso. Tiempo restante 5 días.
             </p>
           </div>
@@ -1094,7 +1093,8 @@ defecto de la página y dónde se encuenta el css -->
         <p class="underline" onclick="desplegar_contenido_barra('calificaciones_profesor')">Mis calificaciones</p>
       </div>
 
-      <div class="barralateralderecha estudiante profesor admin"><img class="icono" src="./images/foro.png" alt="foro" />
+      <div class="barralateralderecha estudiante profesor admin"><img class="icono" src="./images/foro.png"
+          alt="foro" />
         <p class="underline" onclick="desplegar_contenido_barra('foroasignatura')">Foro</p>
       </div>
 
@@ -1107,7 +1107,8 @@ defecto de la página y dónde se encuenta el css -->
         <p class="underline" onclick="desplegar_contenido_barra('actividades_estudiante')">Actividades</p>
       </div>
 
-      <div class="barralateralderecha profesor admin"><img class="icono" src="./images/actividades.png" alt="actividades" />
+      <div class="barralateralderecha profesor admin"><img class="icono" src="./images/actividades.png"
+          alt="actividades" />
         <p class="underline" onclick="desplegar_contenido_barra('actividades_profesor')">Actividades</p>
       </div>
 
@@ -1138,3 +1139,5 @@ defecto de la página y dónde se encuenta el css -->
     </ul>
   </div>
   <script src="./script/script.js"></script>
+</body>
+</html>

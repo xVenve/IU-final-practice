@@ -42,8 +42,6 @@ function popups(nombre, seccion) {
   });
 }
 
-
-
 function start() {
   document.getElementById('iniciosesion').style.paddingTop = "2%";
   document.getElementById('iniciosesion').style.width = "100%";
@@ -71,33 +69,8 @@ function guardarCookie() {
 function desplegarRegistro() {
   document.getElementById('vertical-line').style.display = "absolute";
   document.getElementById('registro').style.display = "block";
-
-  if(window.matchMedia("(max-width: 600px)").matches){
-
-    document.getElementById('formularios').style.display = "inline-block";
-    document.getElementById('formularios').style.marginLeft = "0%";
-    document.getElementById('formularios').style.marginRight = "0%";
-    document.getElementById('formularios').style.width = "100%";
-    document.getElementById('iniciosesion').style.width = "100%";
-
-  }else if(window.matchMedia("(max-width: 768px)").matches){
-
-    $("#vertical-line").fadeIn("slow");
-    $("#registro").fadeIn("slow");
-    document.getElementById('formularios').style.width = "60%";
-    document.getElementById('formularios').style.marginLeft = "20%";
-
-  }else{
-
-   $("#vertical-line").fadeIn("slow");
-   $("#registro").fadeIn("slow");
-   document.getElementById('iniciosesion').style.paddingTop = "10%";
-   document.getElementById('formularios').style.marginLeft = "20%";
-   document.getElementById('formularios').style.marginRight = "20%";
-   document.getElementById('formularios').style.width = "58.33%";
-   document.getElementById('iniciosesion').style.width = "40%";
-
-  }
+  window.addEventListener("resize",responsivelogin);
+  responsivelogin();
 }
 
 
@@ -110,6 +83,7 @@ function desplegar_asignatura(x) {
   var asignatura = document.getElementById(x);
   asignatura.style.display = "block";
   $(".barralateralderecha").show();
+  
 
   if (rolActivo === "Estudiante") {
     estudiante();
@@ -149,6 +123,30 @@ function obtenerCookie(email) {
   return valoresCookie;
 }
 
+function responsivelogin(){
+  if(window.matchMedia("(max-width: 600px)").matches){
+    document.getElementById('formularios').style.display = "inline-block";
+    document.getElementById('formularios').style.marginLeft = "0%";
+    document.getElementById('formularios').style.marginRight = "0%";
+    document.getElementById('formularios').style.width = "100%";
+    document.getElementById('iniciosesion').style.width = "100%";
+  }else if(window.matchMedia("(max-width: 768px)").matches){
+    $("#vertical-line").fadeIn("slow"); 
+    $("#registro").fadeIn("slow");
+    document.getElementById('formularios').style.width = "60%";
+    document.getElementById('formularios').style.marginLeft = "20%";
+    document.getElementById('formularios').style.display = "flex";
+  }else{
+    $("#vertical-line").fadeIn("slow");
+    $("#registro").fadeIn("slow");
+    document.getElementById('iniciosesion').style.paddingTop = "10%";
+    document.getElementById('formularios').style.marginLeft = "20%";
+    document.getElementById('formularios').style.marginRight = "20%";
+    document.getElementById('formularios').style.width = "58.33%";
+    document.getElementById('iniciosesion').style.width = "40%";
+  }
+}
+
 function responsive(){
   if(window.matchMedia("(max-width: 600px)").matches){
       document.getElementById('principal').style.display="inline";
@@ -157,7 +155,7 @@ function responsive(){
       document.getElementById('principal').style.display="inline";
   }else{
       document.getElementById('principal').style.display="flex";
-      document.getElementById('lateral').display.display="inline";
+      document.getElementById('lateral').display.display="block";
   }
 }
 
@@ -180,15 +178,18 @@ function inicioSesion() {
 
     if (rolCookie === "Estudiante") {
       rolActivo = "Estudiante";
+      
       estudiante();
     } else if (rolCookie === "Profesor") {
       rolActivo = "Profesor";
+      
       profesor();
     } else {
       rolActivo = "Administrador";
+      
       administrador();
     }
-
+    window.removeEventListener("resize", responsivelogin);
     $(".barralateralderecha").hide();
     document.getElementById('nombreusuario').innerHTML = usernameCookie;
     responsive();
@@ -235,7 +236,9 @@ function cerrarSesion() {
     $("#calificaciones_estudiante").hide();
     $("#calificaciones_profesor").hide();
     $("#estudiantes").hide();
+    window.removeEventListener("resize", responsive);
   }
+  
 }
 
 function Inicio() {
