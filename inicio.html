@@ -80,7 +80,7 @@ defecto de la página y dónde se encuenta el css -->
         <li class="elementoshamburguesa estudiante" onclick="desplegar_contenido_barra('actividades_estudiante')">
           Actividades
         </li>
-        <li class="elementoshamburguesaprofesor admin" onclick="desplegar_contenido_barra('actividades_profesor')">
+        <li class="elementoshamburguesa profesor admin" onclick="desplegar_contenido_barra('actividades_profesor')">
           Actividades
         </li>
       </ul>
@@ -103,7 +103,7 @@ defecto de la página y dónde se encuenta el css -->
     </div>
     <span id="vertical-line"></span>
     <div id="registro">
-      <form id="formularioregistro" method="post" onsubmit="guardarCookie()">
+      <form id="formularioregistro" method="get" onsubmit="guardarCookie()">
         <label class="underline" for="formnombre">Nombre y Apellidos</label><br>
         <input type="text" id="formnombre" name="nombre" placeholder="Nombre" required>
         <input type="text" id="formapellidos" name="apellidos" placeholder="Apellidos" required><br>
@@ -135,7 +135,7 @@ defecto de la página y dónde se encuenta el css -->
   <div id="principal">
     <div class="content">
 
-      <div id="contenido_principal" class="estudiante profesor admin">
+      <div id="contenido_principal">
 
         <h1>CURSOS</h1>
 
@@ -145,7 +145,7 @@ defecto de la página y dónde se encuenta el css -->
         <div id="asignaturasLega" class="asignaturas">
           <ul>
             <li id="link_IU" onclick="desplegar_asignatura('IU')"> Grupo 1. Interfaces de Usuario.</li>
-            <li id="link_IS"> Grupo 27. Ingeniería del Software.</li>
+            <li onclick="desplegar_asignatura('IU')"> Grupo 27. Ingeniería del Software.</li>
           </ul>
         </div>
 
@@ -154,10 +154,10 @@ defecto de la página y dónde se encuenta el css -->
         </h2>
         <div id="asignaturasColme" class="asignaturas">
           <ul>
-            <li>Grupo 99. Programación.</li>
-            <li>Grupo 16. Ingeniería del Software.</li>
-            <li>Grupo 37. Interfaces de Usuario.</li>
-            <li>Grupo 12. Interfaces de Usuario.</li>
+            <li onclick="desplegar_asignatura('IU')">Grupo 99. Programación.</li>
+            <li onclick="desplegar_asignatura('IU')">Grupo 16. Ingeniería del Software.</li>
+            <li onclick="desplegar_asignatura('IU')">Grupo 37. Interfaces de Usuario.</li>
+            <li onclick="desplegar_asignatura('IU')">Grupo 12. Interfaces de Usuario.</li>
           </ul>
         </div>
 
@@ -166,8 +166,8 @@ defecto de la página y dónde se encuenta el css -->
         </h2>
         <div id="asignaturasGeta" class="asignaturas">
           <ul>
-            <li>Grupo 40. Marketing y publicidad.</li>
-            <li>Grupo 56. Desarrollo web y multimedia.</li>
+            <li onclick="desplegar_asignatura('IU')">Grupo 40. Marketing y publicidad.</li>
+            <li onclick="desplegar_asignatura('IU')">Grupo 56. Desarrollo web y multimedia.</li>
           </ul>
         </div>
         <div class="nuevocontenido admin">
@@ -212,7 +212,7 @@ defecto de la página y dónde se encuenta el css -->
       </div>
       <!--PAGINA DE ASIGNATURA INTERFACES DE USUSARIO-->
       <div id="IU">
-        <h1> ASIGNATURA INTERFACES DE USUARIO</h1>
+        <h1>INTERFACES DE USUARIO</h1>
         <p> <a href="https://eu-lti.bbcollab.com/collab/ui/scheduler/session"> <img class="pdf"
               src="./images/blackboard.png" alt="Online"><b> Enlace al Blackboard Collaborate de las magistrales</b></a>
         </p>
@@ -265,7 +265,7 @@ defecto de la página y dónde se encuenta el css -->
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: HTA & GOMS</li>
           </ul>
         </div>
-        <div class="nuevocontenido">
+        <div class="nuevocontenido profesor admin">
           <img class="icono" src="./images/anadir.png" alt="nuevoContenido" />
           <p id="addcontent">Añadir contenido</p>
         </div>
@@ -282,11 +282,11 @@ defecto de la página y dónde se encuenta el css -->
                 <input type="text" name="Titulocontenido" id="Titulocontenido"><br>
               </form>
 
-              <div id="seleccionarArchivo">
-                <div id="fileHolder">
-                  <input type="file" id="fileURL" />
+              <div class="seleccionarArchivo">
+                <div class="fileHolder">
+                  <input type="file" class="fileURL" />
                 </div>
-                <img id="dragdrop" src="./images/dragdrop.jpg" alt="ArrastraAquíLaImagen">
+                <img class="dragdrop" src="./images/dragdrop.png" alt="ArrastraAquíLaImagen">
               </div>
               <a class="boton cerrar" onclick="alert('Se ha añadido el contenido correctamente')">Añadir</a>
 
@@ -326,7 +326,7 @@ defecto de la página y dónde se encuenta el css -->
           <tbody>
 
             <tr class="impar">
-              <td class="NOMBRE">Tu</td>
+              <td class="NOMBRE">Tú</td>
               <td id="act1"></td>
               <td id="act2"></td>
               <td id="act3"></td>
@@ -341,7 +341,7 @@ defecto de la página y dónde se encuenta el css -->
         </div>
         <div class="botonnombre">
           <img class="icono" src="./images/chart.png" alt="chart" />
-          <p id="verChartE" onclick="verGrafica('Estudiante')">Ver graficas de resultados</p>
+          <p id="verChartE" onclick="verGrafica('Estudiante')">Ver gráficas de resultados</p>
         </div>
 
       </div>
@@ -355,7 +355,7 @@ defecto de la página y dónde se encuenta el css -->
               <p class="botoncerrar">+</p>
             </div>
             <div>
-              <h2>Grafica de calificaciones</h2>
+              <h2>Gráfica de calificaciones</h2>
               <div id="graphcontainerP"></div>
             </div>
           </div>
@@ -542,7 +542,7 @@ defecto de la página y dónde se encuenta el css -->
                   <img src="./images/usericon.png" class="usericon" alt="usericon">
                 </div>
                 <div class="nombreestudiante">
-                  <p>Paula Echavarría Sánchez</p>
+                  <p>Paula Alvarez Rey</p>
                 </div>
                 <div class="fechamensaje">
                   <p>11:02 29/09/2020</p>
@@ -561,7 +561,7 @@ defecto de la página y dónde se encuenta el css -->
                   <img src="./images/usericon.png" class="usericon" alt="usericon">
                 </div>
                 <div class="nombreestudiante">
-                  <p>Félix Macipe Albarrán</p>
+                  <p>Daniel Cano Robledo</p>
                 </div>
                 <div class="fechamensaje">
                   <p>13:37 29/09/2020</p>
@@ -580,7 +580,7 @@ defecto de la página y dónde se encuenta el css -->
                   <img src="./images/usericon.png" class="usericon" alt="usericon">
                 </div>
                 <div class="nombreestudiante">
-                  <p>Carmina Rodríguez Pazos</p>
+                  <p>Nuria Gárcia Rozas</p>
                 </div>
                 <div class="fechamensaje">
                   <p>14:20 29/09/2020</p>
@@ -625,7 +625,7 @@ defecto de la página y dónde se encuenta el css -->
                   <img src="./images/usericon.png" class="usericon" alt="usericon">
                 </div>
                 <div class="nombreestudiante">
-                  <p>María Perez Da Silva</p>
+                  <p>Carlos Rubio Olivares</p>
                 </div>
                 <div class="fechamensaje">
                   <p>23:00 28/09/2020</p>
@@ -646,7 +646,7 @@ defecto de la página y dónde se encuenta el css -->
                   <img src="./images/usericon.png" class="usericon" alt="usericon">
                 </div>
                 <div class="nombreestudiante">
-                  <p>Sofiane Fernández Álvarez</p>
+                  <p>Maria Sanchez Blazquez</p>
                 </div>
                 <div class="fechamensaje">
                   <p>06:01 29/09/2020</p>
@@ -654,7 +654,7 @@ defecto de la página y dónde se encuenta el css -->
 
               </div>
               <div class="mensajeforo">
-                <p>Hola María, el profe lo ha dicho claramente en clase que iba a ser online,
+                <p>Hola Carlos, el profe lo ha dicho claramente en clase que iba a ser online,
                   por la razón que has expuesto tu antes. Un saludo, nos vemos en clase! :)</p>
               </div>
             </div>
@@ -747,7 +747,7 @@ defecto de la página y dónde se encuenta el css -->
                   <img src="./images/usericon.png" class="usericon" alt="usericon">
                 </div>
                 <div class="nombreestudiante">
-                  <p>Borja Álvarez de Toledo</p>
+                  <p>Ivan Serrano García</p>
                 </div>
                 <div class="fechamensaje">
                   <p>16:37 18/09/2020</p>
@@ -789,7 +789,7 @@ defecto de la página y dónde se encuenta el css -->
                   <img src="./images/usericon.png" class="usericon" alt="usericon">
                 </div>
                 <div class="nombreestudiante">
-                  <p>Li Zhou Weng</p>
+                  <p>Xu Chen</p>
                 </div>
                 <div class="fechamensaje">
                   <p>20:36 14/09/2020</p>
@@ -797,7 +797,7 @@ defecto de la página y dónde se encuenta el css -->
 
               </div>
               <div class="mensajeforo">
-                <p>Hola ya que mañana comienza el curso, me presento: Soy Li Zhou Weng y tengo muchas ganas de conoceros
+                <p>Hola ya que mañana comienza el curso, me presento: Soy Xu Chen y tengo muchas ganas de conoceros
                   a todos.
                   ¡Nos vemos mañana en clase! :D
                 </p>
@@ -809,14 +809,14 @@ defecto de la página y dónde se encuenta el css -->
                   <img src="./images/usericon.png" class="usericon" alt="usericon">
                 </div>
                 <div class="nombreestudiante">
-                  <p>João Carvalho Ronaldo</p>
+                  <p>Luis Acero Morata</p>
                 </div>
                 <div class="fechamensaje">
                   <p>21:21 14/09/2020</p>
                 </div>
               </div>
               <div class="mensajeforo">
-                <p>Hola Li, yo también tengo bastante ilusión por este curso (aunque vaya a ser un poco raro),
+                <p>Hola Xu, yo también tengo bastante ilusión por este curso (aunque vaya a ser un poco raro),
                   y eso que estamos de Erasmus!!!!!! Si quieres para los laboratorios nos ponemos juntos.
                   Mi correo es el siguiente: 100425897@alumnos.uc3m.es Un saludo!!!
                 </p>
@@ -847,7 +847,7 @@ defecto de la página y dónde se encuenta el css -->
                 <label class="underline" for="TemaHilo">Tema</label><br>
                 <input type="text" name="Tema" id="TemaHilo"><br>
                 <label class="underline" for="mensaje_formulario_foro">Mensaje</label><br>
-                <textarea rows="10" cols="80" id="mensaje_formulario_foro"></textarea> <br>
+                <textarea rows= 10 cols = 80 id="mensaje_formulario_foro"></textarea> <br>
               </form>
               <a class="boton cerrar" onclick="alert('Se ha añadido el hilo correctamente')">Añadir</a>
 
@@ -1043,6 +1043,8 @@ defecto de la página y dónde se encuenta el css -->
                 <textarea rows="10" cols="80" id="mensaje_formulario_actividad"></textarea> <br>
                 <label class="underline" for="fecha_entrega">Fecha Límite de la entrega</label><br>
                 <input id="fecha_entrega" type="datetime-local" name="fecha"><br>
+                <label class="underline" for="alumnosAsignados">Introduzca los alumnos asignados (separados ';')</label><br>
+                <input type="text" name="alumnosAsignados" id="alumnosAsignados"><br>
               </form>
               <a class="boton cerrar" onclick="alert('Se ha añadido la fecha')">Añadir</a>
 
@@ -1075,6 +1077,44 @@ defecto de la página y dónde se encuenta el css -->
             </p>
           </div>
         </div>
+
+        <div id="addEntrega" class="nuevocontenido">
+          <img class="icono Añadir" src="./images/anadir.png" alt="anadir" />
+          <p>Añadir entrega</p>
+        </div>
+
+        <div id="popup_entregar">
+          <div class="content-popup">
+            <div class="cerrar">
+              <p class="botoncerrar">+</p>
+            </div>
+            <div>
+              <h2>Introduzca los datos de la entrega</h2>
+              <form id="Formulario_Entrega" name="Formulario_Entrega" method="post">
+                <label class="underline" for="TitulocontenidoEntrega">Titulo Archivo</label><br>
+                <input type="text" name="TitulocontenidoEntrega" id="TitulocontenidoEntrega"><br>
+                <label class="underline" for="ActividadEntrega">Actividad</label><br>
+                <select name="entregas" id="ActividadEntrega" required>
+                  <option selected disabled value="">Elegir</option>
+                  <option value="entre1">Práctica 1</option>
+                  <option value="entre2">Práctica 2</option>
+                </select><br>
+              </form>
+        
+              <div class="seleccionarArchivo">
+                <div class="fileHolder">
+                  <input type="file" class="fileURL" />
+                </div>
+                <img class="dragdrop" src="./images/dragdrop.png" alt="ArrastraAquíLaImagen">
+              </div>
+              <a class="boton cerrar" onclick="alert('Se ha entregado correctamente')">Añadir</a>
+        
+        
+            </div>
+          </div>
+        </div>
+
+        
       </div>
 
     </div>

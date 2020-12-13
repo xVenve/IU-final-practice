@@ -13,7 +13,12 @@ $(document).ready(function() {
     events: [{
       startDate: new Date("2020-12-22 23:55"),
       endDate: new Date("2020-12-22 23:55"),
-      summary: 'ENTREGA PRACTICA 2. JAVASCRIPT Y JQUERY'
+      summary: 'ENTREGA PRÁCTICA 2. JAVASCRIPT Y JQUERY'
+    },
+    {
+      startDate: new Date("2020-12-05 23:55"),
+      endDate: new Date("2020-12-05 23:55"),
+      summary: 'ENTREGA PRÁCTICA 1. HTML Y CSS'
     }]
   });
     popups('#addAsignatura', '#popup_add_asignatura');
@@ -24,6 +29,7 @@ $(document).ready(function() {
     popups('#addActividad', '#popup_actividad');
     popups('#verChartP', '#popup_chartP');
     popups('#verChartE', '#popup_chartE');
+    popups('#addEntrega', '#popup_entregar');
 
 });
 
@@ -83,7 +89,6 @@ function desplegar_asignatura(x) {
   var asignatura = document.getElementById(x);
   asignatura.style.display = "block";
   $(".barralateralderecha").show();
-  
 
   if (rolActivo === "Estudiante") {
     estudiante();
@@ -91,6 +96,10 @@ function desplegar_asignatura(x) {
     profesor();
   } else {
     administrador();
+  }
+
+  if(window.matchMedia("(max-width: 600px)").matches){
+    $(".barralateralderecha").hide();
   }
   
   var home = document.getElementById("contenido_principal");
@@ -151,11 +160,20 @@ function responsive(){
   if(window.matchMedia("(max-width: 600px)").matches){
       document.getElementById('principal').style.display="inline";
       document.getElementById('menuhamburguesa').style.display="block";
+      $(".barralateralderecha").hide();
   }else if(window.matchMedia("(max-width: 768px)").matches){
       document.getElementById('principal').style.display="inline";
+      $(".barralateralderecha").show();
+      if (rolActivo === "Estudiante") {
+        estudiante();
+      } else if (rolActivo === "Profesor") {
+        profesor();
+      } else {
+        administrador();
+      }
   }else{
       document.getElementById('principal').style.display="flex";
-      document.getElementById('lateral').display.display="block";
+      document.getElementById('lateral').style.display="block";
   }
 }
 
@@ -168,6 +186,7 @@ function inicioSesion() {
   var usernameCookie = elementosCookie[1] + " " + elementosCookie[2];
   if (contraseñaInicio === contraseñaCookie) {
     cuentaActiva = emailInicio;
+    window.removeEventListener("resize", responsivelogin);
     window.addEventListener("resize", responsive);
     document.getElementById('formularios').style.display = "none";
     document.getElementById('cabecera2').style.display = "block";
@@ -189,7 +208,7 @@ function inicioSesion() {
       
       administrador();
     }
-    window.removeEventListener("resize", responsivelogin);
+
     $(".barralateralderecha").hide();
     document.getElementById('nombreusuario').innerHTML = usernameCookie;
     responsive();
@@ -220,9 +239,9 @@ function administrador() {
 function cerrarSesion() {
   var confirmacion = confirm("¿Quieres cerrar sesión?");
   if (confirmacion) {
-    start();
     $("#principal").hide();
     $("#formularios").show();
+    $("#iniciosesion").show();
     $("#perfil").hide();
     $("#cabecera2").hide();
     $("#abajo").hide();
@@ -236,7 +255,7 @@ function cerrarSesion() {
     $("#calificaciones_estudiante").hide();
     $("#calificaciones_profesor").hide();
     $("#estudiantes").hide();
-    window.removeEventListener("resize", responsive);
+    window.removeEventListener("resize", responsive);    
   }
   
 }

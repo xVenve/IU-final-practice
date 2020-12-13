@@ -418,11 +418,7 @@ ul {
   display: none;
 }
 
-/*.asignaturas li{
-  cursor: pointer;
-}*/
-
-#link_IU{
+.asignaturas li{
   cursor: pointer;
 }
 
@@ -729,6 +725,15 @@ a {
   display: none;
 }
 
+#popup_entregar {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  display: none;
+}
+
 #popup_add_asignatura {
   left: 0;
   position: absolute;
@@ -794,6 +799,8 @@ a {
 
 textarea{
   margin-top: 1%;
+  width: 80%;
+  height: 100%;
 }
 #fecha_entrega{
   margin-top:1%;
@@ -876,7 +883,7 @@ input[type="file"] {
   height: 22px; 
 }
 
-#fileHolder{
+.fileHolder{
   width: 100%; 
   height: 25px; 
   overflow:hidden;
@@ -884,16 +891,17 @@ input[type="file"] {
   text-align: right; 
 }
 
-#seleccionarArchivo{
+.seleccionarArchivo{
   border: 1px solid grey;
   height:300px;
 }
 
 
-#dragdrop {
-  max-width: 100%;
-  max-height: 100%;
+.dragdrop {
+  max-width: 60%;
+  max-height: 60%;
   margin: auto;
+  margin-top: 45px;
   display: block;
 }
 
@@ -938,14 +946,18 @@ input[type="file"] {
     font-size: medium;
   }
 
-  #principal{
-    display:inline-block;
+  #nombreusuario{
+    padding:5%;
+    font-size: 1.25vw;
   }
 
   .content{
     width:94%;
     margin-bottom: 2%;
+    height: auto;
+    display: flex;
   }
+
   #lateral{
     width:94%;
     margin-left:3%;
@@ -953,6 +965,11 @@ input[type="file"] {
 
   #lateral p{
     width: 92%;
+    padding-top: 0;
+  }
+
+  .content-popup {
+    width: 80%;
   }
 
 }
@@ -960,12 +977,12 @@ input[type="file"] {
 @media only screen and (max-width:600px){
   #menuhamburguesa label{
     display: inline-block;
-}
+  }
 
 #menuhamburguesa input:checked  ~ ul{
     display:block;
     text-align: center;
-}
+  }
 
   #formularios {
     width:100%;
@@ -990,8 +1007,17 @@ input[type="file"] {
     font-size: xx-small;
   }
 
-  #principal{
-    display:inline-block;
+  #arribaperfil{
+    height: 45%;
+  }
+
+  #cerrarsesion{
+    font-size: 7px;
+  }
+
+  #nombreusuario{
+    padding:5%;
+    font-size: 1.25vw;
   }
 
   .content{
@@ -1003,9 +1029,25 @@ input[type="file"] {
     width:94%;
     margin-left:3%;
   }
+
   #lateral p{
     width: 85%;
   }
+
+
+  .content-popup {
+    width: 100%;
+  }
+
+  .fechamensaje {
+    padding-left: 0px;
+    text-align: center;
+  }
+
+  .elementoshamburguesa {
+    background-color: #fc7474;
+  }
+
 }
 
 
