@@ -32,7 +32,7 @@ defecto de la página y dónde se encuenta el css -->
       <p>PLATAFORMA EDUCATIVA UNIVERSIDAD CARLOS III</p>
 
     </div>
-
+<!--  Parte dedicada al usuario -->
     <div id="perfil" class="col-2">
       <div id="arribaperfil">
         <div id="divusericon" class="col-2">
@@ -47,7 +47,7 @@ defecto de la página y dónde se encuenta el css -->
 
   </div>
 
-
+  <!-- Segunda cabecera del archivo -->
   <div id="cabecera2" class="col-12">
     <ul id="menucabecera">
       <li><a onclick="Inicio()">Inicio</a> | </li>
@@ -87,9 +87,10 @@ defecto de la página y dónde se encuenta el css -->
     </nav>
   </div>
 
-
+  <!-- Formulario de inicio de sesión y registro -->
   <div class="col-3" id="formularios">
 
+    <!-- Formulario de inicio de sesión -->
     <div id="iniciosesion">
       <form id="Formulario_Inicio_Sesion" name="Formulario_Inicio_Sesion" method="post">
         <label class="underline" for="inicioemail">Correo electrónico</label><br>
@@ -99,9 +100,11 @@ defecto de la página y dónde se encuenta el css -->
         <a class="boton" onclick="inicioSesion()">Iniciar sesión</a>
         <a id="boton_registro" class="boton" onclick="desplegarRegistro()"><span>Registrarse</span></a>
       </form>
-
     </div>
+    
     <span id="vertical-line"></span>
+    
+    <!-- Formulario de registro -->
     <div id="registro">
       <form id="formularioregistro" method="get" onsubmit="guardarCookie()">
         <label class="underline" for="formnombre">Nombre y Apellidos</label><br>
@@ -109,12 +112,17 @@ defecto de la página y dónde se encuenta el css -->
         <input type="text" id="formapellidos" name="apellidos" placeholder="Apellidos" required><br>
         <label class="underline" for="formemail">Correo electrónico</label><br>
         <input type="text" id="formemail" name="email" placeholder="Correo electrónico" required
-          pattern="[A-Za-z0-9]+@[a-z0-9]+.[a-z]{2,3}"><br>
+          pattern="[A-Za-z0-9]+@[a-z0-9]+.[a-z]{2,3}" oninvalid="this.setCustomValidity('El email debe ser válido');"
+          oninput="this.setCustomValidity('');"><br>
         <label class="underline" for="formcontraseña">Contraseña</label><br>
         <input type="password" id="formcontraseña" name="contraseña" placeholder="Contraseña" required
-          pattern="[A-Za-z0-9]{1,8}"><br>
+          pattern="[A-Za-z0-9]{1,8}"
+          oninvalid="this.setCustomValidity('La contraseña debe tener de 1 a 8 caracteres (números y letras)');"
+          oninput="this.setCustomValidity('');"><br>
         <label class="underline" for="formNIA">NIA</label><br>
-        <input type="text" id="formNIA" name="NIA" placeholder="NIA" required pattern="100[0-9]{6}"><br>
+        <input type="text" id="formNIA" name="NIA" placeholder="NIA" required pattern="100[0-9]{6}"
+          oninvalid="this.setCustomValidity('El NIA debe tener el formato 100XXXXXX');"
+          oninput="this.setCustomValidity('');"><br>
         <label class="underline" for="formrol">Roles</label><br>
         <select name="roles" id="formrol" required>
           <option selected disabled value="">Elige tu rol</option>
@@ -134,7 +142,7 @@ defecto de la página y dónde se encuenta el css -->
 
   <div id="principal">
     <div class="content">
-
+      <!-- Página una vez iniciada la sesión-->
       <div id="contenido_principal">
 
         <h1>CURSOS</h1>
@@ -179,6 +187,7 @@ defecto de la página y dónde se encuenta el css -->
               <div class="cerrar">
                 <p class="botoncerrar">+</p>
               </div>
+              <!-- Parte dedicada a la gestión de cursos por parte del administrador-->
               <div>
                 <h2>Introduzca los datos de la nueva asignatura</h2>
                 <form id="Formulario_Asignatura" name="Formulario_Asignatura" method="post">
@@ -225,8 +234,8 @@ defecto de la página y dónde se encuenta el css -->
           <ul>
 
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Modelo de Norman</li>
-            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas de teoria</li>
-            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Enunciado practica individual</li>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas de teoría</li>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Enunciado práctica individual</li>
           </ul>
         </div>
 
@@ -237,7 +246,7 @@ defecto de la página y dónde se encuenta el css -->
           <ul>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Interfaces</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Usabilidad</li>
-            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Metedologia</li>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Metodología</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Prototipado</li>
           </ul>
         </div>
@@ -250,7 +259,7 @@ defecto de la página y dónde se encuenta el css -->
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Diseño web</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Patrones y Heurísticas</li>
             <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Diapositivas Principios de diseño</li>
-            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Obtencion de patrones</li>
+            <li><img class="pdf" src="./images/pdf.png" alt="PDF" />Ejercicio 1: Obtención de patrones</li>
           </ul>
         </div>
 
@@ -269,7 +278,7 @@ defecto de la página y dónde se encuenta el css -->
           <img class="icono" src="./images/anadir.png" alt="nuevoContenido" />
           <p id="addcontent">Añadir contenido</p>
         </div>
-
+        <!-- Subida de nuevo contenido por parte del profesor o administrador-->
         <div id="popup_contenido">
           <div class="content-popup">
             <div class="cerrar">
@@ -278,7 +287,7 @@ defecto de la página y dónde se encuenta el css -->
             <div>
               <h2>Introduzca los datos del nuevo contenido</h2>
               <form id="Formulario_Contenido" name="Formulario_Contenido" method="post">
-                <label class="underline" for="Titulocontenido">Titulo Archivo</label><br>
+                <label class="underline" for="Titulocontenido">Título Archivo</label><br>
                 <input type="text" name="Titulocontenido" id="Titulocontenido"><br>
               </form>
 
@@ -300,14 +309,14 @@ defecto de la página y dónde se encuenta el css -->
       <!--PAGINA DE CALIFICACIONES-->
       <div id="calificaciones_estudiante">
         <h1>CALIFICACIONES</h1>
-
+        <!-- Gráfica de calificaciones del estudiante -->
         <div id="popup_chartE">
           <div class="content-popup">
             <div class="cerrar">
               <p class="botoncerrar">+</p>
             </div>
             <div>
-              <h2>Grafica de calificaciones</h2>
+              <h2>Gráfica de calificaciones</h2>
               <div id="graphcontainerE"></div>
             </div>
           </div>
@@ -335,9 +344,10 @@ defecto de la página y dónde se encuenta el css -->
           </tbody>
 
         </table>
+        <!-- Exportar calificaciones a un excel -->
         <div class="botonnombre">
-          <img class="icono export_e" src="./images/excel.png" alt="excel">
-          <p>Exportar datos tabla Excel</p>
+          <img class="icono" src="./images/excel.png" alt="excel">
+          <p class="export_e">Exportar datos tabla Excel</p>
         </div>
         <div class="botonnombre">
           <img class="icono" src="./images/chart.png" alt="chart" />
@@ -348,7 +358,7 @@ defecto de la página y dónde se encuenta el css -->
 
       <div id="calificaciones_profesor">
         <h1>CALIFICACIONES</h1>
-
+        <!-- Grafica de calificaciones de todos los estudiantes -->
         <div id="popup_chartP">
           <div class="content-popup">
             <div class="cerrar">
@@ -362,7 +372,7 @@ defecto de la página y dónde se encuenta el css -->
         </div>
 
 
-
+        <!-- Tabla de calificaciones de las actividades-->
         <table class="tabla_calificaciones col-12 col-t-12" id="TABLA_PROFESOR" data-graph-container="#graphcontainerP"
           data-graph-type="line">
           <thead>
@@ -385,7 +395,7 @@ defecto de la página y dónde se encuenta el css -->
 
             <!-- Alumno 2 -->
             <tr class="par">
-              <td class="NOMBRE">Jorge Rodriguez Fraile</td>
+              <td class="NOMBRE">Jorge Rodríguez Fraile</td>
               <td>10.00</td>
               <td>7.75</td>
               <td>8.50</td>
@@ -458,13 +468,15 @@ defecto de la página y dónde se encuenta el css -->
           </tbody>
 
         </table>
-        <div class="botonnombre"><img class="icono export_p" src="./images/excel.png" alt="excel" />
-          <p>Exportar datos tabla Excel</p>
+        <!-- Exportación de calificaciones a un Excel-->
+        <div class="botonnombre">
+          <img class="icono" src="./images/excel.png" alt="excel" />
+          <p class="export_p">Exportar datos tabla Excel</p>
         </div>
-        <div class="botonnombre" id=addCalificaciones><img class="icono" src="./images/anadir.png" alt="anadir" />
+        <!--Añadir nuevas calificaciones (SOLO DISPONIBLE PARA PROFESOR Y ADMINISTRADOR)-->
+        <div class="botonnombre" id=addCalificaciones><img class="icono" src="./images/anadir.png" alt="añadir" />
           <p>Añadir calificaciones</p>
         </div>
-
 
         <div id="popup_calificaciones">
           <div class="content-popup">
@@ -835,7 +847,7 @@ defecto de la página y dónde se encuenta el css -->
           <img class="icono Añadir" src="./images/anadir.png" alt="anadir" />
           <p>Crear nuevo hilo</p>
         </div>
-
+        <!-- Popup para añadir un nuevo hilo en el foro -->
         <div id="popup_hilo">
           <div class="content-popup">
             <div class="cerrar">
@@ -847,7 +859,7 @@ defecto de la página y dónde se encuenta el css -->
                 <label class="underline" for="TemaHilo">Tema</label><br>
                 <input type="text" name="Tema" id="TemaHilo"><br>
                 <label class="underline" for="mensaje_formulario_foro">Mensaje</label><br>
-                <textarea rows= 10 cols = 80 id="mensaje_formulario_foro"></textarea> <br>
+                <textarea rows=10 cols=80 id="mensaje_formulario_foro"></textarea> <br>
               </form>
               <a class="boton cerrar" onclick="alert('Se ha añadido el hilo correctamente')">Añadir</a>
 
@@ -888,7 +900,7 @@ defecto de la página y dónde se encuenta el css -->
           <tr class="par">
             <td><img class="AVATAR" src="./images/Jorge.jpg" alt="JorgeRodriguez" /></td>
             <td>Jorge</td>
-            <td>Rodriguez Fraile</td>
+            <td>Rodríguez Fraile</td>
             <td>100405951@alumnos.uc3m.es</td>
             <td><button class="boton" type="button"
                 onclick="window.location.href='mailto:100405951@alumnos.uc3m.es';">Enviar mensaje</button></td>
@@ -898,7 +910,7 @@ defecto de la página y dónde se encuenta el css -->
           <tr class="impar">
             <td><img class="AVATAR" src="./images/Ivan.jpg" alt="IvanSerrano" /></td>
             <td>Ivan</td>
-            <td>Serrano Garcia</td>
+            <td>Serrano García</td>
             <td>100405836@alumnos.uc3m.es</td>
             <td><button class="boton" type="button"
                 onclick="window.location.href='mailto:100405836@alumnos.uc3m.es';">Enviar mensaje</button></td>
@@ -977,7 +989,7 @@ defecto de la página y dónde se encuenta el css -->
           <img id="ajustes" class="icono" src="./images/configuraciones.png" alt="nuevoAlumno" />
           <p id="gestAlumno">Gestionar estudiantes</p>
         </div>
-
+        <!-- Popup de administrador para añadir estudiantes o eliminarlos -->
         <div id="popup_gestion_est">
           <div class="content-popup">
             <div class="cerrar">
@@ -1001,7 +1013,7 @@ defecto de la página y dónde se encuenta el css -->
         </div>
 
       </div>
-
+      <!-- Sección donde aparecsn todas la tareas creadas por el profesor para esa asignatura  -->
       <div id="actividades_profesor">
 
         <div class="actividad">
@@ -1028,7 +1040,7 @@ defecto de la página y dónde se encuenta el css -->
           <img class="icono Añadir" src="./images/anadir.png" alt="anadir" />
           <p>Crear nueva actividad</p>
         </div>
-
+        <!-- Popup en profesor para añnadir una tarea a los alumnos -->
         <div id="popup_actividad">
           <div class="content-popup">
             <div class="cerrar">
@@ -1043,7 +1055,8 @@ defecto de la página y dónde se encuenta el css -->
                 <textarea rows="10" cols="80" id="mensaje_formulario_actividad"></textarea> <br>
                 <label class="underline" for="fecha_entrega">Fecha Límite de la entrega</label><br>
                 <input id="fecha_entrega" type="datetime-local" name="fecha"><br>
-                <label class="underline" for="alumnosAsignados">Introduzca los alumnos asignados (separados ';')</label><br>
+                <label class="underline" for="alumnosAsignados">Introduzca los alumnos asignados (separados
+                  ';')</label><br>
                 <input type="text" name="alumnosAsignados" id="alumnosAsignados"><br>
               </form>
               <a class="boton cerrar" onclick="alert('Se ha añadido la fecha')">Añadir</a>
@@ -1055,7 +1068,7 @@ defecto de la página y dónde se encuenta el css -->
 
       </div>
 
-
+      <!-- Sección donde muestras las distintas tareas que tiene el usuario en la asignatura -->
       <div id="actividades_estudiante">
 
         <div class="actividad">
@@ -1082,7 +1095,7 @@ defecto de la página y dónde se encuenta el css -->
           <img class="icono Añadir" src="./images/anadir.png" alt="anadir" />
           <p>Añadir entrega</p>
         </div>
-
+        <!-- Popup para realizar una entrega como alumno -->
         <div id="popup_entregar">
           <div class="content-popup">
             <div class="cerrar">
@@ -1100,7 +1113,7 @@ defecto de la página y dónde se encuenta el css -->
                   <option value="entre2">Práctica 2</option>
                 </select><br>
               </form>
-        
+
               <div class="seleccionarArchivo">
                 <div class="fileHolder">
                   <input type="file" class="fileURL" />
@@ -1108,19 +1121,19 @@ defecto de la página y dónde se encuenta el css -->
                 <img class="dragdrop" src="./images/dragdrop.png" alt="ArrastraAquíLaImagen">
               </div>
               <a class="boton cerrar" onclick="alert('Se ha entregado correctamente')">Añadir</a>
-        
-        
+
+
             </div>
           </div>
         </div>
 
-        
+
       </div>
 
     </div>
 
 
-
+    <!-- Barra lateral para el acceso rápido al contenido en la web a Calificaciones, Foro, Estudientes y Actividades. Además se muestra el calendario con los distinto eventos del usuario -->
     <div id="lateral">
 
       <div class="barralateralderecha estudiante"><img class="icono" src="./images/calificaciones.png"
@@ -1162,9 +1175,8 @@ defecto de la página y dónde se encuenta el css -->
 
   </div>
 
-  <!--Parte reservada para el footer de la página en el que se podrá acceder a la web de la universidad, a la
-			 política de privacidad o a la politica de derechos de autor y a la propiedad intelectual
-		-->
+  <!-- Parte reservada para el footer de la página en el que se podrá acceder a la web de la universidad, a la
+			 política de privacidad o a la politica de derechos de autor y a la propiedad intelectual	-->
   <div id="abajo" class="col-12">
     <ul class="menupie">
       <li><a
@@ -1180,4 +1192,5 @@ defecto de la página y dónde se encuenta el css -->
   </div>
   <script src="./script/script.js"></script>
 </body>
+
 </html>
