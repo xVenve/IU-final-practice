@@ -359,7 +359,7 @@ $(".export_e").click(function () {
     // exclude CSS class
     exclude: ".noExl",
     name: "Data",
-    filename: "mis_calificaciones", 
+    filename: "mis_calificaciones.xlsx", 
   });
 });
 
@@ -368,7 +368,7 @@ $(".export_p").click(function () {
     // exclude CSS class
     exclude: ".noExl",
     name: "Data",
-    filename: "calificaciones_estudiantes", 
+    filename: "calificaciones_estudiantes.xlsx",
   });
 });
 
