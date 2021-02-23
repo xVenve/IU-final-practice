@@ -17,7 +17,7 @@ El mecanismo de las cookies o localStorage es obligatorio.
 
 ## Tercera Fase: Documentación
 Además del diseño y desarrollo de la interfaz web, durante la tercera fase el grupo se ocupará de redactar una memoria de diseño incluyendo lo que ya se redactó para la tercera práctica. Se seguirá la siguiente estructura:
-• Objetivo principal de la aplicación web a diseñar (combinando los objetivos ya definidos en el punto 3 de la tercera práctica)
-• Usuarios potenciales de la aplicación (personas), y estudio y evaluación de las páginas web similares, incluyendo los principios, las heurísticas y los patrones de diseño aplicados (combinando los puntos 1 y 2 de la tercera práctica)
-• Descripción del prototipo diseñado previamente aplicando las heurísticas de Nielsen y los patrones del Van Duyne.
-• Descripción de las tecnologías usadas.
+- Objetivo principal de la aplicación web a diseñar (combinando los objetivos ya definidos en el punto 3 de la tercera práctica)
+- Usuarios potenciales de la aplicación (personas), y estudio y evaluación de las páginas web similares, incluyendo los principios, las heurísticas y los patrones de diseño aplicados (combinando los puntos 1 y 2 de la tercera práctica)
+- Descripción del prototipo diseñado previamente aplicando las heurísticas de Nielsen y los patrones del Van Duyne.
+- Descripción de las tecnologías usadas.
