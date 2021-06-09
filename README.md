@@ -1,23 +1,23 @@
 # FPIU
 
-## Enunciado
-El objetivo del caso práctico se centra en la aplicación de los conocimientos adquiridos durante la asignatura, tanto en las clases magistrales de teoría como en las clases prácticas. Para ello, se pide retomar el prototipo diseñado para el tercer bloque de prácticas e implementarlo. 
-El proyecto se realizará en tres fases.
+## Statement
+The objective of the case study focuses on the application of the knowledge acquired during the course, both in the theory lectures and in the practical classes. For this purpose, the prototype designed for the third practical block is requested to be taken up and implemented. 
+The project will be carried out in three phases.
 
-## Primera Fase: Definición del Prototipo
-Cada grupo del caso práctico estará formado por cuatro miembros y tendrá a disposición diferentes prototipos realizados en la tercera práctica. Durante esta primera fase, los miembros del grupo tendrán que combinar los diferentes prototipos en un nuevo diseño común. El nuevo prototipo deberá ser validado por el profesor o la profesora de práctica antes de empezar su implementación. En caso contrario, no se permitirá la entrega final del proyecto.
+## First Phase: Definition of the Prototype
+Each case study group will consist of four members and will have at its disposal different prototypes made in the third practical. During this first phase, the group members will have to combine the different prototypes into a new common design. The new prototype will have to be validated by the practice teacher before starting its implementation. Otherwise, the final delivery of the project will not be allowed.
 
-## Segunda Fase: Implementación del Prototipo
-El prototipo diseñado durante la primera fase se implementará utilizando las tecnologías vistas en las clases prácticas u otras a elección de cada grupo de estudiantes. Se pueden utilizar frameworks (por ejemplo, Bootstrap), pero no se dará soporte para ellos. En particular, se pide implementar por lo menos las siguientes tres páginas:
-- página principal (con el listado de cursos en el caso de estudiante y profesor; con un panel de opciones en el caso de administrador);
-- página de registro / inicio sesión;
-- página del curso (con información y contenido sobre el curso con diferentes opciones dependiendo del rol, estudiante o profesor; esta página no se implementará para el rol administrador).
+## Phase Two: Prototype Implementation
+The prototype designed during the first phase will be implemented using the technologies seen in the practical classes or others of each group of students' choice. Frameworks (e.g. Bootstrap) may be used, but will not be supported. In particular, it is requested to implement at least the following three pages:
+- home page (with the course listing in the case of student and teacher; with an options panel in the case of administrator);
+- registration / login page;
+- course page (with information and content about the course with different options depending on the role, student or teacher; this page will not be implemented for the administrator role).
 
-El mecanismo de las cookies o localStorage es obligatorio.
+The cookie mechanism or localStorage is mandatory.
 
-## Tercera Fase: Documentación
-Además del diseño y desarrollo de la interfaz web, durante la tercera fase el grupo se ocupará de redactar una memoria de diseño incluyendo lo que ya se redactó para la tercera práctica. Se seguirá la siguiente estructura:
-- Objetivo principal de la aplicación web a diseñar (combinando los objetivos ya definidos en el punto 3 de la tercera práctica)
-- Usuarios potenciales de la aplicación (personas), y estudio y evaluación de las páginas web similares, incluyendo los principios, las heurísticas y los patrones de diseño aplicados (combinando los puntos 1 y 2 de la tercera práctica)
-- Descripción del prototipo diseñado previamente aplicando las heurísticas de Nielsen y los patrones del Van Duyne.
-- Descripción de las tecnologías usadas.
+## Third Phase: Documentation
+In addition to the design and development of the web interface, during the third phase the group will be engaged in writing a design memory including what was already written for the third practice. The following structure will be followed:
+- Main objective of the web application to be designed (combining the objectives already defined in point 3 of the third practice).
+- Potential users of the application (people), and study and evaluation of similar web pages, including the principles, heuristics and design patterns applied (combining points 1 and 2 of the third practice).
+- Description of the prototype previously designed applying Nielsen's heuristics and Van Duyne's patterns.
+- Description of the technologies used.
